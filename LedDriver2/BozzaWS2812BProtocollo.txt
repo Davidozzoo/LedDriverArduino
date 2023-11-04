@@ -1,0 +1,47 @@
+‾‾‾‾‾|__________	= 0
+‾‾‾‾‾‾‾‾‾‾‾|____	= 1
+400ns|400ns|400ns
+
+Parte iniziale e finale sempre uguale
+parte centrale definisce se 0 o 1
+in RAM ho registro per ogni 8 bit
+
+@8mhz  istruzione 125ns 
+@16mhz istruzione 62.5ns 
+@20mhz istruzione 50ns 
+
+ByteTx[16] 	= {0}; 
+REG 			= 0b11001110
+
+for(j=0; j < 16; j++)	{					//Cycle for all bytes
+	REG = ByteTx[j];
+	for(i=0; i < 8; i++)	{ 					//Cycle for all bits
+		///////////////////////////////////////////
+		asm volatile ("sbi 0x18,1"); 	//PORTB1 = 1.
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		///////////////////////////////////////////
+		if(REG & 0x80) {
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		}
+		else				{
+		asm volatile ("cbi 0x18,1"); 	//PORTB1 = 0.
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		}
+		///////////////////////////////////////////
+		asm volatile ("cbi 0x18,1"); 	//PORTB1 = 0.
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		asm volatile ("nop");
+		REG = REG << 1;
+	}
+}
+

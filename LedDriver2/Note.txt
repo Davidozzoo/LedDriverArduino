@@ -1,0 +1,9 @@
+Compilato con arduino 1.8.19
+Minicore 3.0.0
+FastLED Daniel Garcia 3.6.0
+ATmega8 oscillatore interno 8Mhz
+
+Calcolo seno con octave
+LED = 0: 1: 19
+Sine = 255 * sin (pi .* t ./ 20) 
+Controllo bright
