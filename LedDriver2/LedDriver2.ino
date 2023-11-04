@@ -24,6 +24,7 @@ uint8_t ResetStatus;
 uint8_t WriteStatusRom = 0;
 uint8_t CountDir;
 uint8_t FrameDelay;
+uint8_t Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
 uint8_t Vect[NUM_LEDS];
 unsigned long ResetTimeStamp;
 
@@ -250,10 +251,9 @@ void loop() {
   	}	
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
-		TriInit();
 		for (iLed=0; iLed<NUM_LEDS; iLed++) {
-			if(iLed + iFrame >= NUM_LEDS)	{ leds[iLed] = CRGB(0, 0, Vect[iLed + iFrame - NUM_LEDS]);}
-			else									{ leds[iLed] = CRGB(0, 0, Vect[iLed + iFrame]);} 
+			if(iLed + iFrame >= NUM_LEDS)	{ leds[iLed] = CRGB(0, 0, Tri[iLed + iFrame - NUM_LEDS]);}
+			else									{ leds[iLed] = CRGB(0, 0, Tri[iLed + iFrame]);} 
 		}
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -520,6 +520,7 @@ void RampInit()	{
 	for(Vect[0] = 0, i=1; i < NUM_LEDS; i++)	{ Vect[i] = Vect[i-1]+255/NUM_LEDS;};
 }
 
+/*
 void TriInit()		{
     Vect[0] = 255/NUM_LEDS*2; 
     for(i=1; i<NUM_LEDS; i++)    {
@@ -532,3 +533,4 @@ void TriInit()		{
     }
     Vect[NUM_LEDS -1] = Vect[NUM_LEDS -2];
 }
+*/
