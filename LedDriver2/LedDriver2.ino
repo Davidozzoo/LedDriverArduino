@@ -1,5 +1,5 @@
 #include <FastLED.h> 
-#define NUM_LEDS 20
+#define NUM_LEDS 28
 #define DATA_PIN 11 			//SPI MOSI
 #define COLOR_ORDER GRB 	//Green (G), Red (R), Blue (B)
 #define CHIPSET WS2812B
@@ -24,7 +24,6 @@ uint8_t ResetStatus;
 uint8_t WriteStatusRom = 0;
 uint8_t CountDir;
 uint8_t FrameDelay;
-uint8_t Tri[NUM_LEDS] = {25,50,75,100,125,150,175,200,225,250,225,200,175,150,125,100,75,50,25,25};
 uint8_t Vect[NUM_LEDS];
 unsigned long ResetTimeStamp;
 
@@ -251,9 +250,10 @@ void loop() {
   	}	
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
+		TriInit();
 		for (iLed=0; iLed<NUM_LEDS; iLed++) {
-			if(iLed + iFrame >= NUM_LEDS)	{ leds[iLed] = CRGB(0, 0, Tri[iLed + iFrame - NUM_LEDS]);}
-			else									{ leds[iLed] = CRGB(0, 0, Tri[iLed + iFrame]);} 
+			if(iLed + iFrame >= NUM_LEDS)	{ leds[iLed] = CRGB(0, 0, Vect[iLed + iFrame - NUM_LEDS]);}
+			else									{ leds[iLed] = CRGB(0, 0, Vect[iLed + iFrame]);} 
 		}
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -518,4 +518,17 @@ void ColorLeds(CRGB color)	{
 
 void RampInit()	{
 	for(Vect[0] = 0, i=1; i < NUM_LEDS; i++)	{ Vect[i] = Vect[i-1]+255/NUM_LEDS;};
+}
+
+void TriInit()		{
+    Vect[0] = 255/NUM_LEDS*2; 
+    for(i=1; i<NUM_LEDS; i++)    {
+		if(i < NUM_LEDS/2)	{
+	    	Vect[i] = Vect[i-1] + 255/NUM_LEDS*2;
+		}
+		else	{
+		    Vect[i] = Vect[i-1] - 255/NUM_LEDS*2;
+		}
+    }
+    Vect[NUM_LEDS -1] = Vect[NUM_LEDS -2];
 }
