@@ -15,18 +15,18 @@
 
 CRGB leds[NUM_LEDS];
 
-uint8_t Status = 14;
-uint8_t i = 0;
-uint8_t iLed = 0;
-uint8_t iFrame = 0;
-uint8_t xFrame = 0;
-uint8_t yFrame = 0;
-uint8_t ResetStatus = 0;
-uint8_t CountDir = 0;
-uint8_t FrameDelay = 0;
+uint8_t Status;
+uint8_t i;
+uint8_t iLed;
+uint8_t iFrame;
+uint8_t xFrame;
+uint8_t ResetStatus;
+uint8_t WriteStatusRom = 0;
+uint8_t CountDir;
+uint8_t FrameDelay;
 uint8_t Tri[NUM_LEDS] = {25,50,75,100,125,150,175,200,225,250,225,200,175,150,125,100,75,50,25,25};
 uint8_t Vect[NUM_LEDS];
-
+unsigned long ResetTimeStamp;
 
 void setup() {
 	pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -56,20 +56,28 @@ void loop() {
 				CountDir = CountUp;
 				FastLED.setBrightness(BRIGHTNESS);
 				ResetStatus = 1;
-				//Write status to rom
-				EEAR = 0x00;
-				EEDR = Status;
-				
-				//asm volatile ("sbi EECR,EEMWE");			//Write enable on;
-				asm volatile ("sbi 0x1C,2");			//Write enable on;
-				//asm volatile ("sbi EECR,EEWE");			//Start write;
-				asm volatile ("sbi 0x1C,1");			//Start write;
+				WriteStatusRom = 1;
+				ResetTimeStamp = millis();
 				while(digitalRead(BUTTON_PIN) == 0)	{}		//Wait button release.
 				break;
 			}
 		}
 		delay(5);
 	}
+	if(WriteStatusRom == 1)	{
+		if(millis()-ResetTimeStamp >= 30000)	{
+			//Write status to rom
+			EEAR = 0x00;
+			EEDR = Status;
+			//asm volatile ("sbi EECR,EEMWE");			//Write enable on;
+			asm volatile ("sbi 0x1C,2");			//Write enable on;
+			//asm volatile ("sbi EECR,EEWE");			//Start write;
+			asm volatile ("sbi 0x1C,1");			//Start write;
+			WriteStatusRom = 0;	
+		}
+	}
+				
+
 	//////////////////// STATUS 0 ///////////////////////
 	if(Status == 0)	{
 		ColorLeds(CRGB::Red);
