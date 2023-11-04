@@ -29,13 +29,18 @@ uint8_t Vect[NUM_LEDS];
 
 
 void setup() {
-pinMode(BUTTON_PIN, INPUT_PULLUP);
+	pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-FastLED.addLeds<CHIPSET,DATA_PIN,COLOR_ORDER>(leds,NUM_LEDS);
-//FastLED.setMaxPowerInVoltsAndMilliamps(VOLTS,MAX_AMPS);
-FastLED.setBrightness(BRIGHTNESS);
-//FastLED.clear();
-//FastLED.show(); 
+	FastLED.addLeds<CHIPSET,DATA_PIN,COLOR_ORDER>(leds,NUM_LEDS);
+	//FastLED.setMaxPowerInVoltsAndMilliamps(VOLTS,MAX_AMPS);
+	FastLED.setBrightness(BRIGHTNESS);
+	//FastLED.clear();
+	//FastLED.show(); 
+
+	EEAR = 0x00;
+	//asm volatile ("sbi EECR,EERE");		//Start read.
+	asm volatile ("sbi 0x1C,0");			//Write enable on;
+	Status = EEDR;
 
 
 }
@@ -48,8 +53,17 @@ void loop() {
 				Status += 1;
 				iFrame = 0;
 				xFrame = 0;
+				CountDir = CountUp;
 				FastLED.setBrightness(BRIGHTNESS);
 				ResetStatus = 1;
+				//Write status to rom
+				EEAR = 0x00;
+				EEDR = Status;
+				
+				//asm volatile ("sbi EECR,EEMWE");			//Write enable on;
+				asm volatile ("sbi 0x1C,2");			//Write enable on;
+				//asm volatile ("sbi EECR,EEWE");			//Start write;
+				asm volatile ("sbi 0x1C,1");			//Start write;
 				while(digitalRead(BUTTON_PIN) == 0)	{}		//Wait button release.
 				break;
 			}
@@ -90,14 +104,10 @@ void loop() {
 		ColorLeds(CRGB::Red);
 		FastLED.setBrightness(iFrame);
 		FastLED.show();
-		if			(iFrame == BRIGHTNESS)	CountDir = CountDown;
-		else if	(iFrame == 0)				CountDir = CountUp;
-		if(CountDir == CountUp)	{
-			iFrame += 1;
-		}
-		else if(CountDir == CountDown)	{
-			iFrame -= 1;
-		}
+		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
+		else if	(iFrame == 0)             	{ CountDir = CountUp;}
+		if		(CountDir == CountUp)		{ iFrame ++;}
+		else								{ iFrame --;}
 		FrameDelay = 5;
 	}
 	//////////////////// STATUS 5 ///////////////////////
@@ -105,14 +115,10 @@ void loop() {
 		ColorLeds(CRGB::Green);
 		FastLED.setBrightness(iFrame);
 		FastLED.show();
-		if			(iFrame == BRIGHTNESS)	CountDir = CountDown;
-		else if	(iFrame == 0)				CountDir = CountUp;
-		if(CountDir == CountUp)	{
-			iFrame += 1;
-		}
-		else if(CountDir == CountDown)	{
-			iFrame -= 1;
-		}
+		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
+		else if	(iFrame == 0)             	{ CountDir = CountUp;}
+		if		(CountDir == CountUp)		{ iFrame ++;}
+		else								{ iFrame --;}
 		FrameDelay = 5;
 	}
 	//////////////////// STATUS 6 ///////////////////////
@@ -120,14 +126,10 @@ void loop() {
 		ColorLeds(CRGB::Blue);
 		FastLED.setBrightness(iFrame);
 		FastLED.show();
-		if			(iFrame == BRIGHTNESS)	CountDir = CountDown;
-		else if	(iFrame == 0)				CountDir = CountUp;
-		if(CountDir == CountUp)	{
-			iFrame += 1;
-		}
-		else if(CountDir == CountDown)	{
-			iFrame -= 1;
-		}
+		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
+		else if	(iFrame == 0)             	{ CountDir = CountUp;}
+		if		(CountDir == CountUp)		{ iFrame ++;}
+		else								{ iFrame --;}
 		FrameDelay = 5;
 	}
 	//////////////////// STATUS 7 ///////////////////////
@@ -135,14 +137,10 @@ void loop() {
 		ColorLeds(CRGB::Purple);
 		FastLED.setBrightness(iFrame);
 		FastLED.show();
-		if			(iFrame == BRIGHTNESS)	CountDir = CountDown;
-		else if	(iFrame == 0)				CountDir = CountUp;
-		if(CountDir == CountUp)	{
-			iFrame += 1;
-		}
-		else if(CountDir == CountDown)	{
-			iFrame -= 1;
-		}
+		if			(iFrame == BRIGHTNESS)	{ CountDir = CountDown;}
+		else if		(iFrame == 0)			{ CountDir = CountUp;}
+		if			(CountDir == CountUp)	{ iFrame ++;}
+		else								{ iFrame --;}
 		FrameDelay = 5;
 	}
 	//////////////////// STATUS 8 ///////////////////////
@@ -189,14 +187,10 @@ void loop() {
 		for (iLed = 0; iLed<NUM_LEDS; iLed++) { leds[iLed] = CRGB::Black; }
 		for (iLed = iFrame; iLed < (iFrame + 2); iLed++) { leds[iLed] = CRGB::Blue;}
 		for (iLed = NUM_LEDS - 1 - iFrame; iLed > (NUM_LEDS - 3 - iFrame); iLed--) { leds[iLed] = CRGB::Blue;}
-		if			(iFrame + 2 == NUM_LEDS/2)	CountDir = CountDown;
-		else if		(iFrame == 0)				CountDir = CountUp;
-		if(CountDir == CountUp)	{
-			iFrame += 1;
-		}
-		else if(CountDir == CountDown)	{
-			iFrame -= 1;
-		}
+		if		(iFrame + 2 == NUM_LEDS/2)	{CountDir = CountDown;}
+		else if	(iFrame == 0)				{CountDir = CountUp;}
+		if		(CountDir == CountUp)		{ iFrame ++;}
+		else								{ iFrame --;}
 		FrameDelay = 20;
 		FastLED.show();
   	}
@@ -261,7 +255,7 @@ void loop() {
   	//////////////////// STATUS 15 ///////////////////////
   	else if(Status == 15)  {
 		if(ResetStatus)	{
-			for(Vect[0] = 0, i=1; i < NUM_LEDS; i++)	{ Vect[i] = Vect[i-1]+255/NUM_LEDS;};
+			RampInit();
 			ResetStatus = 0;
 		}
 		ShiftLed(BlueDD);
@@ -273,7 +267,7 @@ void loop() {
   	//////////////////// STATUS 16 ///////////////////////
   	else if(Status == 16)  {
 		if(ResetStatus)	{
-			for(Vect[0] = 0, i=1; i < NUM_LEDS; i++)	{ Vect[i] = Vect[i-1]+255/NUM_LEDS;};
+			RampInit();
 			ResetStatus = 0;
 		}
 		if(xFrame == 0)	{
@@ -450,6 +444,42 @@ void loop() {
 		FastLED.show();
 		FrameDelay = 15;
   	}
+  	//////////////////// STATUS 19 ///////////////////////
+  	else if(Status == 19)  {
+		for (iLed=0; iLed<NUM_LEDS; iLed++) { Vect[iLed] = 0; }
+		Vect[NUM_LEDS - 1] = 255;
+		Vect[NUM_LEDS - 2] = 255;
+		Vect[NUM_LEDS - 3] = 255;
+		Vect[NUM_LEDS - 4] = 255;
+		ShiftLed(GreenDD);
+		if		(iFrame == NUM_LEDS - 4)	{ CountDir = CountDown;}
+		else if	(iFrame == 0)             	{ CountDir = CountUp;}
+		if		(CountDir == CountUp)		{ iFrame ++;}
+		else								{ iFrame --;}
+		FastLED.show();
+		FrameDelay = 8;
+  	}
+  	//////////////////// STATUS 20 ///////////////////////
+  	else if(Status == 20)  {
+		for (iLed=0; iLed<NUM_LEDS; iLed++) { Vect[iLed] = 0; }
+		Vect[NUM_LEDS - 1] = 255;
+		Vect[NUM_LEDS - 2] = 255;
+		Vect[NUM_LEDS - 3] = 255;
+		Vect[NUM_LEDS - 4] = 255;
+		ShiftLed(RedDD);
+		if  (iFrame == NUM_LEDS - 1)    { 
+			iFrame = 0;
+			if		(xFrame == 8)			{ CountDir = CountDown;}
+			else if	(xFrame == 1)       	{ CountDir = CountUp;}
+			if		(CountDir == CountUp)	{ xFrame++;}
+			else							{ xFrame--;}
+		}
+		else                            { 
+			iFrame++; 
+		}
+		FastLED.show();
+		FrameDelay = xFrame;
+  	}
 	//////////////////// STATUS OTHERS ///////////////////////
 	else	{
 		Status = 0;
@@ -462,7 +492,7 @@ void ShiftLed(uint8_t ColorSwitch)	{
 	uint8_t TempIndex;
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
 		TempIndex = iLed + iFrame;
-		if(TempIndex >= NUM_LEDS)	{ 
+		while(TempIndex >= NUM_LEDS)	{ 
 			TempIndex = TempIndex - NUM_LEDS;
 		}
 		if		(ColorSwitch == RedDD)		{TempColor = CRGB(Vect[TempIndex], 0, 0);}
@@ -476,4 +506,8 @@ void ColorLeds(CRGB color)	{
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
 		leds[iLed] = color; 
 	}
+}
+
+void RampInit()	{
+	for(Vect[0] = 0, i=1; i < NUM_LEDS; i++)	{ Vect[i] = Vect[i-1]+255/NUM_LEDS;};
 }
