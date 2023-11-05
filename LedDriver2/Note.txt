@@ -7,11 +7,14 @@ Calcolo seno con octave
 LED = 0: 1: 19
 Sine = 255 * sin (pi .* t ./ 20) 
 Controllo bright
+
+7124
+
 7234
 7150
 7202
 7190
-
 7238
-
 7176
+7166
+7162

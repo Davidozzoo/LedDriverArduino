@@ -81,37 +81,28 @@ void loop() {
 	//////////////////// STATUS 0 ///////////////////////
 	if(Status == 0)	{
 		ColorLeds(CRGB::Red);
-		//FastLED.setBrightness(BRIGHTNESS);
-		FastLED.show();
 		FrameDelay = 255;
 	}
 	//////////////////// STATUS 1 ///////////////////////
 	else if(Status == 1)	{
 		ColorLeds(CRGB::Green);
-		//FastLED.setBrightness(BRIGHTNESS);
-		FastLED.show();
 		FrameDelay = 255;
 	}
 	//////////////////// STATUS 2 ///////////////////////
 	else if(Status == 2)	{
 		ColorLeds(CRGB::Blue);
-		//FastLED.setBrightness(BRIGHTNESS);
-		FastLED.show();
 		FrameDelay = 255;
 	}
 
 	//////////////////// STATUS 3 ///////////////////////
 	else if(Status == 3)	{
 		ColorLeds(CRGB::Purple);
-		//FastLED.setBrightness(BRIGHTNESS);
-		FastLED.show();
 		FrameDelay = 255;
 	}
 	//////////////////// STATUS 4 ///////////////////////
 	else if(Status == 4)	{
 		ColorLeds(CRGB::Red);
 		FastLED.setBrightness(iFrame);
-		FastLED.show();
 		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
 		if		(CountDir == CountUp)		{ iFrame ++;}
@@ -122,7 +113,6 @@ void loop() {
 	else if(Status == 5)	{
 		ColorLeds(CRGB::Green);
 		FastLED.setBrightness(iFrame);
-		FastLED.show();
 		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
 		if		(CountDir == CountUp)		{ iFrame ++;}
@@ -133,7 +123,6 @@ void loop() {
 	else if(Status == 6)	{
 		ColorLeds(CRGB::Blue);
 		FastLED.setBrightness(iFrame);
-		FastLED.show();
 		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
 		if		(CountDir == CountUp)		{ iFrame ++;}
@@ -144,7 +133,6 @@ void loop() {
 	else if(Status == 7)	{
 		ColorLeds(CRGB::Purple);
 		FastLED.setBrightness(iFrame);
-		FastLED.show();
 		if			(iFrame == BRIGHTNESS)	{ CountDir = CountDown;}
 		else if		(iFrame == 0)			{ CountDir = CountUp;}
 		if			(CountDir == CountUp)	{ iFrame ++;}
@@ -155,7 +143,6 @@ void loop() {
   	else if(Status == 8)  {
 		fill_rainbow_circular(leds,NUM_LEDS,iFrame);
 		//FastLED.setBrightness(BRIGHTNESS);
-		FastLED.show();
 		iFrame += 10;
 		FrameDelay = 5;
 	}
@@ -168,7 +155,6 @@ void loop() {
 		}
 		if  (iFrame == NUM_LEDS)        { iFrame = 0;}
 		else                            { iFrame++; }
-		FastLED.show();
 		FrameDelay = 15;
   	}	
   	//////////////////// STATUS 10 ///////////////////////
@@ -178,7 +164,6 @@ void loop() {
 		}
 		leds[random(NUM_LEDS)] = CRGB(0, 0, random(255)); 
 		FrameDelay = 10;
-		FastLED.show();
   	}
   	//////////////////// STATUS 11 ///////////////////////
   	else if(Status == 11)  {
@@ -188,7 +173,6 @@ void loop() {
 		iFrame = 1;
 		leds[random(NUM_LEDS)] = CRGB(0, 0, random(255)); 
 		FrameDelay = 10;
-		FastLED.show();
   	}
 	//////////////////// STATUS 12 ///////////////////////
 	else if(Status == 12)  {
@@ -200,7 +184,6 @@ void loop() {
 		if		(CountDir == CountUp)		{ iFrame ++;}
 		else								{ iFrame --;}
 		FrameDelay = 20;
-		FastLED.show();
   	}
 	//////////////////// STATUS 13 ///////////////////////
 	else if(Status == 13)  {
@@ -247,7 +230,6 @@ void loop() {
 			iFrame--;
 		}
 		FrameDelay = 5;
-		FastLED.show();
   	}	
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
@@ -257,7 +239,6 @@ void loop() {
 		}
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
-		FastLED.show();
 		FrameDelay = 15;
   	}
   	//////////////////// STATUS 15 ///////////////////////
@@ -269,7 +250,6 @@ void loop() {
 		ShiftLed(BlueDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
-		FastLED.show();
 		FrameDelay = 15;
   	}
   	//////////////////// STATUS 16 ///////////////////////
@@ -416,7 +396,6 @@ void loop() {
 			else						{iFrame++;}		
 		}		
 	
-		FastLED.show();
 		FrameDelay = 15;
   	}
 
@@ -432,7 +411,6 @@ void loop() {
 		else{
 			iFrame += NUM_LEDS/4;
 		}
-		FastLED.show();
 		FrameDelay = 80;
   	}
   	//////////////////// STATUS 18 ///////////////////////
@@ -449,7 +427,6 @@ void loop() {
 		ShiftLed(BlueDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
-		FastLED.show();
 		FrameDelay = 15;
   	}
   	//////////////////// STATUS 19 ///////////////////////
@@ -464,7 +441,6 @@ void loop() {
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
 		if		(CountDir == CountUp)		{ iFrame ++;}
 		else								{ iFrame --;}
-		FastLED.show();
 		FrameDelay = 8;
   	}
   	//////////////////// STATUS 20 ///////////////////////
@@ -485,13 +461,14 @@ void loop() {
 		else                            { 
 			iFrame++; 
 		}
-		FastLED.show();
 		FrameDelay = xFrame;
   	}
 	//////////////////// STATUS OTHERS ///////////////////////
 	else	{
 		Status = 0;
 	}
+	FastLED.show();
+		
 
 }
 
