@@ -80,10 +80,10 @@ void loop() {
 
 	//////////////////// STATUS 0, 1, 2, 3 ///////////////////////
 	if((Status == 0x00) || (Status == 0x01) || (Status == 0x02) || (Status == 0x03))	{
-		if		(Status == 0)	{CRGB::Red;}
-		else if	(Status == 1)	{CRGB::Green;}
-		else if	(Status == 2)	{CRGB::Blue;}
-		else 					{CRGB::Purple;}
+		if		(Status == 0)	{ColorLeds(CRGB::Red);}
+		else if	(Status == 1)	{ColorLeds(CRGB::Green);}
+		else if	(Status == 2)	{ColorLeds(CRGB::Blue);}
+		else 					{ColorLeds(CRGB::Purple);}
 		FastLED.setBrightness(iFrame);
 		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
