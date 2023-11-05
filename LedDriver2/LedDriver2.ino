@@ -76,68 +76,40 @@ void loop() {
 			WriteStatusRom = 0;	
 		}
 	}
-				
 
-	//////////////////// STATUS 0 ///////////////////////
-	if(Status == 0)	{
-		ColorLeds(CRGB::Red);
-		FrameDelay = 255;
-	}
-	//////////////////// STATUS 1 ///////////////////////
-	else if(Status == 1)	{
-		ColorLeds(CRGB::Green);
-		FrameDelay = 255;
-	}
-	//////////////////// STATUS 2 ///////////////////////
-	else if(Status == 2)	{
-		ColorLeds(CRGB::Blue);
-		FrameDelay = 255;
-	}
 
-	//////////////////// STATUS 3 ///////////////////////
-	else if(Status == 3)	{
-		ColorLeds(CRGB::Purple);
-		FrameDelay = 255;
+	//////////////////// STATUS 0, 1, 2, 3 ///////////////////////
+	if((Status == 0x00) || (Status == 0x01) || (Status == 0x02) || (Status == 0x03))	{
+		if		(Status == 0)	{CRGB::Red;}
+		else if	(Status == 1)	{CRGB::Green;}
+		else if	(Status == 2)	{CRGB::Blue;}
+		else 					{CRGB::Purple;}
+		FastLED.setBrightness(iFrame);
+		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
+		else if	(iFrame == 0)             	{ CountDir = CountUp;}
+		if		(CountDir == CountUp)		{ iFrame ++;}
+		else								{ iFrame --;}
+		FrameDelay = 5;
 	}
 	//////////////////// STATUS 4 ///////////////////////
 	else if(Status == 4)	{
 		ColorLeds(CRGB::Red);
-		FastLED.setBrightness(iFrame);
-		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
-		else if	(iFrame == 0)             	{ CountDir = CountUp;}
-		if		(CountDir == CountUp)		{ iFrame ++;}
-		else								{ iFrame --;}
-		FrameDelay = 5;
+		FrameDelay = 255;
 	}
 	//////////////////// STATUS 5 ///////////////////////
 	else if(Status == 5)	{
 		ColorLeds(CRGB::Green);
-		FastLED.setBrightness(iFrame);
-		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
-		else if	(iFrame == 0)             	{ CountDir = CountUp;}
-		if		(CountDir == CountUp)		{ iFrame ++;}
-		else								{ iFrame --;}
-		FrameDelay = 5;
+		FrameDelay = 255;
 	}
 	//////////////////// STATUS 6 ///////////////////////
 	else if(Status == 6)	{
 		ColorLeds(CRGB::Blue);
-		FastLED.setBrightness(iFrame);
-		if		(iFrame == BRIGHTNESS)		{ CountDir = CountDown;}
-		else if	(iFrame == 0)             	{ CountDir = CountUp;}
-		if		(CountDir == CountUp)		{ iFrame ++;}
-		else								{ iFrame --;}
-		FrameDelay = 5;
+		FrameDelay = 255;
 	}
 	//////////////////// STATUS 7 ///////////////////////
 	else if(Status == 7)	{
 		ColorLeds(CRGB::Purple);
-		FastLED.setBrightness(iFrame);
-		if			(iFrame == BRIGHTNESS)	{ CountDir = CountDown;}
-		else if		(iFrame == 0)			{ CountDir = CountUp;}
-		if			(CountDir == CountUp)	{ iFrame ++;}
-		else								{ iFrame --;}
-		FrameDelay = 5;
+		FrameDelay = 255;
 	}
 	//////////////////// STATUS 8 ///////////////////////
   	else if(Status == 8)  {
