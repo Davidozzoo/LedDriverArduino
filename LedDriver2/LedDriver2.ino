@@ -45,7 +45,7 @@ void setup() {
 void loop() {
 	uint8_t i;
 	uint8_t iLed;
-	uint8_t ResetStatus = 0;
+	// uint8_t ResetStatus = 0;
 
 
 	for(i = 0; i < FrameDelay; i++)	{
@@ -57,7 +57,7 @@ void loop() {
 				xFrame = 0;
 				CountDir = CountUp;
 				FastLED.setBrightness(BRIGHTNESS);
-				ResetStatus = 1;
+				// ResetStatus = 1;
 				WriteStatusRom = 1;
 				ResetTimeStamp = millis();
 				while(digitalRead(BUTTON_PIN) == 0)	{}		//Wait button release.
@@ -161,13 +161,13 @@ void loop() {
   	}
 	//////////////////// STATUS 13 ///////////////////////
 	else if(Status == 13)  {
-		if(ResetStatus == 1) {	
-			ColorLeds(CRGB::Blue);
-			xFrame = NUM_LEDS;
-			iFrame = 0;
-			CountDir = CountUp;
-			ResetStatus = 0;
-		}
+		// if(ResetStatus == 1) {	
+		// 	ColorLeds(CRGB::Blue);
+		// 	xFrame = NUM_LEDS;
+		// 	iFrame = 0;
+		// 	CountDir = CountUp;
+		// 	ResetStatus = 0;
+		// }
 		if(xFrame == 255)	{
 			for (iLed=0; iLed < NUM_LEDS; iLed++) 	{ leds[iLed] = CRGB::Yellow;}
 			CountDir = CountDown;
@@ -217,10 +217,10 @@ void loop() {
   	}
   	//////////////////// STATUS 15 ///////////////////////
   	else if(Status == 15)  {
-		if(ResetStatus)	{
+		// if(ResetStatus)	{
 			RampInit();
-			ResetStatus = 0;
-		}
+			// ResetStatus = 0;
+		// }
 		ShiftLed(BlueDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -228,10 +228,10 @@ void loop() {
   	}
   	//////////////////// STATUS 16 ///////////////////////
   	else if(Status == 16)  {
-		if(ResetStatus)	{
+		// if(ResetStatus)	{
 			RampInit();
-			ResetStatus = 0;
-		}
+			// ResetStatus = 0;
+		// }
 		if(xFrame == 0)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) { leds[iLed] = CRGB(0,255,0); }
 			xFrame++;
