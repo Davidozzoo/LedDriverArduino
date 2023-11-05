@@ -16,13 +16,10 @@
 CRGB leds[NUM_LEDS];
 
 uint8_t Status;
-uint8_t i;
-uint8_t iLed;
 uint8_t iFrame;
 uint8_t xFrame;
-uint8_t ResetStatus;
-uint8_t WriteStatusRom = 0;
 uint8_t CountDir;
+uint8_t WriteStatusRom = 0;
 uint8_t FrameDelay;
 uint8_t Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
 uint8_t Vect[NUM_LEDS];
@@ -46,6 +43,11 @@ void setup() {
 }
 
 void loop() {
+	uint8_t i;
+	uint8_t iLed;
+	uint8_t ResetStatus = 0;
+
+
 	for(i = 0; i < FrameDelay; i++)	{
 		if(digitalRead(BUTTON_PIN) == 0) {
 			delay(30);											//Debounce.
@@ -445,6 +447,7 @@ void loop() {
 }
 
 void ShiftLed(uint8_t ColorSwitch)	{
+	uint8_t iLed;
 	CRGB TempColor;
 	uint8_t TempIndex;
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
@@ -460,12 +463,14 @@ void ShiftLed(uint8_t ColorSwitch)	{
 }
 
 void ColorLeds(CRGB color)	{
+	uint8_t iLed;
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
 		leds[iLed] = color; 
 	}
 }
 
 void RampInit()	{
+	uint8_t i;
 	for(Vect[0] = 0, i=1; i < NUM_LEDS; i++)	{ Vect[i] = Vect[i-1]+255/NUM_LEDS;};
 }
 
