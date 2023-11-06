@@ -15,14 +15,15 @@
 
 CRGB leds[NUM_LEDS];
 
-uint8_t Status;
-uint8_t iFrame;
-uint8_t xFrame;
-uint8_t CountDir;
-uint8_t WriteStatusRom = 0;
-uint8_t FrameDelay;
-uint8_t Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
-uint8_t Vect[NUM_LEDS];
+uint8_t 	Status;
+uint8_t 	iFrame;
+uint8_t 	xFrame;
+uint8_t 	CountDir;
+uint8_t 	WriteStatusRom = 0;
+uint8_t 	FrameDelay;
+uint8_t 	Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
+uint8_t 	Vect[NUM_LEDS];
+uint8_t* 	LedPointer;
 unsigned long ResetTimeStamp;
 
 void setup() {
@@ -56,6 +57,7 @@ void loop() {
 				iFrame = 0;
 				xFrame = 0;
 				CountDir = CountUp;
+				LedPointer = &Vect[0];
 				FastLED.setBrightness(BRIGHTNESS);
 				// ResetStatus = 1;
 				WriteStatusRom = 1;
@@ -207,9 +209,7 @@ void loop() {
   	}	
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
-		for (iLed=0; iLed<NUM_LEDS; iLed++) {
-			Vect[iLed] = Tri[iLed];
-		}
+		LedPointer = &Tri[0];
 		ShiftLed(BlueDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -455,9 +455,9 @@ void ShiftLed(uint8_t ColorSwitch)	{
 		while(TempIndex >= NUM_LEDS)	{ 
 			TempIndex = TempIndex - NUM_LEDS;
 		}
-		if		(ColorSwitch == RedDD)		{TempColor = CRGB(Vect[TempIndex], 0, 0);}
-		else if	(ColorSwitch == GreenDD)	{TempColor = CRGB(0, Vect[TempIndex], 0);}
-		else if	(ColorSwitch == BlueDD)		{TempColor = CRGB(0, 0, Vect[TempIndex]);}
+		if		(ColorSwitch == RedDD)		{TempColor = CRGB(LedPointer[TempIndex], 0, 0);}
+		else if	(ColorSwitch == GreenDD)	{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
+		else if	(ColorSwitch == BlueDD)		{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
 		leds[iLed] = TempColor;
 	}
 }
