@@ -445,6 +445,24 @@ void loop() {
 		else                            { iFrame++; }
 		FrameDelay = 15;
   	}
+  	
+	//////////////////// STATUS 22 ///////////////////////
+  	else if(Status == 22)  {
+		for(iLed = 0; iLed < NUM_LEDS - 6; iLed = iLed + 7)	{
+			Vect[iLed + 0] = 32;
+			Vect[iLed + 1] = 64;
+			Vect[iLed + 2] = 96;
+			Vect[iLed + 3] = 128;
+			Vect[iLed + 4] = 160;
+			Vect[iLed + 5] = 192;
+			Vect[iLed + 6] = 224;
+		} 
+		ShiftLed(BlueDD);
+		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
+		else                            { iFrame++; }
+		FrameDelay = 15;
+  	}
+	
 	//////////////////// STATUS OTHERS ///////////////////////
 	else	{
 		Status = 0;

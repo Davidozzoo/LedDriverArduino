@@ -54,7 +54,7 @@ __trampolines_start():
 
 0000008a <__ctors_start>:
 __ctors_start():
-      8a:	f8 0b       	sbc	r31, r24
+      8a:	10 0c       	add	r1, r0
 
 0000008c <__ctors_end>:
 __dtors_end():
@@ -74,7 +74,7 @@ __do_copy_data():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
       9c:	b0 e0       	ldi	r27, 0x00	; 0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
-      9e:	e0 e9       	ldi	r30, 0x90	; 144
+      9e:	e0 ec       	ldi	r30, 0xC0	; 192
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
       a0:	fa e1       	ldi	r31, 0x1A	; 26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
@@ -128,7 +128,7 @@ __do_global_ctors():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2480
       c8:	fe 01       	movw	r30, r28
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2481
-      ca:	d6 dc       	rcall	.-1620   	; 0xfffffa78 <__eeprom_end+0xff7efa78>
+      ca:	ee dc       	rcall	.-1572   	; 0xfffffaa8 <__eeprom_end+0xff7efaa8>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2483
       cc:	c5 34       	cpi	r28, 0x45	; 69
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2484
@@ -136,7 +136,7 @@ __do_global_ctors():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2489
       d0:	d1 f7       	brne	.-12     	; 0xc6 <__do_global_ctors+0x8>
       d2:	f7 d3       	rcall	.+2030   	; 0x8c2 <main>
-      d4:	db cc       	rjmp	.-1610   	; 0xfffffa8c <__eeprom_end+0xff7efa8c>
+      d4:	f3 cc       	rjmp	.-1562   	; 0xfffffabc <__eeprom_end+0xff7efabc>
 
 000000d6 <__bad_interrupt>:
 __vector_1():
@@ -534,7 +534,7 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/controller.h:415
      21c:	21 f0       	breq	.+8      	; 0x226 <PixelController<(EOrder)66, 1, 4294967295ul>::init_binary_dithering()+0x40>
      21e:	70 e0       	ldi	r23, 0x00	; 0
      220:	c8 01       	movw	r24, r16
-     222:	fd db       	rcall	.-2054   	; 0xfffffa1e <__eeprom_end+0xff7efa1e>
+     222:	15 dc       	rcall	.-2006   	; 0xfffffa4e <__eeprom_end+0xff7efa4e>
      224:	6f 5f       	subi	r22, 0xFF	; 255
      226:	61 87       	std	Z+9, r22	; 0x09
 scale8():
@@ -1226,7 +1226,7 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/platforms/avr/clockless_tr
      524:	20 ef       	ldi	r18, 0xF0	; 240
      526:	30 e0       	ldi	r19, 0x00	; 0
      528:	df 01       	movw	r26, r30
-     52a:	8c da       	rcall	.-2792   	; 0xfffffa44 <__eeprom_end+0xff7efa44>
+     52a:	a4 da       	rcall	.-2744   	; 0xfffffa74 <__eeprom_end+0xff7efa74>
      52c:	6b 01       	movw	r12, r22
      52e:	7c 01       	movw	r14, r24
      530:	a3 e0       	ldi	r26, 0x03	; 3
@@ -1715,7 +1715,7 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/controller.h:440
 
 00000752 <RampInit()>:
 _Z8RampInitv():
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:483
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:501
 	}
 }
 
@@ -1732,13 +1732,13 @@ void RampInit()	{
      762:	e9 35       	cpi	r30, 0x59	; 89
      764:	f8 07       	cpc	r31, r24
      766:	c9 f7       	brne	.-14     	; 0x75a <RampInit()+0x8>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:484
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:502
 }
      768:	08 95       	ret
 
 0000076a <ColorLeds(CRGB)>:
 _Z9ColorLeds4CRGB():
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:474
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:492
 		else if	(ColorSwitch == PurpleBlueDD)	{TempColor = CRGB(LedPointer[TempIndex], 0, 255);}
 		leds[iLed] = TempColor;
 	}
@@ -1747,14 +1747,14 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:474
 void ColorLeds(CRGB color)	{
      76a:	e8 ed       	ldi	r30, 0xD8	; 216
      76c:	f0 e0       	ldi	r31, 0x00	; 0
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:477
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:495
 	uint8_t iLed;
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
 		leds[iLed] = color; 
      76e:	61 93       	st	Z+, r22
      770:	71 93       	st	Z+, r23
      772:	81 93       	st	Z+, r24
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:476
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:494
 	}
 }
 
@@ -1765,7 +1765,7 @@ void ColorLeds(CRGB color)	{
      776:	ec 32       	cpi	r30, 0x2C	; 44
      778:	f9 07       	cpc	r31, r25
      77a:	c9 f7       	brne	.-14     	; 0x76e <ColorLeds(CRGB)+0x4>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:479
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:497
 		leds[iLed] = color; 
 	}
 }
@@ -1773,7 +1773,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:479
 
 0000077e <ShiftLed(unsigned char)>:
 _Z8ShiftLedh():
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:462
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:480
 void ShiftLed(uint8_t ColorSwitch)	{
 	uint8_t iLed;
 	CRGB TempColor;
@@ -1781,7 +1781,7 @@ void ShiftLed(uint8_t ColorSwitch)	{
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
 		TempIndex = iLed + iFrame;
      77e:	50 91 5e 01 	lds	r21, 0x015E	; 0x80015e <iFrame>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:469
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:487
 			TempIndex = TempIndex - NUM_LEDS;
 		}
 		if		(ColorSwitch == RedDD)			{TempColor = CRGB(LedPointer[TempIndex], 0, 0);}
@@ -1792,7 +1792,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:469
      786:	70 91 5b 01 	lds	r23, 0x015B	; 0x80015b <LedPointer+0x1>
      78a:	a8 ed       	ldi	r26, 0xD8	; 216
      78c:	b0 e0       	ldi	r27, 0x00	; 0
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:461
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:479
 
 void ShiftLed(uint8_t ColorSwitch)	{
 	uint8_t iLed;
@@ -1802,12 +1802,12 @@ void ShiftLed(uint8_t ColorSwitch)	{
      78e:	20 e0       	ldi	r18, 0x00	; 0
      790:	e5 2f       	mov	r30, r21
      792:	e2 0f       	add	r30, r18
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:463
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:481
 		TempIndex = iLed + iFrame;
 		while(TempIndex >= NUM_LEDS)	{ 
      794:	ec 31       	cpi	r30, 0x1C	; 28
      796:	10 f0       	brcs	.+4      	; 0x79c <ShiftLed(unsigned char)+0x1e>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:464
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:482
 			TempIndex = TempIndex - NUM_LEDS;
      798:	ec 51       	subi	r30, 0x1C	; 28
      79a:	fc cf       	rjmp	.-8      	; 0x794 <ShiftLed(unsigned char)+0x16>
@@ -1815,20 +1815,20 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:464
      79e:	f7 2f       	mov	r31, r23
      7a0:	f1 1d       	adc	r31, r1
      7a2:	90 81       	ld	r25, Z
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:466
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:484
 		}
 		if		(ColorSwitch == RedDD)			{TempColor = CRGB(LedPointer[TempIndex], 0, 0);}
      7a4:	88 23       	and	r24, r24
      7a6:	41 f0       	breq	.+16     	; 0x7b8 <ShiftLed(unsigned char)+0x3a>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:467
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:485
 		else if	(ColorSwitch == GreenDD)		{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
      7a8:	81 30       	cpi	r24, 0x01	; 1
      7aa:	a1 f0       	breq	.+40     	; 0x7d4 <ShiftLed(unsigned char)+0x56>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:469
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:487
 		else if	(ColorSwitch == BlueDD)			{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
 		else if	(ColorSwitch == PurpleBlueDD)	{TempColor = CRGB(LedPointer[TempIndex], 0, 255);}
      7ac:	3f ef       	ldi	r19, 0xFF	; 255
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:468
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:486
 		while(TempIndex >= NUM_LEDS)	{ 
 			TempIndex = TempIndex - NUM_LEDS;
 		}
@@ -1840,7 +1840,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:468
      7b2:	39 2f       	mov	r19, r25
      7b4:	40 e0       	ldi	r20, 0x00	; 0
      7b6:	10 c0       	rjmp	.+32     	; 0x7d8 <ShiftLed(unsigned char)+0x5a>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:466
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:484
 	for (iLed=0; iLed<NUM_LEDS; iLed++) {
 		TempIndex = iLed + iFrame;
 		while(TempIndex >= NUM_LEDS)	{ 
@@ -1849,7 +1849,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:466
 		if		(ColorSwitch == RedDD)			{TempColor = CRGB(LedPointer[TempIndex], 0, 0);}
      7b8:	30 e0       	ldi	r19, 0x00	; 0
      7ba:	40 e0       	ldi	r20, 0x00	; 0
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:470
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:488
 		else if	(ColorSwitch == GreenDD)		{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
 		else if	(ColorSwitch == BlueDD)			{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
 		else if	(ColorSwitch == PurpleBlueDD)	{TempColor = CRGB(LedPointer[TempIndex], 0, 255);}
@@ -1861,7 +1861,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:470
      7c4:	12 96       	adiw	r26, 0x02	; 2
      7c6:	3c 93       	st	X, r19
      7c8:	12 97       	sbiw	r26, 0x02	; 2
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:461
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:479
 
 void ShiftLed(uint8_t ColorSwitch)	{
 	uint8_t iLed;
@@ -1872,7 +1872,7 @@ void ShiftLed(uint8_t ColorSwitch)	{
      7cc:	13 96       	adiw	r26, 0x03	; 3
      7ce:	2c 31       	cpi	r18, 0x1C	; 28
      7d0:	f9 f6       	brne	.-66     	; 0x790 <ShiftLed(unsigned char)+0x12>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:472
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:490
 		else if	(ColorSwitch == GreenDD)		{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
 		else if	(ColorSwitch == BlueDD)			{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
 		else if	(ColorSwitch == PurpleBlueDD)	{TempColor = CRGB(LedPointer[TempIndex], 0, 255);}
@@ -1880,7 +1880,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:472
 	}
 }
      7d2:	08 95       	ret
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:467
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:485
 		TempIndex = iLed + iFrame;
 		while(TempIndex >= NUM_LEDS)	{ 
 			TempIndex = TempIndex - NUM_LEDS;
@@ -1889,7 +1889,7 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:467
 		else if	(ColorSwitch == GreenDD)		{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
      7d4:	49 2f       	mov	r20, r25
      7d6:	30 e0       	ldi	r19, 0x00	; 0
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:468
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:486
 		else if	(ColorSwitch == BlueDD)			{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
      7d8:	90 e0       	ldi	r25, 0x00	; 0
      7da:	f0 cf       	rjmp	.-32     	; 0x7bc <ShiftLed(unsigned char)+0x3e>
@@ -1997,7 +1997,7 @@ extern "C" void __cxa_deleted_virtual(void) __attribute__ ((__noreturn__));
 namespace std {
   [[gnu::weak, noreturn]] void terminate() {
     abort();
-     82c:	2b d9       	rcall	.-3498   	; 0xfffffa84 <__eeprom_end+0xff7efa84>
+     82c:	43 d9       	rcall	.-3450   	; 0xfffffab4 <__eeprom_end+0xff7efab4>
 
 0000082e <__vector_9>:
 __vector_9():
@@ -2826,13 +2826,13 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:116
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:117
 		FrameDelay = 255;
      ba0:	8f ef       	ldi	r24, 0xFF	; 255
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:418
-		ShiftLed(GreenDD);
-		if		(iFrame == NUM_LEDS - 4)	{ CountDir = CountDown;}
-		else if	(iFrame == 0)             	{ CountDir = CountUp;}
-		if		(CountDir == CountUp)		{ iFrame ++;}
-		else								{ iFrame --;}
-		FrameDelay = 8;
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:438
+			else							{ xFrame--;}
+		}
+		else                            { 
+			iFrame++; 
+		}
+		FrameDelay = xFrame;
      ba2:	80 93 60 01 	sts	0x0160, r24	; 0x800160 <FrameDelay>
 show():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.h:573
@@ -2935,7 +2935,7 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:65
      c42:	e1 14       	cp	r14, r1
      c44:	f1 04       	cpc	r15, r1
      c46:	09 f4       	brne	.+2      	; 0xc4a <main+0x388>
-     c48:	73 c5       	rjmp	.+2790   	; 0x1730 <L_5289+0x99e>
+     c48:	8b c5       	rjmp	.+2838   	; 0x1760 <L_5289+0x9ce>
      c4a:	d7 01       	movw	r26, r14
      c4c:	1c 96       	adiw	r26, 0x0c	; 12
      c4e:	cc 90       	ld	r12, X
@@ -3032,7 +3032,7 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/controller.h:236
      ca0:	7f 81       	ldd	r23, Y+7	; 0x07
      ca2:	88 85       	ldd	r24, Y+8	; 0x08
      ca4:	99 85       	ldd	r25, Y+9	; 0x09
-     ca6:	ac d6       	rcall	.+3416   	; 0x1a00 <__mulsi3>
+     ca6:	c4 d6       	rcall	.+3464   	; 0x1a30 <__mulsi3>
      ca8:	9b 01       	movw	r18, r22
      caa:	ac 01       	movw	r20, r24
      cac:	89 2d       	mov	r24, r9
@@ -3045,7 +3045,7 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/controller.h:236
      cba:	7f 4f       	sbci	r23, 0xFF	; 255
      cbc:	8f 4f       	sbci	r24, 0xFF	; 255
      cbe:	9f 4f       	sbci	r25, 0xFF	; 255
-     cc0:	9f d6       	rcall	.+3390   	; 0x1a00 <__mulsi3>
+     cc0:	b7 d6       	rcall	.+3438   	; 0x1a30 <__mulsi3>
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/controller.h:238
                           work /= 0x10000L;
                           adj.raw[i] = work & 0xFF;
@@ -3753,13 +3753,13 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:140
      eb8:	58 dc       	rcall	.-1872   	; 0x76a <ColorLeds(CRGB)>
 random():
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/WMath.cpp:40
-     eba:	f3 d4       	rcall	.+2534   	; 0x18a2 <random>
+     eba:	0b d5       	rcall	.+2582   	; 0x18d2 <random>
      ebc:	6b 01       	movw	r12, r22
      ebe:	7c 01       	movw	r14, r24
-     ec0:	f0 d4       	rcall	.+2528   	; 0x18a2 <random>
+     ec0:	08 d5       	rcall	.+2576   	; 0x18d2 <random>
      ec2:	a3 01       	movw	r20, r6
      ec4:	92 01       	movw	r18, r4
-     ec6:	42 d5       	rcall	.+2692   	; 0x194c <__divmodsi4>
+     ec6:	5a d5       	rcall	.+2740   	; 0x197c <__divmodsi4>
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:151
   	else if(Status == 11)  {
@@ -3787,7 +3787,7 @@ C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores
      ee4:	30 e0       	ldi	r19, 0x00	; 0
      ee6:	40 e0       	ldi	r20, 0x00	; 0
      ee8:	50 e0       	ldi	r21, 0x00	; 0
-     eea:	30 d5       	rcall	.+2656   	; 0x194c <__divmodsi4>
+     eea:	48 d5       	rcall	.+2704   	; 0x197c <__divmodsi4>
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:151
      eec:	f8 01       	movw	r30, r16
@@ -4387,40 +4387,22 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:212
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
     10fc:	8e 30       	cpi	r24, 0x0E	; 14
-    10fe:	89 f4       	brne	.+34     	; 0x1122 <L_5289+0x390>
+    10fe:	41 f4       	brne	.+16     	; 0x1110 <L_5289+0x37e>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:213
 		LedPointer = &Tri[0];
     1100:	40 e6       	ldi	r20, 0x60	; 96
     1102:	50 e0       	ldi	r21, 0x00	; 0
     1104:	50 93 5b 01 	sts	0x015B, r21	; 0x80015b <LedPointer+0x1>
     1108:	40 93 5a 01 	sts	0x015A, r20	; 0x80015a <LedPointer>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:225
-  	else if(Status == 15)  {
-		// if(ResetStatus)	{
-			RampInit();
-			// ResetStatus = 0;
-		// }
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:460
+			Vect[iLed + 3] = 128;
+			Vect[iLed + 4] = 160;
+			Vect[iLed + 5] = 192;
+			Vect[iLed + 6] = 224;
+		} 
 		ShiftLed(BlueDD);
     110c:	82 e0       	ldi	r24, 0x02	; 2
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:443
-		FrameDelay = xFrame;
-  	}
-  	//////////////////// STATUS 21 ///////////////////////
-  	else if(Status == 21)  {
-		LedPointer = &Tri[0];
-		ShiftLed(PurpleBlueDD);
-    110e:	37 db       	rcall	.-2450   	; 0x77e <ShiftLed(unsigned char)>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:444
-		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
-    1110:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1114:	8b 31       	cpi	r24, 0x1B	; 27
-    1116:	09 f4       	brne	.+2      	; 0x111a <L_5289+0x388>
-    1118:	bf ce       	rjmp	.-642    	; 0xe98 <L_5289+0x106>
-C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:445
-		else                            { iFrame++; }
-    111a:	8f 5f       	subi	r24, 0xFF	; 255
-    111c:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
-    1120:	c1 ce       	rjmp	.-638    	; 0xea4 <L_5289+0x112>
+    110e:	03 c3       	rjmp	.+1542   	; 0x1716 <L_5289+0x984>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:220
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -4428,13 +4410,13 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:220
   	}
   	//////////////////// STATUS 15 ///////////////////////
   	else if(Status == 15)  {
-    1122:	8f 30       	cpi	r24, 0x0F	; 15
-    1124:	11 f4       	brne	.+4      	; 0x112a <L_5289+0x398>
+    1110:	8f 30       	cpi	r24, 0x0F	; 15
+    1112:	11 f4       	brne	.+4      	; 0x1118 <L_5289+0x386>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:222
 		// if(ResetStatus)	{
 			RampInit();
-    1126:	15 db       	rcall	.-2518   	; 0x752 <RampInit()>
-    1128:	f1 cf       	rjmp	.-30     	; 0x110c <L_5289+0x37a>
+    1114:	1e db       	rcall	.-2500   	; 0x752 <RampInit()>
+    1116:	fa cf       	rjmp	.-12     	; 0x110c <L_5289+0x37a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:231
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -4442,60 +4424,60 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:231
   	}
   	//////////////////// STATUS 16 ///////////////////////
   	else if(Status == 16)  {
-    112a:	80 31       	cpi	r24, 0x10	; 16
-    112c:	09 f0       	breq	.+2      	; 0x1130 <L_5289+0x39e>
-    112e:	43 c2       	rjmp	.+1158   	; 0x15b6 <L_5289+0x824>
+    1118:	80 31       	cpi	r24, 0x10	; 16
+    111a:	09 f0       	breq	.+2      	; 0x111e <L_5289+0x38c>
+    111c:	43 c2       	rjmp	.+1158   	; 0x15a4 <L_5289+0x812>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:233
 		// if(ResetStatus)	{
 			RampInit();
-    1130:	10 db       	rcall	.-2528   	; 0x752 <RampInit()>
+    111e:	19 db       	rcall	.-2510   	; 0x752 <RampInit()>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:236
 			// ResetStatus = 0;
 		// }
 		if(xFrame == 0)	{
-    1132:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <xFrame>
-    1136:	81 11       	cpse	r24, r1
-    1138:	12 c0       	rjmp	.+36     	; 0x115e <L_5289+0x3cc>
+    1120:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <xFrame>
+    1124:	81 11       	cpse	r24, r1
+    1126:	12 c0       	rjmp	.+36     	; 0x114c <L_5289+0x3ba>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:237
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) { leds[iLed] = CRGB(0,255,0); }
-    113a:	20 91 5e 01 	lds	r18, 0x015E	; 0x80015e <iFrame>
-    113e:	e9 e2       	ldi	r30, 0x29	; 41
-    1140:	f1 e0       	ldi	r31, 0x01	; 1
+    1128:	20 91 5e 01 	lds	r18, 0x015E	; 0x80015e <iFrame>
+    112c:	e9 e2       	ldi	r30, 0x29	; 41
+    112e:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    1142:	8b e1       	ldi	r24, 0x1B	; 27
+    1130:	8b e1       	ldi	r24, 0x1B	; 27
 loop():
-    1144:	9f ef       	ldi	r25, 0xFF	; 255
-    1146:	28 17       	cp	r18, r24
-    1148:	30 f4       	brcc	.+12     	; 0x1156 <L_5289+0x3c4>
-    114a:	10 82       	st	Z, r1
-    114c:	91 83       	std	Z+1, r25	; 0x01
-    114e:	12 82       	std	Z+2, r1	; 0x02
-    1150:	81 50       	subi	r24, 0x01	; 1
-    1152:	33 97       	sbiw	r30, 0x03	; 3
-    1154:	f8 cf       	rjmp	.-16     	; 0x1146 <L_5289+0x3b4>
+    1132:	9f ef       	ldi	r25, 0xFF	; 255
+    1134:	28 17       	cp	r18, r24
+    1136:	30 f4       	brcc	.+12     	; 0x1144 <L_5289+0x3b2>
+    1138:	10 82       	st	Z, r1
+    113a:	91 83       	std	Z+1, r25	; 0x01
+    113c:	12 82       	std	Z+2, r1	; 0x02
+    113e:	81 50       	subi	r24, 0x01	; 1
+    1140:	33 97       	sbiw	r30, 0x03	; 3
+    1142:	f8 cf       	rjmp	.-16     	; 0x1134 <L_5289+0x3a2>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:238
 			xFrame++;
-    1156:	81 e0       	ldi	r24, 0x01	; 1
-    1158:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <xFrame>
-    115c:	9d ce       	rjmp	.-710    	; 0xe98 <L_5289+0x106>
+    1144:	81 e0       	ldi	r24, 0x01	; 1
+    1146:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <xFrame>
+    114a:	a6 ce       	rjmp	.-692    	; 0xe98 <L_5289+0x106>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:242
 			iFrame = 0;
 		}
 		//Fade Blue
 		else if(xFrame ==1)	{
-    115e:	81 30       	cpi	r24, 0x01	; 1
-    1160:	79 f5       	brne	.+94     	; 0x11c0 <L_5289+0x42e>
+    114c:	81 30       	cpi	r24, 0x01	; 1
+    114e:	79 f5       	brne	.+94     	; 0x11ae <L_5289+0x41c>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:243
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1162:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1166:	e9 e2       	ldi	r30, 0x29	; 41
-    1168:	f1 e0       	ldi	r31, 0x01	; 1
+    1150:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1154:	e9 e2       	ldi	r30, 0x29	; 41
+    1156:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    116a:	9b e1       	ldi	r25, 0x1B	; 27
+    1158:	9b e1       	ldi	r25, 0x1B	; 27
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:244
 				leds[iLed] = CRGB(0,255,0);
-    116c:	2f ef       	ldi	r18, 0xFF	; 255
+    115a:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:243
 			xFrame++;
 			iFrame = 0;
@@ -4503,35 +4485,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:243
 		//Fade Blue
 		else if(xFrame ==1)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    116e:	89 17       	cp	r24, r25
-    1170:	08 f1       	brcs	.+66     	; 0x11b4 <L_5289+0x422>
-    1172:	98 2f       	mov	r25, r24
-    1174:	8c 31       	cpi	r24, 0x1C	; 28
-    1176:	08 f0       	brcs	.+2      	; 0x117a <L_5289+0x3e8>
-    1178:	9b e1       	ldi	r25, 0x1B	; 27
+    115c:	89 17       	cp	r24, r25
+    115e:	08 f1       	brcs	.+66     	; 0x11a2 <L_5289+0x410>
+    1160:	98 2f       	mov	r25, r24
+    1162:	8c 31       	cpi	r24, 0x1C	; 28
+    1164:	08 f0       	brcs	.+2      	; 0x1168 <L_5289+0x3d6>
+    1166:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:247
 				leds[iLed] = CRGB(0,255,0);
 			}		
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(0, 255, Vect[iFrame - iLed]);
-    117a:	28 2f       	mov	r18, r24
-    117c:	30 e0       	ldi	r19, 0x00	; 0
-    117e:	53 e0       	ldi	r21, 0x03	; 3
-    1180:	4f ef       	ldi	r20, 0xFF	; 255
-    1182:	f9 01       	movw	r30, r18
-    1184:	e9 1b       	sub	r30, r25
-    1186:	f1 09       	sbc	r31, r1
-    1188:	e2 5c       	subi	r30, 0xC2	; 194
-    118a:	fe 4f       	sbci	r31, 0xFE	; 254
-    118c:	60 81       	ld	r22, Z
-    118e:	95 9f       	mul	r25, r21
-    1190:	f0 01       	movw	r30, r0
-    1192:	11 24       	eor	r1, r1
-    1194:	e8 52       	subi	r30, 0x28	; 40
-    1196:	ff 4f       	sbci	r31, 0xFF	; 255
-    1198:	10 82       	st	Z, r1
-    119a:	41 83       	std	Z+1, r20	; 0x01
-    119c:	62 83       	std	Z+2, r22	; 0x02
+    1168:	28 2f       	mov	r18, r24
+    116a:	30 e0       	ldi	r19, 0x00	; 0
+    116c:	53 e0       	ldi	r21, 0x03	; 3
+    116e:	4f ef       	ldi	r20, 0xFF	; 255
+    1170:	f9 01       	movw	r30, r18
+    1172:	e9 1b       	sub	r30, r25
+    1174:	f1 09       	sbc	r31, r1
+    1176:	e2 5c       	subi	r30, 0xC2	; 194
+    1178:	fe 4f       	sbci	r31, 0xFE	; 254
+    117a:	60 81       	ld	r22, Z
+    117c:	95 9f       	mul	r25, r21
+    117e:	f0 01       	movw	r30, r0
+    1180:	11 24       	eor	r1, r1
+    1182:	e8 52       	subi	r30, 0x28	; 40
+    1184:	ff 4f       	sbci	r31, 0xFF	; 255
+    1186:	10 82       	st	Z, r1
+    1188:	41 83       	std	Z+1, r20	; 0x01
+    118a:	62 83       	std	Z+2, r22	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:246
 		//Fade Blue
 		else if(xFrame ==1)	{
@@ -4539,17 +4521,17 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:246
 				leds[iLed] = CRGB(0,255,0);
 			}		
 			for (;iLed != 255; iLed--) {
-    119e:	91 50       	subi	r25, 0x01	; 1
-    11a0:	80 f7       	brcc	.-32     	; 0x1182 <L_5289+0x3f0>
+    118c:	91 50       	subi	r25, 0x01	; 1
+    118e:	80 f7       	brcc	.-32     	; 0x1170 <L_5289+0x3de>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:249
 				leds[iLed] = CRGB(0, 255, Vect[iFrame - iLed]);
 			}			
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    11a2:	8b 31       	cpi	r24, 0x1B	; 27
-    11a4:	09 f0       	breq	.+2      	; 0x11a8 <L_5289+0x416>
-    11a6:	b9 cf       	rjmp	.-142    	; 0x111a <L_5289+0x388>
-    11a8:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    11ac:	82 e0       	ldi	r24, 0x02	; 2
+    1190:	8b 31       	cpi	r24, 0x1B	; 27
+    1192:	09 f0       	breq	.+2      	; 0x1196 <L_5289+0x404>
+    1194:	c6 c2       	rjmp	.+1420   	; 0x1722 <L_5289+0x990>
+    1196:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    119a:	82 e0       	ldi	r24, 0x02	; 2
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:370
 				leds[iLed] = CRGB(Vect[iLed - iFrame], 255, 0);
 			}
@@ -4557,8 +4539,8 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:370
 				leds[iLed] = CRGB(0, 255, 0);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame = 1;}
-    11ae:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <xFrame>
-    11b2:	78 ce       	rjmp	.-784    	; 0xea4 <L_5289+0x112>
+    119c:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <xFrame>
+    11a0:	81 ce       	rjmp	.-766    	; 0xea4 <L_5289+0x112>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:244
 			iFrame = 0;
 		}
@@ -4566,9 +4548,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:244
 		else if(xFrame ==1)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
 				leds[iLed] = CRGB(0,255,0);
-    11b4:	10 82       	st	Z, r1
-    11b6:	21 83       	std	Z+1, r18	; 0x01
-    11b8:	12 82       	std	Z+2, r1	; 0x02
+    11a2:	10 82       	st	Z, r1
+    11a4:	21 83       	std	Z+1, r18	; 0x01
+    11a6:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:243
 			xFrame++;
 			iFrame = 0;
@@ -4576,9 +4558,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:243
 		//Fade Blue
 		else if(xFrame ==1)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    11ba:	91 50       	subi	r25, 0x01	; 1
-    11bc:	33 97       	sbiw	r30, 0x03	; 3
-    11be:	d7 cf       	rjmp	.-82     	; 0x116e <L_5289+0x3dc>
+    11a8:	91 50       	subi	r25, 0x01	; 1
+    11aa:	33 97       	sbiw	r30, 0x03	; 3
+    11ac:	d7 cf       	rjmp	.-82     	; 0x115c <L_5289+0x3ca>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:253
 			}			
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
@@ -4586,21 +4568,21 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:253
 		}
 		//Fill Blue
 		else if(xFrame == 2)	{
-    11c0:	82 30       	cpi	r24, 0x02	; 2
-    11c2:	59 f5       	brne	.+86     	; 0x121a <L_5289+0x488>
+    11ae:	82 30       	cpi	r24, 0x02	; 2
+    11b0:	59 f5       	brne	.+86     	; 0x1208 <L_5289+0x476>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:254
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    11c4:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    11c8:	a8 2f       	mov	r26, r24
-    11ca:	b0 e0       	ldi	r27, 0x00	; 0
-    11cc:	a2 5c       	subi	r26, 0xC2	; 194
-    11ce:	be 4f       	sbci	r27, 0xFE	; 254
-    11d0:	e9 e2       	ldi	r30, 0x29	; 41
-    11d2:	f1 e0       	ldi	r31, 0x01	; 1
-    11d4:	9b e1       	ldi	r25, 0x1B	; 27
+    11b2:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    11b6:	a8 2f       	mov	r26, r24
+    11b8:	b0 e0       	ldi	r27, 0x00	; 0
+    11ba:	a2 5c       	subi	r26, 0xC2	; 194
+    11bc:	be 4f       	sbci	r27, 0xFE	; 254
+    11be:	e9 e2       	ldi	r30, 0x29	; 41
+    11c0:	f1 e0       	ldi	r31, 0x01	; 1
+    11c2:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:255
 				leds[iLed] = CRGB(0, 255, Vect[NUM_LEDS - 1 - iLed + iFrame]);
-    11d6:	3f ef       	ldi	r19, 0xFF	; 255
+    11c4:	3f ef       	ldi	r19, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:254
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4608,35 +4590,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:254
 		//Fill Blue
 		else if(xFrame == 2)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    11d8:	89 17       	cp	r24, r25
-    11da:	38 f4       	brcc	.+14     	; 0x11ea <L_5289+0x458>
+    11c6:	89 17       	cp	r24, r25
+    11c8:	38 f4       	brcc	.+14     	; 0x11d8 <L_5289+0x446>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:255
 				leds[iLed] = CRGB(0, 255, Vect[NUM_LEDS - 1 - iLed + iFrame]);
-    11dc:	2d 91       	ld	r18, X+
-    11de:	10 82       	st	Z, r1
-    11e0:	31 83       	std	Z+1, r19	; 0x01
-    11e2:	22 83       	std	Z+2, r18	; 0x02
-    11e4:	91 50       	subi	r25, 0x01	; 1
-    11e6:	33 97       	sbiw	r30, 0x03	; 3
-    11e8:	f7 cf       	rjmp	.-18     	; 0x11d8 <L_5289+0x446>
-    11ea:	98 2f       	mov	r25, r24
-    11ec:	8c 31       	cpi	r24, 0x1C	; 28
-    11ee:	08 f0       	brcs	.+2      	; 0x11f2 <L_5289+0x460>
-    11f0:	9b e1       	ldi	r25, 0x1B	; 27
+    11ca:	2d 91       	ld	r18, X+
+    11cc:	10 82       	st	Z, r1
+    11ce:	31 83       	std	Z+1, r19	; 0x01
+    11d0:	22 83       	std	Z+2, r18	; 0x02
+    11d2:	91 50       	subi	r25, 0x01	; 1
+    11d4:	33 97       	sbiw	r30, 0x03	; 3
+    11d6:	f7 cf       	rjmp	.-18     	; 0x11c6 <L_5289+0x434>
+    11d8:	98 2f       	mov	r25, r24
+    11da:	8c 31       	cpi	r24, 0x1C	; 28
+    11dc:	08 f0       	brcs	.+2      	; 0x11e0 <L_5289+0x44e>
+    11de:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:258
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(0, 255, 255);
-    11f2:	23 e0       	ldi	r18, 0x03	; 3
-    11f4:	3f ef       	ldi	r19, 0xFF	; 255
-    11f6:	92 9f       	mul	r25, r18
-    11f8:	f0 01       	movw	r30, r0
-    11fa:	11 24       	eor	r1, r1
-    11fc:	e8 52       	subi	r30, 0x28	; 40
-    11fe:	ff 4f       	sbci	r31, 0xFF	; 255
-    1200:	10 82       	st	Z, r1
-    1202:	31 83       	std	Z+1, r19	; 0x01
-    1204:	32 83       	std	Z+2, r19	; 0x02
+    11e0:	23 e0       	ldi	r18, 0x03	; 3
+    11e2:	3f ef       	ldi	r19, 0xFF	; 255
+    11e4:	92 9f       	mul	r25, r18
+    11e6:	f0 01       	movw	r30, r0
+    11e8:	11 24       	eor	r1, r1
+    11ea:	e8 52       	subi	r30, 0x28	; 40
+    11ec:	ff 4f       	sbci	r31, 0xFF	; 255
+    11ee:	10 82       	st	Z, r1
+    11f0:	31 83       	std	Z+1, r19	; 0x01
+    11f2:	32 83       	std	Z+2, r19	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:257
 		//Fill Blue
 		else if(xFrame == 2)	{
@@ -4644,36 +4626,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:257
 				leds[iLed] = CRGB(0, 255, Vect[NUM_LEDS - 1 - iLed + iFrame]);
 			}
 			for (;iLed != 255; iLed--) {
-    1206:	91 50       	subi	r25, 0x01	; 1
-    1208:	b0 f7       	brcc	.-20     	; 0x11f6 <L_5289+0x464>
+    11f4:	91 50       	subi	r25, 0x01	; 1
+    11f6:	b0 f7       	brcc	.-20     	; 0x11e4 <L_5289+0x452>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:260
 				leds[iLed] = CRGB(0, 255, 255);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    120a:	8b 31       	cpi	r24, 0x1B	; 27
-    120c:	09 f0       	breq	.+2      	; 0x1210 <L_5289+0x47e>
-    120e:	85 cf       	rjmp	.-246    	; 0x111a <L_5289+0x388>
-    1210:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    1214:	20 93 5d 01 	sts	0x015D, r18	; 0x80015d <xFrame>
-    1218:	45 ce       	rjmp	.-886    	; 0xea4 <L_5289+0x112>
+    11f8:	8b 31       	cpi	r24, 0x1B	; 27
+    11fa:	09 f0       	breq	.+2      	; 0x11fe <L_5289+0x46c>
+    11fc:	92 c2       	rjmp	.+1316   	; 0x1722 <L_5289+0x990>
+    11fe:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1202:	20 93 5d 01 	sts	0x015D, r18	; 0x80015d <xFrame>
+    1206:	4e ce       	rjmp	.-868    	; 0xea4 <L_5289+0x112>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:264
 			else						{iFrame++;}		
 		}
 		//Fade Green out
 		else if(xFrame == 3)	{
-    121a:	83 30       	cpi	r24, 0x03	; 3
-    121c:	71 f5       	brne	.+92     	; 0x127a <L_5289+0x4e8>
+    1208:	83 30       	cpi	r24, 0x03	; 3
+    120a:	71 f5       	brne	.+92     	; 0x1268 <L_5289+0x4d6>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:265
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    121e:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1222:	e9 e2       	ldi	r30, 0x29	; 41
-    1224:	f1 e0       	ldi	r31, 0x01	; 1
+    120c:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1210:	e9 e2       	ldi	r30, 0x29	; 41
+    1212:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    1226:	9b e1       	ldi	r25, 0x1B	; 27
+    1214:	9b e1       	ldi	r25, 0x1B	; 27
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:266
 				leds[iLed] = CRGB(0, 255, 255);
-    1228:	2f ef       	ldi	r18, 0xFF	; 255
+    1216:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:265
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4681,36 +4663,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:265
 		//Fade Green out
 		else if(xFrame == 3)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    122a:	89 17       	cp	r24, r25
-    122c:	00 f1       	brcs	.+64     	; 0x126e <L_5289+0x4dc>
-    122e:	98 2f       	mov	r25, r24
-    1230:	8c 31       	cpi	r24, 0x1C	; 28
-    1232:	08 f0       	brcs	.+2      	; 0x1236 <L_5289+0x4a4>
-    1234:	9b e1       	ldi	r25, 0x1B	; 27
+    1218:	89 17       	cp	r24, r25
+    121a:	00 f1       	brcs	.+64     	; 0x125c <L_5289+0x4ca>
+    121c:	98 2f       	mov	r25, r24
+    121e:	8c 31       	cpi	r24, 0x1C	; 28
+    1220:	08 f0       	brcs	.+2      	; 0x1224 <L_5289+0x492>
+    1222:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:269
 				leds[iLed] = CRGB(0, 255, 255);
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(0, Vect[NUM_LEDS - 1 - iFrame + iLed], 255);
-    1236:	91 01       	movw	r18, r2
-    1238:	28 1b       	sub	r18, r24
-    123a:	31 09       	sbc	r19, r1
-    123c:	22 5c       	subi	r18, 0xC2	; 194
-    123e:	3e 4f       	sbci	r19, 0xFE	; 254
-    1240:	63 e0       	ldi	r22, 0x03	; 3
-    1242:	4f ef       	ldi	r20, 0xFF	; 255
-    1244:	f9 01       	movw	r30, r18
-    1246:	e9 0f       	add	r30, r25
-    1248:	f1 1d       	adc	r31, r1
-    124a:	50 81       	ld	r21, Z
-    124c:	96 9f       	mul	r25, r22
-    124e:	f0 01       	movw	r30, r0
-    1250:	11 24       	eor	r1, r1
-    1252:	e8 52       	subi	r30, 0x28	; 40
-    1254:	ff 4f       	sbci	r31, 0xFF	; 255
-    1256:	10 82       	st	Z, r1
-    1258:	51 83       	std	Z+1, r21	; 0x01
-    125a:	42 83       	std	Z+2, r20	; 0x02
+    1224:	91 01       	movw	r18, r2
+    1226:	28 1b       	sub	r18, r24
+    1228:	31 09       	sbc	r19, r1
+    122a:	22 5c       	subi	r18, 0xC2	; 194
+    122c:	3e 4f       	sbci	r19, 0xFE	; 254
+    122e:	63 e0       	ldi	r22, 0x03	; 3
+    1230:	4f ef       	ldi	r20, 0xFF	; 255
+    1232:	f9 01       	movw	r30, r18
+    1234:	e9 0f       	add	r30, r25
+    1236:	f1 1d       	adc	r31, r1
+    1238:	50 81       	ld	r21, Z
+    123a:	96 9f       	mul	r25, r22
+    123c:	f0 01       	movw	r30, r0
+    123e:	11 24       	eor	r1, r1
+    1240:	e8 52       	subi	r30, 0x28	; 40
+    1242:	ff 4f       	sbci	r31, 0xFF	; 255
+    1244:	10 82       	st	Z, r1
+    1246:	51 83       	std	Z+1, r21	; 0x01
+    1248:	42 83       	std	Z+2, r20	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:268
 		//Fade Green out
 		else if(xFrame == 3)	{
@@ -4718,18 +4700,18 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:268
 				leds[iLed] = CRGB(0, 255, 255);
 			}
 			for (;iLed != 255; iLed--) {
-    125c:	91 50       	subi	r25, 0x01	; 1
-    125e:	90 f7       	brcc	.-28     	; 0x1244 <L_5289+0x4b2>
+    124a:	91 50       	subi	r25, 0x01	; 1
+    124c:	90 f7       	brcc	.-28     	; 0x1232 <L_5289+0x4a0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:271
 				leds[iLed] = CRGB(0, Vect[NUM_LEDS - 1 - iFrame + iLed], 255);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    1260:	8b 31       	cpi	r24, 0x1B	; 27
-    1262:	09 f0       	breq	.+2      	; 0x1266 <L_5289+0x4d4>
-    1264:	5a cf       	rjmp	.-332    	; 0x111a <L_5289+0x388>
-    1266:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    126a:	84 e0       	ldi	r24, 0x04	; 4
-    126c:	a0 cf       	rjmp	.-192    	; 0x11ae <L_5289+0x41c>
+    124e:	8b 31       	cpi	r24, 0x1B	; 27
+    1250:	09 f0       	breq	.+2      	; 0x1254 <L_5289+0x4c2>
+    1252:	67 c2       	rjmp	.+1230   	; 0x1722 <L_5289+0x990>
+    1254:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1258:	84 e0       	ldi	r24, 0x04	; 4
+    125a:	a0 cf       	rjmp	.-192    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:266
 			else						{iFrame++;}		
 		}
@@ -4737,9 +4719,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:266
 		else if(xFrame == 3)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
 				leds[iLed] = CRGB(0, 255, 255);
-    126e:	10 82       	st	Z, r1
-    1270:	21 83       	std	Z+1, r18	; 0x01
-    1272:	22 83       	std	Z+2, r18	; 0x02
+    125c:	10 82       	st	Z, r1
+    125e:	21 83       	std	Z+1, r18	; 0x01
+    1260:	22 83       	std	Z+2, r18	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:265
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4747,9 +4729,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:265
 		//Fade Green out
 		else if(xFrame == 3)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1274:	91 50       	subi	r25, 0x01	; 1
-    1276:	33 97       	sbiw	r30, 0x03	; 3
-    1278:	d8 cf       	rjmp	.-80     	; 0x122a <L_5289+0x498>
+    1262:	91 50       	subi	r25, 0x01	; 1
+    1264:	33 97       	sbiw	r30, 0x03	; 3
+    1266:	d8 cf       	rjmp	.-80     	; 0x1218 <L_5289+0x486>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:275
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
@@ -4757,22 +4739,22 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:275
 		}
 		//Turn off green
 		else if(xFrame == 4)	{
-    127a:	84 30       	cpi	r24, 0x04	; 4
-    127c:	59 f5       	brne	.+86     	; 0x12d4 <L_5289+0x542>
+    1268:	84 30       	cpi	r24, 0x04	; 4
+    126a:	59 f5       	brne	.+86     	; 0x12c2 <L_5289+0x530>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:276
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    127e:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1282:	d5 01       	movw	r26, r10
-    1284:	a8 1b       	sub	r26, r24
-    1286:	b1 09       	sbc	r27, r1
-    1288:	a2 5c       	subi	r26, 0xC2	; 194
-    128a:	be 4f       	sbci	r27, 0xFE	; 254
-    128c:	e9 e2       	ldi	r30, 0x29	; 41
-    128e:	f1 e0       	ldi	r31, 0x01	; 1
-    1290:	9b e1       	ldi	r25, 0x1B	; 27
+    126c:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1270:	d5 01       	movw	r26, r10
+    1272:	a8 1b       	sub	r26, r24
+    1274:	b1 09       	sbc	r27, r1
+    1276:	a2 5c       	subi	r26, 0xC2	; 194
+    1278:	be 4f       	sbci	r27, 0xFE	; 254
+    127a:	e9 e2       	ldi	r30, 0x29	; 41
+    127c:	f1 e0       	ldi	r31, 0x01	; 1
+    127e:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:277
 				leds[iLed] = CRGB(0, Vect[iLed - iFrame], 255);
-    1292:	2f ef       	ldi	r18, 0xFF	; 255
+    1280:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:276
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4780,35 +4762,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:276
 		//Turn off green
 		else if(xFrame == 4)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1294:	89 17       	cp	r24, r25
-    1296:	38 f4       	brcc	.+14     	; 0x12a6 <L_5289+0x514>
+    1282:	89 17       	cp	r24, r25
+    1284:	38 f4       	brcc	.+14     	; 0x1294 <L_5289+0x502>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:277
 				leds[iLed] = CRGB(0, Vect[iLed - iFrame], 255);
-    1298:	3e 91       	ld	r19, -X
-    129a:	10 82       	st	Z, r1
-    129c:	31 83       	std	Z+1, r19	; 0x01
-    129e:	22 83       	std	Z+2, r18	; 0x02
-    12a0:	91 50       	subi	r25, 0x01	; 1
-    12a2:	33 97       	sbiw	r30, 0x03	; 3
-    12a4:	f7 cf       	rjmp	.-18     	; 0x1294 <L_5289+0x502>
-    12a6:	98 2f       	mov	r25, r24
-    12a8:	8c 31       	cpi	r24, 0x1C	; 28
-    12aa:	08 f0       	brcs	.+2      	; 0x12ae <L_5289+0x51c>
-    12ac:	9b e1       	ldi	r25, 0x1B	; 27
+    1286:	3e 91       	ld	r19, -X
+    1288:	10 82       	st	Z, r1
+    128a:	31 83       	std	Z+1, r19	; 0x01
+    128c:	22 83       	std	Z+2, r18	; 0x02
+    128e:	91 50       	subi	r25, 0x01	; 1
+    1290:	33 97       	sbiw	r30, 0x03	; 3
+    1292:	f7 cf       	rjmp	.-18     	; 0x1282 <L_5289+0x4f0>
+    1294:	98 2f       	mov	r25, r24
+    1296:	8c 31       	cpi	r24, 0x1C	; 28
+    1298:	08 f0       	brcs	.+2      	; 0x129c <L_5289+0x50a>
+    129a:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:280
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(0, 0, 255);
-    12ae:	33 e0       	ldi	r19, 0x03	; 3
-    12b0:	2f ef       	ldi	r18, 0xFF	; 255
-    12b2:	93 9f       	mul	r25, r19
-    12b4:	f0 01       	movw	r30, r0
-    12b6:	11 24       	eor	r1, r1
-    12b8:	e8 52       	subi	r30, 0x28	; 40
-    12ba:	ff 4f       	sbci	r31, 0xFF	; 255
-    12bc:	10 82       	st	Z, r1
-    12be:	11 82       	std	Z+1, r1	; 0x01
-    12c0:	22 83       	std	Z+2, r18	; 0x02
+    129c:	33 e0       	ldi	r19, 0x03	; 3
+    129e:	2f ef       	ldi	r18, 0xFF	; 255
+    12a0:	93 9f       	mul	r25, r19
+    12a2:	f0 01       	movw	r30, r0
+    12a4:	11 24       	eor	r1, r1
+    12a6:	e8 52       	subi	r30, 0x28	; 40
+    12a8:	ff 4f       	sbci	r31, 0xFF	; 255
+    12aa:	10 82       	st	Z, r1
+    12ac:	11 82       	std	Z+1, r1	; 0x01
+    12ae:	22 83       	std	Z+2, r18	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:279
 		//Turn off green
 		else if(xFrame == 4)	{
@@ -4816,36 +4798,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:279
 				leds[iLed] = CRGB(0, Vect[iLed - iFrame], 255);
 			}
 			for (;iLed != 255; iLed--) {
-    12c2:	91 50       	subi	r25, 0x01	; 1
-    12c4:	b0 f7       	brcc	.-20     	; 0x12b2 <L_5289+0x520>
+    12b0:	91 50       	subi	r25, 0x01	; 1
+    12b2:	b0 f7       	brcc	.-20     	; 0x12a0 <L_5289+0x50e>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:282
 				leds[iLed] = CRGB(0, 0, 255);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    12c6:	8b 31       	cpi	r24, 0x1B	; 27
-    12c8:	09 f0       	breq	.+2      	; 0x12cc <L_5289+0x53a>
-    12ca:	27 cf       	rjmp	.-434    	; 0x111a <L_5289+0x388>
-    12cc:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    12d0:	85 e0       	ldi	r24, 0x05	; 5
-    12d2:	6d cf       	rjmp	.-294    	; 0x11ae <L_5289+0x41c>
+    12b4:	8b 31       	cpi	r24, 0x1B	; 27
+    12b6:	09 f0       	breq	.+2      	; 0x12ba <L_5289+0x528>
+    12b8:	34 c2       	rjmp	.+1128   	; 0x1722 <L_5289+0x990>
+    12ba:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    12be:	85 e0       	ldi	r24, 0x05	; 5
+    12c0:	6d cf       	rjmp	.-294    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:286
 			else						{iFrame++;}		
 		}	
 		//Fade red
 		else if(xFrame == 5)	{
-    12d4:	85 30       	cpi	r24, 0x05	; 5
-    12d6:	69 f5       	brne	.+90     	; 0x1332 <L_5289+0x5a0>
+    12c2:	85 30       	cpi	r24, 0x05	; 5
+    12c4:	69 f5       	brne	.+90     	; 0x1320 <L_5289+0x58e>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:287
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    12d8:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    12dc:	e9 e2       	ldi	r30, 0x29	; 41
-    12de:	f1 e0       	ldi	r31, 0x01	; 1
+    12c6:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    12ca:	e9 e2       	ldi	r30, 0x29	; 41
+    12cc:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    12e0:	9b e1       	ldi	r25, 0x1B	; 27
+    12ce:	9b e1       	ldi	r25, 0x1B	; 27
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:288
 				leds[iLed] = CRGB(0,0,255);
-    12e2:	2f ef       	ldi	r18, 0xFF	; 255
+    12d0:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:287
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4853,35 +4835,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:287
 		//Fade red
 		else if(xFrame == 5)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    12e4:	89 17       	cp	r24, r25
-    12e6:	f8 f0       	brcs	.+62     	; 0x1326 <L_5289+0x594>
-    12e8:	98 2f       	mov	r25, r24
-    12ea:	8c 31       	cpi	r24, 0x1C	; 28
-    12ec:	08 f0       	brcs	.+2      	; 0x12f0 <L_5289+0x55e>
-    12ee:	9b e1       	ldi	r25, 0x1B	; 27
+    12d2:	89 17       	cp	r24, r25
+    12d4:	f8 f0       	brcs	.+62     	; 0x1314 <L_5289+0x582>
+    12d6:	98 2f       	mov	r25, r24
+    12d8:	8c 31       	cpi	r24, 0x1C	; 28
+    12da:	08 f0       	brcs	.+2      	; 0x12de <L_5289+0x54c>
+    12dc:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:291
 				leds[iLed] = CRGB(0,0,255);
 			}		
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(Vect[iFrame - iLed], 0, 255);
-    12f0:	63 e0       	ldi	r22, 0x03	; 3
-    12f2:	48 2f       	mov	r20, r24
-    12f4:	50 e0       	ldi	r21, 0x00	; 0
-    12f6:	2f ef       	ldi	r18, 0xFF	; 255
-    12f8:	96 9f       	mul	r25, r22
-    12fa:	f0 01       	movw	r30, r0
-    12fc:	11 24       	eor	r1, r1
-    12fe:	e8 52       	subi	r30, 0x28	; 40
-    1300:	ff 4f       	sbci	r31, 0xFF	; 255
-    1302:	da 01       	movw	r26, r20
-    1304:	a9 1b       	sub	r26, r25
-    1306:	b1 09       	sbc	r27, r1
-    1308:	a2 5c       	subi	r26, 0xC2	; 194
-    130a:	be 4f       	sbci	r27, 0xFE	; 254
-    130c:	3c 91       	ld	r19, X
-    130e:	30 83       	st	Z, r19
-    1310:	11 82       	std	Z+1, r1	; 0x01
-    1312:	22 83       	std	Z+2, r18	; 0x02
+    12de:	63 e0       	ldi	r22, 0x03	; 3
+    12e0:	48 2f       	mov	r20, r24
+    12e2:	50 e0       	ldi	r21, 0x00	; 0
+    12e4:	2f ef       	ldi	r18, 0xFF	; 255
+    12e6:	96 9f       	mul	r25, r22
+    12e8:	f0 01       	movw	r30, r0
+    12ea:	11 24       	eor	r1, r1
+    12ec:	e8 52       	subi	r30, 0x28	; 40
+    12ee:	ff 4f       	sbci	r31, 0xFF	; 255
+    12f0:	da 01       	movw	r26, r20
+    12f2:	a9 1b       	sub	r26, r25
+    12f4:	b1 09       	sbc	r27, r1
+    12f6:	a2 5c       	subi	r26, 0xC2	; 194
+    12f8:	be 4f       	sbci	r27, 0xFE	; 254
+    12fa:	3c 91       	ld	r19, X
+    12fc:	30 83       	st	Z, r19
+    12fe:	11 82       	std	Z+1, r1	; 0x01
+    1300:	22 83       	std	Z+2, r18	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:290
 		//Fade red
 		else if(xFrame == 5)	{
@@ -4889,18 +4871,18 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:290
 				leds[iLed] = CRGB(0,0,255);
 			}		
 			for (;iLed != 255; iLed--) {
-    1314:	91 50       	subi	r25, 0x01	; 1
-    1316:	80 f7       	brcc	.-32     	; 0x12f8 <L_5289+0x566>
+    1302:	91 50       	subi	r25, 0x01	; 1
+    1304:	80 f7       	brcc	.-32     	; 0x12e6 <L_5289+0x554>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:293
 				leds[iLed] = CRGB(Vect[iFrame - iLed], 0, 255);
 			}			
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    1318:	8b 31       	cpi	r24, 0x1B	; 27
-    131a:	09 f0       	breq	.+2      	; 0x131e <L_5289+0x58c>
-    131c:	fe ce       	rjmp	.-516    	; 0x111a <L_5289+0x388>
-    131e:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    1322:	86 e0       	ldi	r24, 0x06	; 6
-    1324:	44 cf       	rjmp	.-376    	; 0x11ae <L_5289+0x41c>
+    1306:	8b 31       	cpi	r24, 0x1B	; 27
+    1308:	09 f0       	breq	.+2      	; 0x130c <L_5289+0x57a>
+    130a:	0b c2       	rjmp	.+1046   	; 0x1722 <L_5289+0x990>
+    130c:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1310:	86 e0       	ldi	r24, 0x06	; 6
+    1312:	44 cf       	rjmp	.-376    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:288
 			else						{iFrame++;}		
 		}	
@@ -4908,9 +4890,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:288
 		else if(xFrame == 5)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
 				leds[iLed] = CRGB(0,0,255);
-    1326:	10 82       	st	Z, r1
-    1328:	11 82       	std	Z+1, r1	; 0x01
-    132a:	22 83       	std	Z+2, r18	; 0x02
+    1314:	10 82       	st	Z, r1
+    1316:	11 82       	std	Z+1, r1	; 0x01
+    1318:	22 83       	std	Z+2, r18	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:287
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4918,9 +4900,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:287
 		//Fade red
 		else if(xFrame == 5)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    132c:	91 50       	subi	r25, 0x01	; 1
-    132e:	33 97       	sbiw	r30, 0x03	; 3
-    1330:	d9 cf       	rjmp	.-78     	; 0x12e4 <L_5289+0x552>
+    131a:	91 50       	subi	r25, 0x01	; 1
+    131c:	33 97       	sbiw	r30, 0x03	; 3
+    131e:	d9 cf       	rjmp	.-78     	; 0x12d2 <L_5289+0x540>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:297
 			}			
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
@@ -4928,21 +4910,21 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:297
 		}
 		//Fill red
 		else if(xFrame == 6)	{
-    1332:	86 30       	cpi	r24, 0x06	; 6
-    1334:	51 f5       	brne	.+84     	; 0x138a <L_5289+0x5f8>
+    1320:	86 30       	cpi	r24, 0x06	; 6
+    1322:	51 f5       	brne	.+84     	; 0x1378 <L_5289+0x5e6>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:298
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1336:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    133a:	a8 2f       	mov	r26, r24
-    133c:	b0 e0       	ldi	r27, 0x00	; 0
-    133e:	a2 5c       	subi	r26, 0xC2	; 194
-    1340:	be 4f       	sbci	r27, 0xFE	; 254
-    1342:	e9 e2       	ldi	r30, 0x29	; 41
-    1344:	f1 e0       	ldi	r31, 0x01	; 1
-    1346:	9b e1       	ldi	r25, 0x1B	; 27
+    1324:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1328:	a8 2f       	mov	r26, r24
+    132a:	b0 e0       	ldi	r27, 0x00	; 0
+    132c:	a2 5c       	subi	r26, 0xC2	; 194
+    132e:	be 4f       	sbci	r27, 0xFE	; 254
+    1330:	e9 e2       	ldi	r30, 0x29	; 41
+    1332:	f1 e0       	ldi	r31, 0x01	; 1
+    1334:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:299
 				leds[iLed] = CRGB(Vect[NUM_LEDS - 1 - iLed + iFrame], 0, 255);
-    1348:	2f ef       	ldi	r18, 0xFF	; 255
+    1336:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:298
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -4950,35 +4932,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:298
 		//Fill red
 		else if(xFrame == 6)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    134a:	89 17       	cp	r24, r25
-    134c:	38 f4       	brcc	.+14     	; 0x135c <L_5289+0x5ca>
+    1338:	89 17       	cp	r24, r25
+    133a:	38 f4       	brcc	.+14     	; 0x134a <L_5289+0x5b8>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:299
 				leds[iLed] = CRGB(Vect[NUM_LEDS - 1 - iLed + iFrame], 0, 255);
-    134e:	3d 91       	ld	r19, X+
-    1350:	30 83       	st	Z, r19
-    1352:	11 82       	std	Z+1, r1	; 0x01
-    1354:	22 83       	std	Z+2, r18	; 0x02
-    1356:	91 50       	subi	r25, 0x01	; 1
-    1358:	33 97       	sbiw	r30, 0x03	; 3
-    135a:	f7 cf       	rjmp	.-18     	; 0x134a <L_5289+0x5b8>
-    135c:	98 2f       	mov	r25, r24
-    135e:	8c 31       	cpi	r24, 0x1C	; 28
-    1360:	08 f0       	brcs	.+2      	; 0x1364 <L_5289+0x5d2>
-    1362:	9b e1       	ldi	r25, 0x1B	; 27
+    133c:	3d 91       	ld	r19, X+
+    133e:	30 83       	st	Z, r19
+    1340:	11 82       	std	Z+1, r1	; 0x01
+    1342:	22 83       	std	Z+2, r18	; 0x02
+    1344:	91 50       	subi	r25, 0x01	; 1
+    1346:	33 97       	sbiw	r30, 0x03	; 3
+    1348:	f7 cf       	rjmp	.-18     	; 0x1338 <L_5289+0x5a6>
+    134a:	98 2f       	mov	r25, r24
+    134c:	8c 31       	cpi	r24, 0x1C	; 28
+    134e:	08 f0       	brcs	.+2      	; 0x1352 <L_5289+0x5c0>
+    1350:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:302
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(255, 0, 255);
-    1364:	33 e0       	ldi	r19, 0x03	; 3
-    1366:	2f ef       	ldi	r18, 0xFF	; 255
-    1368:	93 9f       	mul	r25, r19
-    136a:	f0 01       	movw	r30, r0
-    136c:	11 24       	eor	r1, r1
-    136e:	e8 52       	subi	r30, 0x28	; 40
-    1370:	ff 4f       	sbci	r31, 0xFF	; 255
-    1372:	20 83       	st	Z, r18
-    1374:	11 82       	std	Z+1, r1	; 0x01
-    1376:	22 83       	std	Z+2, r18	; 0x02
+    1352:	33 e0       	ldi	r19, 0x03	; 3
+    1354:	2f ef       	ldi	r18, 0xFF	; 255
+    1356:	93 9f       	mul	r25, r19
+    1358:	f0 01       	movw	r30, r0
+    135a:	11 24       	eor	r1, r1
+    135c:	e8 52       	subi	r30, 0x28	; 40
+    135e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1360:	20 83       	st	Z, r18
+    1362:	11 82       	std	Z+1, r1	; 0x01
+    1364:	22 83       	std	Z+2, r18	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:301
 		//Fill red
 		else if(xFrame == 6)	{
@@ -4986,36 +4968,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:301
 				leds[iLed] = CRGB(Vect[NUM_LEDS - 1 - iLed + iFrame], 0, 255);
 			}
 			for (;iLed != 255; iLed--) {
-    1378:	91 50       	subi	r25, 0x01	; 1
-    137a:	b0 f7       	brcc	.-20     	; 0x1368 <L_5289+0x5d6>
+    1366:	91 50       	subi	r25, 0x01	; 1
+    1368:	b0 f7       	brcc	.-20     	; 0x1356 <L_5289+0x5c4>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:304
 				leds[iLed] = CRGB(255, 0, 255);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    137c:	8b 31       	cpi	r24, 0x1B	; 27
-    137e:	09 f0       	breq	.+2      	; 0x1382 <L_5289+0x5f0>
-    1380:	cc ce       	rjmp	.-616    	; 0x111a <L_5289+0x388>
-    1382:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    1386:	87 e0       	ldi	r24, 0x07	; 7
-    1388:	12 cf       	rjmp	.-476    	; 0x11ae <L_5289+0x41c>
+    136a:	8b 31       	cpi	r24, 0x1B	; 27
+    136c:	09 f0       	breq	.+2      	; 0x1370 <L_5289+0x5de>
+    136e:	d9 c1       	rjmp	.+946    	; 0x1722 <L_5289+0x990>
+    1370:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1374:	87 e0       	ldi	r24, 0x07	; 7
+    1376:	12 cf       	rjmp	.-476    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:308
 			else						{iFrame++;}		
 		}
 		//Fade blue out		
 		else if(xFrame == 7)	{
-    138a:	87 30       	cpi	r24, 0x07	; 7
-    138c:	71 f5       	brne	.+92     	; 0x13ea <L_5289+0x658>
+    1378:	87 30       	cpi	r24, 0x07	; 7
+    137a:	71 f5       	brne	.+92     	; 0x13d8 <L_5289+0x646>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:309
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    138e:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1392:	e9 e2       	ldi	r30, 0x29	; 41
-    1394:	f1 e0       	ldi	r31, 0x01	; 1
+    137c:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1380:	e9 e2       	ldi	r30, 0x29	; 41
+    1382:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    1396:	9b e1       	ldi	r25, 0x1B	; 27
+    1384:	9b e1       	ldi	r25, 0x1B	; 27
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:310
 				leds[iLed] = CRGB(255, 0, 255);
-    1398:	2f ef       	ldi	r18, 0xFF	; 255
+    1386:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:309
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5023,36 +5005,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:309
 		//Fade blue out		
 		else if(xFrame == 7)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    139a:	89 17       	cp	r24, r25
-    139c:	00 f1       	brcs	.+64     	; 0x13de <L_5289+0x64c>
-    139e:	98 2f       	mov	r25, r24
-    13a0:	8c 31       	cpi	r24, 0x1C	; 28
-    13a2:	08 f0       	brcs	.+2      	; 0x13a6 <L_5289+0x614>
-    13a4:	9b e1       	ldi	r25, 0x1B	; 27
+    1388:	89 17       	cp	r24, r25
+    138a:	00 f1       	brcs	.+64     	; 0x13cc <L_5289+0x63a>
+    138c:	98 2f       	mov	r25, r24
+    138e:	8c 31       	cpi	r24, 0x1C	; 28
+    1390:	08 f0       	brcs	.+2      	; 0x1394 <L_5289+0x602>
+    1392:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:313
 				leds[iLed] = CRGB(255, 0, 255);
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(255, 0, Vect[NUM_LEDS - 1 - iFrame + iLed]);
-    13a6:	91 01       	movw	r18, r2
-    13a8:	28 1b       	sub	r18, r24
-    13aa:	31 09       	sbc	r19, r1
-    13ac:	22 5c       	subi	r18, 0xC2	; 194
-    13ae:	3e 4f       	sbci	r19, 0xFE	; 254
-    13b0:	63 e0       	ldi	r22, 0x03	; 3
-    13b2:	5f ef       	ldi	r21, 0xFF	; 255
-    13b4:	f9 01       	movw	r30, r18
-    13b6:	e9 0f       	add	r30, r25
-    13b8:	f1 1d       	adc	r31, r1
-    13ba:	40 81       	ld	r20, Z
-    13bc:	96 9f       	mul	r25, r22
-    13be:	f0 01       	movw	r30, r0
-    13c0:	11 24       	eor	r1, r1
-    13c2:	e8 52       	subi	r30, 0x28	; 40
-    13c4:	ff 4f       	sbci	r31, 0xFF	; 255
-    13c6:	50 83       	st	Z, r21
-    13c8:	11 82       	std	Z+1, r1	; 0x01
-    13ca:	42 83       	std	Z+2, r20	; 0x02
+    1394:	91 01       	movw	r18, r2
+    1396:	28 1b       	sub	r18, r24
+    1398:	31 09       	sbc	r19, r1
+    139a:	22 5c       	subi	r18, 0xC2	; 194
+    139c:	3e 4f       	sbci	r19, 0xFE	; 254
+    139e:	63 e0       	ldi	r22, 0x03	; 3
+    13a0:	5f ef       	ldi	r21, 0xFF	; 255
+    13a2:	f9 01       	movw	r30, r18
+    13a4:	e9 0f       	add	r30, r25
+    13a6:	f1 1d       	adc	r31, r1
+    13a8:	40 81       	ld	r20, Z
+    13aa:	96 9f       	mul	r25, r22
+    13ac:	f0 01       	movw	r30, r0
+    13ae:	11 24       	eor	r1, r1
+    13b0:	e8 52       	subi	r30, 0x28	; 40
+    13b2:	ff 4f       	sbci	r31, 0xFF	; 255
+    13b4:	50 83       	st	Z, r21
+    13b6:	11 82       	std	Z+1, r1	; 0x01
+    13b8:	42 83       	std	Z+2, r20	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:312
 		//Fade blue out		
 		else if(xFrame == 7)	{
@@ -5060,18 +5042,18 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:312
 				leds[iLed] = CRGB(255, 0, 255);
 			}
 			for (;iLed != 255; iLed--) {
-    13cc:	91 50       	subi	r25, 0x01	; 1
-    13ce:	90 f7       	brcc	.-28     	; 0x13b4 <L_5289+0x622>
+    13ba:	91 50       	subi	r25, 0x01	; 1
+    13bc:	90 f7       	brcc	.-28     	; 0x13a2 <L_5289+0x610>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:315
 				leds[iLed] = CRGB(255, 0, Vect[NUM_LEDS - 1 - iFrame + iLed]);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    13d0:	8b 31       	cpi	r24, 0x1B	; 27
-    13d2:	09 f0       	breq	.+2      	; 0x13d6 <L_5289+0x644>
-    13d4:	a2 ce       	rjmp	.-700    	; 0x111a <L_5289+0x388>
-    13d6:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    13da:	88 e0       	ldi	r24, 0x08	; 8
-    13dc:	e8 ce       	rjmp	.-560    	; 0x11ae <L_5289+0x41c>
+    13be:	8b 31       	cpi	r24, 0x1B	; 27
+    13c0:	09 f0       	breq	.+2      	; 0x13c4 <L_5289+0x632>
+    13c2:	af c1       	rjmp	.+862    	; 0x1722 <L_5289+0x990>
+    13c4:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    13c8:	88 e0       	ldi	r24, 0x08	; 8
+    13ca:	e8 ce       	rjmp	.-560    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:310
 			else						{iFrame++;}		
 		}
@@ -5079,9 +5061,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:310
 		else if(xFrame == 7)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
 				leds[iLed] = CRGB(255, 0, 255);
-    13de:	20 83       	st	Z, r18
-    13e0:	11 82       	std	Z+1, r1	; 0x01
-    13e2:	22 83       	std	Z+2, r18	; 0x02
+    13cc:	20 83       	st	Z, r18
+    13ce:	11 82       	std	Z+1, r1	; 0x01
+    13d0:	22 83       	std	Z+2, r18	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:309
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5089,9 +5071,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:309
 		//Fade blue out		
 		else if(xFrame == 7)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    13e4:	91 50       	subi	r25, 0x01	; 1
-    13e6:	33 97       	sbiw	r30, 0x03	; 3
-    13e8:	d8 cf       	rjmp	.-80     	; 0x139a <L_5289+0x608>
+    13d2:	91 50       	subi	r25, 0x01	; 1
+    13d4:	33 97       	sbiw	r30, 0x03	; 3
+    13d6:	d8 cf       	rjmp	.-80     	; 0x1388 <L_5289+0x5f6>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:319
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
@@ -5099,22 +5081,22 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:319
 		}
 		//Turn off blue
 		else if(xFrame == 8)	{
-    13ea:	88 30       	cpi	r24, 0x08	; 8
-    13ec:	59 f5       	brne	.+86     	; 0x1444 <L_5289+0x6b2>
+    13d8:	88 30       	cpi	r24, 0x08	; 8
+    13da:	59 f5       	brne	.+86     	; 0x1432 <L_5289+0x6a0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:320
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    13ee:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    13f2:	d5 01       	movw	r26, r10
-    13f4:	a8 1b       	sub	r26, r24
-    13f6:	b1 09       	sbc	r27, r1
-    13f8:	a2 5c       	subi	r26, 0xC2	; 194
-    13fa:	be 4f       	sbci	r27, 0xFE	; 254
-    13fc:	e9 e2       	ldi	r30, 0x29	; 41
-    13fe:	f1 e0       	ldi	r31, 0x01	; 1
-    1400:	9b e1       	ldi	r25, 0x1B	; 27
+    13dc:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    13e0:	d5 01       	movw	r26, r10
+    13e2:	a8 1b       	sub	r26, r24
+    13e4:	b1 09       	sbc	r27, r1
+    13e6:	a2 5c       	subi	r26, 0xC2	; 194
+    13e8:	be 4f       	sbci	r27, 0xFE	; 254
+    13ea:	e9 e2       	ldi	r30, 0x29	; 41
+    13ec:	f1 e0       	ldi	r31, 0x01	; 1
+    13ee:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:321
 				leds[iLed] = CRGB(255, 0, Vect[iLed - iFrame]);
-    1402:	3f ef       	ldi	r19, 0xFF	; 255
+    13f0:	3f ef       	ldi	r19, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:320
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5122,35 +5104,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:320
 		//Turn off blue
 		else if(xFrame == 8)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1404:	89 17       	cp	r24, r25
-    1406:	38 f4       	brcc	.+14     	; 0x1416 <L_5289+0x684>
+    13f2:	89 17       	cp	r24, r25
+    13f4:	38 f4       	brcc	.+14     	; 0x1404 <L_5289+0x672>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:321
 				leds[iLed] = CRGB(255, 0, Vect[iLed - iFrame]);
-    1408:	2e 91       	ld	r18, -X
-    140a:	30 83       	st	Z, r19
-    140c:	11 82       	std	Z+1, r1	; 0x01
-    140e:	22 83       	std	Z+2, r18	; 0x02
-    1410:	91 50       	subi	r25, 0x01	; 1
-    1412:	33 97       	sbiw	r30, 0x03	; 3
-    1414:	f7 cf       	rjmp	.-18     	; 0x1404 <L_5289+0x672>
-    1416:	98 2f       	mov	r25, r24
-    1418:	8c 31       	cpi	r24, 0x1C	; 28
-    141a:	08 f0       	brcs	.+2      	; 0x141e <L_5289+0x68c>
-    141c:	9b e1       	ldi	r25, 0x1B	; 27
+    13f6:	2e 91       	ld	r18, -X
+    13f8:	30 83       	st	Z, r19
+    13fa:	11 82       	std	Z+1, r1	; 0x01
+    13fc:	22 83       	std	Z+2, r18	; 0x02
+    13fe:	91 50       	subi	r25, 0x01	; 1
+    1400:	33 97       	sbiw	r30, 0x03	; 3
+    1402:	f7 cf       	rjmp	.-18     	; 0x13f2 <L_5289+0x660>
+    1404:	98 2f       	mov	r25, r24
+    1406:	8c 31       	cpi	r24, 0x1C	; 28
+    1408:	08 f0       	brcs	.+2      	; 0x140c <L_5289+0x67a>
+    140a:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:324
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(255, 0, 0);
-    141e:	33 e0       	ldi	r19, 0x03	; 3
-    1420:	2f ef       	ldi	r18, 0xFF	; 255
-    1422:	93 9f       	mul	r25, r19
-    1424:	f0 01       	movw	r30, r0
-    1426:	11 24       	eor	r1, r1
-    1428:	e8 52       	subi	r30, 0x28	; 40
-    142a:	ff 4f       	sbci	r31, 0xFF	; 255
-    142c:	20 83       	st	Z, r18
-    142e:	11 82       	std	Z+1, r1	; 0x01
-    1430:	12 82       	std	Z+2, r1	; 0x02
+    140c:	33 e0       	ldi	r19, 0x03	; 3
+    140e:	2f ef       	ldi	r18, 0xFF	; 255
+    1410:	93 9f       	mul	r25, r19
+    1412:	f0 01       	movw	r30, r0
+    1414:	11 24       	eor	r1, r1
+    1416:	e8 52       	subi	r30, 0x28	; 40
+    1418:	ff 4f       	sbci	r31, 0xFF	; 255
+    141a:	20 83       	st	Z, r18
+    141c:	11 82       	std	Z+1, r1	; 0x01
+    141e:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:323
 		//Turn off blue
 		else if(xFrame == 8)	{
@@ -5158,36 +5140,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:323
 				leds[iLed] = CRGB(255, 0, Vect[iLed - iFrame]);
 			}
 			for (;iLed != 255; iLed--) {
-    1432:	91 50       	subi	r25, 0x01	; 1
-    1434:	b0 f7       	brcc	.-20     	; 0x1422 <L_5289+0x690>
+    1420:	91 50       	subi	r25, 0x01	; 1
+    1422:	b0 f7       	brcc	.-20     	; 0x1410 <L_5289+0x67e>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:326
 				leds[iLed] = CRGB(255, 0, 0);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    1436:	8b 31       	cpi	r24, 0x1B	; 27
-    1438:	09 f0       	breq	.+2      	; 0x143c <L_5289+0x6aa>
-    143a:	6f ce       	rjmp	.-802    	; 0x111a <L_5289+0x388>
-    143c:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    1440:	89 e0       	ldi	r24, 0x09	; 9
-    1442:	b5 ce       	rjmp	.-662    	; 0x11ae <L_5289+0x41c>
+    1424:	8b 31       	cpi	r24, 0x1B	; 27
+    1426:	09 f0       	breq	.+2      	; 0x142a <L_5289+0x698>
+    1428:	7c c1       	rjmp	.+760    	; 0x1722 <L_5289+0x990>
+    142a:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    142e:	89 e0       	ldi	r24, 0x09	; 9
+    1430:	b5 ce       	rjmp	.-662    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:330
 			else						{iFrame++;}		
 		}		
 		//Fade in Green
 		else if(xFrame == 9)	{
-    1444:	89 30       	cpi	r24, 0x09	; 9
-    1446:	69 f5       	brne	.+90     	; 0x14a2 <L_5289+0x710>
+    1432:	89 30       	cpi	r24, 0x09	; 9
+    1434:	69 f5       	brne	.+90     	; 0x1490 <L_5289+0x6fe>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:331
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1448:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    144c:	e9 e2       	ldi	r30, 0x29	; 41
-    144e:	f1 e0       	ldi	r31, 0x01	; 1
+    1436:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    143a:	e9 e2       	ldi	r30, 0x29	; 41
+    143c:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    1450:	9b e1       	ldi	r25, 0x1B	; 27
+    143e:	9b e1       	ldi	r25, 0x1B	; 27
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:332
 				leds[iLed] = CRGB(255,0,0);
-    1452:	2f ef       	ldi	r18, 0xFF	; 255
+    1440:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:331
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5195,35 +5177,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:331
 		//Fade in Green
 		else if(xFrame == 9)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1454:	89 17       	cp	r24, r25
-    1456:	f8 f0       	brcs	.+62     	; 0x1496 <L_5289+0x704>
-    1458:	98 2f       	mov	r25, r24
-    145a:	8c 31       	cpi	r24, 0x1C	; 28
-    145c:	08 f0       	brcs	.+2      	; 0x1460 <L_5289+0x6ce>
-    145e:	9b e1       	ldi	r25, 0x1B	; 27
+    1442:	89 17       	cp	r24, r25
+    1444:	f8 f0       	brcs	.+62     	; 0x1484 <L_5289+0x6f2>
+    1446:	98 2f       	mov	r25, r24
+    1448:	8c 31       	cpi	r24, 0x1C	; 28
+    144a:	08 f0       	brcs	.+2      	; 0x144e <L_5289+0x6bc>
+    144c:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:335
 				leds[iLed] = CRGB(255,0,0);
 			}		
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(255,Vect[iFrame - iLed], 0);
-    1460:	28 2f       	mov	r18, r24
-    1462:	30 e0       	ldi	r19, 0x00	; 0
-    1464:	53 e0       	ldi	r21, 0x03	; 3
-    1466:	4f ef       	ldi	r20, 0xFF	; 255
-    1468:	f9 01       	movw	r30, r18
-    146a:	e9 1b       	sub	r30, r25
-    146c:	f1 09       	sbc	r31, r1
-    146e:	e2 5c       	subi	r30, 0xC2	; 194
-    1470:	fe 4f       	sbci	r31, 0xFE	; 254
-    1472:	60 81       	ld	r22, Z
-    1474:	95 9f       	mul	r25, r21
-    1476:	f0 01       	movw	r30, r0
-    1478:	11 24       	eor	r1, r1
-    147a:	e8 52       	subi	r30, 0x28	; 40
-    147c:	ff 4f       	sbci	r31, 0xFF	; 255
-    147e:	40 83       	st	Z, r20
-    1480:	61 83       	std	Z+1, r22	; 0x01
-    1482:	12 82       	std	Z+2, r1	; 0x02
+    144e:	28 2f       	mov	r18, r24
+    1450:	30 e0       	ldi	r19, 0x00	; 0
+    1452:	53 e0       	ldi	r21, 0x03	; 3
+    1454:	4f ef       	ldi	r20, 0xFF	; 255
+    1456:	f9 01       	movw	r30, r18
+    1458:	e9 1b       	sub	r30, r25
+    145a:	f1 09       	sbc	r31, r1
+    145c:	e2 5c       	subi	r30, 0xC2	; 194
+    145e:	fe 4f       	sbci	r31, 0xFE	; 254
+    1460:	60 81       	ld	r22, Z
+    1462:	95 9f       	mul	r25, r21
+    1464:	f0 01       	movw	r30, r0
+    1466:	11 24       	eor	r1, r1
+    1468:	e8 52       	subi	r30, 0x28	; 40
+    146a:	ff 4f       	sbci	r31, 0xFF	; 255
+    146c:	40 83       	st	Z, r20
+    146e:	61 83       	std	Z+1, r22	; 0x01
+    1470:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:334
 		//Fade in Green
 		else if(xFrame == 9)	{
@@ -5231,18 +5213,18 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:334
 				leds[iLed] = CRGB(255,0,0);
 			}		
 			for (;iLed != 255; iLed--) {
-    1484:	91 50       	subi	r25, 0x01	; 1
-    1486:	80 f7       	brcc	.-32     	; 0x1468 <L_5289+0x6d6>
+    1472:	91 50       	subi	r25, 0x01	; 1
+    1474:	80 f7       	brcc	.-32     	; 0x1456 <L_5289+0x6c4>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:337
 				leds[iLed] = CRGB(255,Vect[iFrame - iLed], 0);
 			}			
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    1488:	8b 31       	cpi	r24, 0x1B	; 27
-    148a:	09 f0       	breq	.+2      	; 0x148e <L_5289+0x6fc>
-    148c:	46 ce       	rjmp	.-884    	; 0x111a <L_5289+0x388>
-    148e:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    1492:	8a e0       	ldi	r24, 0x0A	; 10
-    1494:	8c ce       	rjmp	.-744    	; 0x11ae <L_5289+0x41c>
+    1476:	8b 31       	cpi	r24, 0x1B	; 27
+    1478:	09 f0       	breq	.+2      	; 0x147c <L_5289+0x6ea>
+    147a:	53 c1       	rjmp	.+678    	; 0x1722 <L_5289+0x990>
+    147c:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1480:	8a e0       	ldi	r24, 0x0A	; 10
+    1482:	8c ce       	rjmp	.-744    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:332
 			else						{iFrame++;}		
 		}		
@@ -5250,9 +5232,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:332
 		else if(xFrame == 9)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
 				leds[iLed] = CRGB(255,0,0);
-    1496:	20 83       	st	Z, r18
-    1498:	11 82       	std	Z+1, r1	; 0x01
-    149a:	12 82       	std	Z+2, r1	; 0x02
+    1484:	20 83       	st	Z, r18
+    1486:	11 82       	std	Z+1, r1	; 0x01
+    1488:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:331
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5260,9 +5242,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:331
 		//Fade in Green
 		else if(xFrame == 9)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    149c:	91 50       	subi	r25, 0x01	; 1
-    149e:	33 97       	sbiw	r30, 0x03	; 3
-    14a0:	d9 cf       	rjmp	.-78     	; 0x1454 <L_5289+0x6c2>
+    148a:	91 50       	subi	r25, 0x01	; 1
+    148c:	33 97       	sbiw	r30, 0x03	; 3
+    148e:	d9 cf       	rjmp	.-78     	; 0x1442 <L_5289+0x6b0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:341
 			}			
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
@@ -5270,21 +5252,21 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:341
 		}		
 		//Fill green
 		else if(xFrame == 10)	{
-    14a2:	8a 30       	cpi	r24, 0x0A	; 10
-    14a4:	51 f5       	brne	.+84     	; 0x14fa <L_5289+0x768>
+    1490:	8a 30       	cpi	r24, 0x0A	; 10
+    1492:	51 f5       	brne	.+84     	; 0x14e8 <L_5289+0x756>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:342
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    14a6:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    14aa:	a8 2f       	mov	r26, r24
-    14ac:	b0 e0       	ldi	r27, 0x00	; 0
-    14ae:	a2 5c       	subi	r26, 0xC2	; 194
-    14b0:	be 4f       	sbci	r27, 0xFE	; 254
-    14b2:	e9 e2       	ldi	r30, 0x29	; 41
-    14b4:	f1 e0       	ldi	r31, 0x01	; 1
-    14b6:	9b e1       	ldi	r25, 0x1B	; 27
+    1494:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1498:	a8 2f       	mov	r26, r24
+    149a:	b0 e0       	ldi	r27, 0x00	; 0
+    149c:	a2 5c       	subi	r26, 0xC2	; 194
+    149e:	be 4f       	sbci	r27, 0xFE	; 254
+    14a0:	e9 e2       	ldi	r30, 0x29	; 41
+    14a2:	f1 e0       	ldi	r31, 0x01	; 1
+    14a4:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:343
 				leds[iLed] = CRGB(255,Vect[NUM_LEDS - 1 - iLed + iFrame], 0);
-    14b8:	3f ef       	ldi	r19, 0xFF	; 255
+    14a6:	3f ef       	ldi	r19, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:342
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}			
@@ -5292,35 +5274,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:342
 		//Fill green
 		else if(xFrame == 10)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    14ba:	89 17       	cp	r24, r25
-    14bc:	38 f4       	brcc	.+14     	; 0x14cc <L_5289+0x73a>
+    14a8:	89 17       	cp	r24, r25
+    14aa:	38 f4       	brcc	.+14     	; 0x14ba <L_5289+0x728>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:343
 				leds[iLed] = CRGB(255,Vect[NUM_LEDS - 1 - iLed + iFrame], 0);
-    14be:	2d 91       	ld	r18, X+
-    14c0:	30 83       	st	Z, r19
-    14c2:	21 83       	std	Z+1, r18	; 0x01
-    14c4:	12 82       	std	Z+2, r1	; 0x02
-    14c6:	91 50       	subi	r25, 0x01	; 1
-    14c8:	33 97       	sbiw	r30, 0x03	; 3
-    14ca:	f7 cf       	rjmp	.-18     	; 0x14ba <L_5289+0x728>
-    14cc:	98 2f       	mov	r25, r24
-    14ce:	8c 31       	cpi	r24, 0x1C	; 28
-    14d0:	08 f0       	brcs	.+2      	; 0x14d4 <L_5289+0x742>
-    14d2:	9b e1       	ldi	r25, 0x1B	; 27
+    14ac:	2d 91       	ld	r18, X+
+    14ae:	30 83       	st	Z, r19
+    14b0:	21 83       	std	Z+1, r18	; 0x01
+    14b2:	12 82       	std	Z+2, r1	; 0x02
+    14b4:	91 50       	subi	r25, 0x01	; 1
+    14b6:	33 97       	sbiw	r30, 0x03	; 3
+    14b8:	f7 cf       	rjmp	.-18     	; 0x14a8 <L_5289+0x716>
+    14ba:	98 2f       	mov	r25, r24
+    14bc:	8c 31       	cpi	r24, 0x1C	; 28
+    14be:	08 f0       	brcs	.+2      	; 0x14c2 <L_5289+0x730>
+    14c0:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:346
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(255, 255, 0);
-    14d4:	33 e0       	ldi	r19, 0x03	; 3
-    14d6:	2f ef       	ldi	r18, 0xFF	; 255
-    14d8:	93 9f       	mul	r25, r19
-    14da:	f0 01       	movw	r30, r0
-    14dc:	11 24       	eor	r1, r1
-    14de:	e8 52       	subi	r30, 0x28	; 40
-    14e0:	ff 4f       	sbci	r31, 0xFF	; 255
-    14e2:	20 83       	st	Z, r18
-    14e4:	21 83       	std	Z+1, r18	; 0x01
-    14e6:	12 82       	std	Z+2, r1	; 0x02
+    14c2:	33 e0       	ldi	r19, 0x03	; 3
+    14c4:	2f ef       	ldi	r18, 0xFF	; 255
+    14c6:	93 9f       	mul	r25, r19
+    14c8:	f0 01       	movw	r30, r0
+    14ca:	11 24       	eor	r1, r1
+    14cc:	e8 52       	subi	r30, 0x28	; 40
+    14ce:	ff 4f       	sbci	r31, 0xFF	; 255
+    14d0:	20 83       	st	Z, r18
+    14d2:	21 83       	std	Z+1, r18	; 0x01
+    14d4:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:345
 		//Fill green
 		else if(xFrame == 10)	{
@@ -5328,36 +5310,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:345
 				leds[iLed] = CRGB(255,Vect[NUM_LEDS - 1 - iLed + iFrame], 0);
 			}
 			for (;iLed != 255; iLed--) {
-    14e8:	91 50       	subi	r25, 0x01	; 1
-    14ea:	b0 f7       	brcc	.-20     	; 0x14d8 <L_5289+0x746>
+    14d6:	91 50       	subi	r25, 0x01	; 1
+    14d8:	b0 f7       	brcc	.-20     	; 0x14c6 <L_5289+0x734>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:348
 				leds[iLed] = CRGB(255, 255, 0);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    14ec:	8b 31       	cpi	r24, 0x1B	; 27
-    14ee:	09 f0       	breq	.+2      	; 0x14f2 <L_5289+0x760>
-    14f0:	14 ce       	rjmp	.-984    	; 0x111a <L_5289+0x388>
-    14f2:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    14f6:	8b e0       	ldi	r24, 0x0B	; 11
-    14f8:	5a ce       	rjmp	.-844    	; 0x11ae <L_5289+0x41c>
+    14da:	8b 31       	cpi	r24, 0x1B	; 27
+    14dc:	09 f0       	breq	.+2      	; 0x14e0 <L_5289+0x74e>
+    14de:	21 c1       	rjmp	.+578    	; 0x1722 <L_5289+0x990>
+    14e0:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    14e4:	8b e0       	ldi	r24, 0x0B	; 11
+    14e6:	5a ce       	rjmp	.-844    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:352
 			else						{iFrame++;}		
 		}
 		//Fade red out		
 		else if(xFrame == 11)	{
-    14fa:	8b 30       	cpi	r24, 0x0B	; 11
-    14fc:	71 f5       	brne	.+92     	; 0x155a <L_5289+0x7c8>
+    14e8:	8b 30       	cpi	r24, 0x0B	; 11
+    14ea:	71 f5       	brne	.+92     	; 0x1548 <L_5289+0x7b6>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:353
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    14fe:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1502:	e9 e2       	ldi	r30, 0x29	; 41
-    1504:	f1 e0       	ldi	r31, 0x01	; 1
+    14ec:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    14f0:	e9 e2       	ldi	r30, 0x29	; 41
+    14f2:	f1 e0       	ldi	r31, 0x01	; 1
 main():
-    1506:	9b e1       	ldi	r25, 0x1B	; 27
+    14f4:	9b e1       	ldi	r25, 0x1B	; 27
 loop():
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:354
 				leds[iLed] = CRGB(255, 255, 0);
-    1508:	2f ef       	ldi	r18, 0xFF	; 255
+    14f6:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:353
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5365,36 +5347,36 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:353
 		//Fade red out		
 		else if(xFrame == 11)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    150a:	89 17       	cp	r24, r25
-    150c:	00 f1       	brcs	.+64     	; 0x154e <L_5289+0x7bc>
-    150e:	98 2f       	mov	r25, r24
-    1510:	8c 31       	cpi	r24, 0x1C	; 28
-    1512:	08 f0       	brcs	.+2      	; 0x1516 <L_5289+0x784>
-    1514:	9b e1       	ldi	r25, 0x1B	; 27
+    14f8:	89 17       	cp	r24, r25
+    14fa:	00 f1       	brcs	.+64     	; 0x153c <L_5289+0x7aa>
+    14fc:	98 2f       	mov	r25, r24
+    14fe:	8c 31       	cpi	r24, 0x1C	; 28
+    1500:	08 f0       	brcs	.+2      	; 0x1504 <L_5289+0x772>
+    1502:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:357
 				leds[iLed] = CRGB(255, 255, 0);
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(Vect[NUM_LEDS - 1 - iFrame + iLed], 255, 0);
-    1516:	63 e0       	ldi	r22, 0x03	; 3
-    1518:	91 01       	movw	r18, r2
-    151a:	28 1b       	sub	r18, r24
-    151c:	31 09       	sbc	r19, r1
-    151e:	22 5c       	subi	r18, 0xC2	; 194
-    1520:	3e 4f       	sbci	r19, 0xFE	; 254
-    1522:	4f ef       	ldi	r20, 0xFF	; 255
-    1524:	96 9f       	mul	r25, r22
-    1526:	f0 01       	movw	r30, r0
-    1528:	11 24       	eor	r1, r1
-    152a:	e8 52       	subi	r30, 0x28	; 40
-    152c:	ff 4f       	sbci	r31, 0xFF	; 255
-    152e:	d9 01       	movw	r26, r18
-    1530:	a9 0f       	add	r26, r25
-    1532:	b1 1d       	adc	r27, r1
-    1534:	5c 91       	ld	r21, X
-    1536:	50 83       	st	Z, r21
-    1538:	41 83       	std	Z+1, r20	; 0x01
-    153a:	12 82       	std	Z+2, r1	; 0x02
+    1504:	63 e0       	ldi	r22, 0x03	; 3
+    1506:	91 01       	movw	r18, r2
+    1508:	28 1b       	sub	r18, r24
+    150a:	31 09       	sbc	r19, r1
+    150c:	22 5c       	subi	r18, 0xC2	; 194
+    150e:	3e 4f       	sbci	r19, 0xFE	; 254
+    1510:	4f ef       	ldi	r20, 0xFF	; 255
+    1512:	96 9f       	mul	r25, r22
+    1514:	f0 01       	movw	r30, r0
+    1516:	11 24       	eor	r1, r1
+    1518:	e8 52       	subi	r30, 0x28	; 40
+    151a:	ff 4f       	sbci	r31, 0xFF	; 255
+    151c:	d9 01       	movw	r26, r18
+    151e:	a9 0f       	add	r26, r25
+    1520:	b1 1d       	adc	r27, r1
+    1522:	5c 91       	ld	r21, X
+    1524:	50 83       	st	Z, r21
+    1526:	41 83       	std	Z+1, r20	; 0x01
+    1528:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:356
 		//Fade red out		
 		else if(xFrame == 11)	{
@@ -5402,18 +5384,18 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:356
 				leds[iLed] = CRGB(255, 255, 0);
 			}
 			for (;iLed != 255; iLed--) {
-    153c:	91 50       	subi	r25, 0x01	; 1
-    153e:	90 f7       	brcc	.-28     	; 0x1524 <L_5289+0x792>
+    152a:	91 50       	subi	r25, 0x01	; 1
+    152c:	90 f7       	brcc	.-28     	; 0x1512 <L_5289+0x780>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:359
 				leds[iLed] = CRGB(Vect[NUM_LEDS - 1 - iFrame + iLed], 255, 0);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
-    1540:	8b 31       	cpi	r24, 0x1B	; 27
-    1542:	09 f0       	breq	.+2      	; 0x1546 <L_5289+0x7b4>
-    1544:	ea cd       	rjmp	.-1068   	; 0x111a <L_5289+0x388>
-    1546:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    154a:	8c e0       	ldi	r24, 0x0C	; 12
-    154c:	30 ce       	rjmp	.-928    	; 0x11ae <L_5289+0x41c>
+    152e:	8b 31       	cpi	r24, 0x1B	; 27
+    1530:	09 f0       	breq	.+2      	; 0x1534 <L_5289+0x7a2>
+    1532:	f7 c0       	rjmp	.+494    	; 0x1722 <L_5289+0x990>
+    1534:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1538:	8c e0       	ldi	r24, 0x0C	; 12
+    153a:	30 ce       	rjmp	.-928    	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:354
 			else						{iFrame++;}		
 		}
@@ -5421,9 +5403,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:354
 		else if(xFrame == 11)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
 				leds[iLed] = CRGB(255, 255, 0);
-    154e:	20 83       	st	Z, r18
-    1550:	21 83       	std	Z+1, r18	; 0x01
-    1552:	12 82       	std	Z+2, r1	; 0x02
+    153c:	20 83       	st	Z, r18
+    153e:	21 83       	std	Z+1, r18	; 0x01
+    1540:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:353
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5431,9 +5413,9 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:353
 		//Fade red out		
 		else if(xFrame == 11)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1554:	91 50       	subi	r25, 0x01	; 1
-    1556:	33 97       	sbiw	r30, 0x03	; 3
-    1558:	d8 cf       	rjmp	.-80     	; 0x150a <L_5289+0x778>
+    1542:	91 50       	subi	r25, 0x01	; 1
+    1544:	33 97       	sbiw	r30, 0x03	; 3
+    1546:	d8 cf       	rjmp	.-80     	; 0x14f8 <L_5289+0x766>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:363
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
@@ -5441,23 +5423,23 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:363
 		}
 		//Turn off red
 		else if(xFrame == 12)	{
-    155a:	8c 30       	cpi	r24, 0x0C	; 12
-    155c:	09 f0       	breq	.+2      	; 0x1560 <L_5289+0x7ce>
-    155e:	a2 cc       	rjmp	.-1724   	; 0xea4 <L_5289+0x112>
+    1548:	8c 30       	cpi	r24, 0x0C	; 12
+    154a:	09 f0       	breq	.+2      	; 0x154e <L_5289+0x7bc>
+    154c:	ab cc       	rjmp	.-1706   	; 0xea4 <L_5289+0x112>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:364
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1560:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1564:	d5 01       	movw	r26, r10
-    1566:	a8 1b       	sub	r26, r24
-    1568:	b1 09       	sbc	r27, r1
-    156a:	a2 5c       	subi	r26, 0xC2	; 194
-    156c:	be 4f       	sbci	r27, 0xFE	; 254
-    156e:	e9 e2       	ldi	r30, 0x29	; 41
-    1570:	f1 e0       	ldi	r31, 0x01	; 1
-    1572:	9b e1       	ldi	r25, 0x1B	; 27
+    154e:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    1552:	d5 01       	movw	r26, r10
+    1554:	a8 1b       	sub	r26, r24
+    1556:	b1 09       	sbc	r27, r1
+    1558:	a2 5c       	subi	r26, 0xC2	; 194
+    155a:	be 4f       	sbci	r27, 0xFE	; 254
+    155c:	e9 e2       	ldi	r30, 0x29	; 41
+    155e:	f1 e0       	ldi	r31, 0x01	; 1
+    1560:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:365
 				leds[iLed] = CRGB(Vect[iLed - iFrame], 255, 0);
-    1574:	2f ef       	ldi	r18, 0xFF	; 255
+    1562:	2f ef       	ldi	r18, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:364
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame++;}
 			else						{iFrame++;}		
@@ -5465,35 +5447,35 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:364
 		//Turn off red
 		else if(xFrame == 12)	{
 			for (iLed = NUM_LEDS-1; iLed > iFrame; iLed--) {
-    1576:	89 17       	cp	r24, r25
-    1578:	38 f4       	brcc	.+14     	; 0x1588 <L_5289+0x7f6>
+    1564:	89 17       	cp	r24, r25
+    1566:	38 f4       	brcc	.+14     	; 0x1576 <L_5289+0x7e4>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:365
 				leds[iLed] = CRGB(Vect[iLed - iFrame], 255, 0);
-    157a:	3e 91       	ld	r19, -X
-    157c:	30 83       	st	Z, r19
-    157e:	21 83       	std	Z+1, r18	; 0x01
-    1580:	12 82       	std	Z+2, r1	; 0x02
-    1582:	91 50       	subi	r25, 0x01	; 1
-    1584:	33 97       	sbiw	r30, 0x03	; 3
-    1586:	f7 cf       	rjmp	.-18     	; 0x1576 <L_5289+0x7e4>
-    1588:	98 2f       	mov	r25, r24
-    158a:	8c 31       	cpi	r24, 0x1C	; 28
-    158c:	08 f0       	brcs	.+2      	; 0x1590 <L_5289+0x7fe>
-    158e:	9b e1       	ldi	r25, 0x1B	; 27
+    1568:	3e 91       	ld	r19, -X
+    156a:	30 83       	st	Z, r19
+    156c:	21 83       	std	Z+1, r18	; 0x01
+    156e:	12 82       	std	Z+2, r1	; 0x02
+    1570:	91 50       	subi	r25, 0x01	; 1
+    1572:	33 97       	sbiw	r30, 0x03	; 3
+    1574:	f7 cf       	rjmp	.-18     	; 0x1564 <L_5289+0x7d2>
+    1576:	98 2f       	mov	r25, r24
+    1578:	8c 31       	cpi	r24, 0x1C	; 28
+    157a:	08 f0       	brcs	.+2      	; 0x157e <L_5289+0x7ec>
+    157c:	9b e1       	ldi	r25, 0x1B	; 27
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:368
 			}
 			for (;iLed != 255; iLed--) {
 				leds[iLed] = CRGB(0, 255, 0);
-    1590:	33 e0       	ldi	r19, 0x03	; 3
-    1592:	2f ef       	ldi	r18, 0xFF	; 255
-    1594:	93 9f       	mul	r25, r19
-    1596:	f0 01       	movw	r30, r0
-    1598:	11 24       	eor	r1, r1
-    159a:	e8 52       	subi	r30, 0x28	; 40
-    159c:	ff 4f       	sbci	r31, 0xFF	; 255
-    159e:	10 82       	st	Z, r1
-    15a0:	21 83       	std	Z+1, r18	; 0x01
-    15a2:	12 82       	std	Z+2, r1	; 0x02
+    157e:	33 e0       	ldi	r19, 0x03	; 3
+    1580:	2f ef       	ldi	r18, 0xFF	; 255
+    1582:	93 9f       	mul	r25, r19
+    1584:	f0 01       	movw	r30, r0
+    1586:	11 24       	eor	r1, r1
+    1588:	e8 52       	subi	r30, 0x28	; 40
+    158a:	ff 4f       	sbci	r31, 0xFF	; 255
+    158c:	10 82       	st	Z, r1
+    158e:	21 83       	std	Z+1, r18	; 0x01
+    1590:	12 82       	std	Z+2, r1	; 0x02
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:367
 		//Turn off red
 		else if(xFrame == 12)	{
@@ -5501,18 +5483,18 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:367
 				leds[iLed] = CRGB(Vect[iLed - iFrame], 255, 0);
 			}
 			for (;iLed != 255; iLed--) {
-    15a4:	91 50       	subi	r25, 0x01	; 1
-    15a6:	b0 f7       	brcc	.-20     	; 0x1594 <L_5289+0x802>
+    1592:	91 50       	subi	r25, 0x01	; 1
+    1594:	b0 f7       	brcc	.-20     	; 0x1582 <L_5289+0x7f0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:370
 				leds[iLed] = CRGB(0, 255, 0);
 			}
 			if(iFrame == NUM_LEDS-1)	{iFrame = 0; xFrame = 1;}
-    15a8:	8b 31       	cpi	r24, 0x1B	; 27
-    15aa:	09 f0       	breq	.+2      	; 0x15ae <L_5289+0x81c>
-    15ac:	b6 cd       	rjmp	.-1172   	; 0x111a <L_5289+0x388>
-    15ae:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
-    15b2:	81 e0       	ldi	r24, 0x01	; 1
-    15b4:	fc cd       	rjmp	.-1032   	; 0x11ae <L_5289+0x41c>
+    1596:	8b 31       	cpi	r24, 0x1B	; 27
+    1598:	09 f0       	breq	.+2      	; 0x159c <L_5289+0x80a>
+    159a:	c3 c0       	rjmp	.+390    	; 0x1722 <L_5289+0x990>
+    159c:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    15a0:	81 e0       	ldi	r24, 0x01	; 1
+    15a2:	fc cd       	rjmp	.-1032   	; 0x119c <L_5289+0x40a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:377
 		}		
 	
@@ -5520,53 +5502,53 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:377
   	}
   	//////////////////// STATUS 17 ///////////////////////
   	else if(Status == 17)  {
-    15b6:	81 31       	cpi	r24, 0x11	; 17
-    15b8:	91 f5       	brne	.+100    	; 0x161e <L_5289+0x88c>
-    15ba:	ee e3       	ldi	r30, 0x3E	; 62
-    15bc:	f1 e0       	ldi	r31, 0x01	; 1
+    15a4:	81 31       	cpi	r24, 0x11	; 17
+    15a6:	91 f5       	brne	.+100    	; 0x160c <L_5289+0x87a>
+    15a8:	ee e3       	ldi	r30, 0x3E	; 62
+    15aa:	f1 e0       	ldi	r31, 0x01	; 1
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:378
 		for (iLed=0; 			iLed<NUM_LEDS; 		iLed++)	{ Vect[iLed] = 0; }
-    15be:	11 92       	st	Z+, r1
-    15c0:	51 e0       	ldi	r21, 0x01	; 1
-    15c2:	ea 35       	cpi	r30, 0x5A	; 90
-    15c4:	f5 07       	cpc	r31, r21
-    15c6:	d9 f7       	brne	.-10     	; 0x15be <L_5289+0x82c>
+    15ac:	11 92       	st	Z+, r1
+    15ae:	51 e0       	ldi	r21, 0x01	; 1
+    15b0:	ea 35       	cpi	r30, 0x5A	; 90
+    15b2:	f5 07       	cpc	r31, r21
+    15b4:	d9 f7       	brne	.-10     	; 0x15ac <L_5289+0x81a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:379
 		for (iLed=0; 			iLed<NUM_LEDS/4; 	iLed++) { Vect[iLed] = 255; }
-    15c8:	8f ef       	ldi	r24, 0xFF	; 255
-    15ca:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <Vect>
-    15ce:	80 93 3f 01 	sts	0x013F, r24	; 0x80013f <Vect+0x1>
-    15d2:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <Vect+0x2>
-    15d6:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <Vect+0x3>
-    15da:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <Vect+0x4>
-    15de:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <Vect+0x5>
-    15e2:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <Vect+0x6>
+    15b6:	8f ef       	ldi	r24, 0xFF	; 255
+    15b8:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <Vect>
+    15bc:	80 93 3f 01 	sts	0x013F, r24	; 0x80013f <Vect+0x1>
+    15c0:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <Vect+0x2>
+    15c4:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <Vect+0x3>
+    15c8:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <Vect+0x4>
+    15cc:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <Vect+0x5>
+    15d0:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <Vect+0x6>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:380
 		for (iLed=NUM_LEDS/2; 	iLed<NUM_LEDS*3/4;	iLed++) { Vect[iLed] = 255; }
-    15e6:	80 93 4c 01 	sts	0x014C, r24	; 0x80014c <Vect+0xe>
-    15ea:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <Vect+0xf>
-    15ee:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <Vect+0x10>
-    15f2:	80 93 4f 01 	sts	0x014F, r24	; 0x80014f <Vect+0x11>
-    15f6:	80 93 50 01 	sts	0x0150, r24	; 0x800150 <Vect+0x12>
-    15fa:	80 93 51 01 	sts	0x0151, r24	; 0x800151 <Vect+0x13>
-    15fe:	80 93 52 01 	sts	0x0152, r24	; 0x800152 <Vect+0x14>
+    15d4:	80 93 4c 01 	sts	0x014C, r24	; 0x80014c <Vect+0xe>
+    15d8:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <Vect+0xf>
+    15dc:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <Vect+0x10>
+    15e0:	80 93 4f 01 	sts	0x014F, r24	; 0x80014f <Vect+0x11>
+    15e4:	80 93 50 01 	sts	0x0150, r24	; 0x800150 <Vect+0x12>
+    15e8:	80 93 51 01 	sts	0x0151, r24	; 0x800151 <Vect+0x13>
+    15ec:	80 93 52 01 	sts	0x0152, r24	; 0x800152 <Vect+0x14>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:381
 		ShiftLed(GreenDD);
-    1602:	81 e0       	ldi	r24, 0x01	; 1
-    1604:	bc d8       	rcall	.-3720   	; 0x77e <ShiftLed(unsigned char)>
+    15f0:	81 e0       	ldi	r24, 0x01	; 1
+    15f2:	c5 d8       	rcall	.-3702   	; 0x77e <ShiftLed(unsigned char)>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:382
 		if(iFrame) {
-    1606:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    160a:	81 11       	cpse	r24, r1
-    160c:	04 c0       	rjmp	.+8      	; 0x1616 <L_5289+0x884>
+    15f4:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    15f8:	81 11       	cpse	r24, r1
+    15fa:	04 c0       	rjmp	.+8      	; 0x1604 <L_5289+0x872>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:386
 			iFrame = 0;
 		}
 		else{
 			iFrame += NUM_LEDS/4;
-    160e:	87 e0       	ldi	r24, 0x07	; 7
-    1610:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
-    1614:	02 c0       	rjmp	.+4      	; 0x161a <L_5289+0x888>
+    15fc:	87 e0       	ldi	r24, 0x07	; 7
+    15fe:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
+    1602:	02 c0       	rjmp	.+4      	; 0x1608 <L_5289+0x876>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:383
 		for (iLed=0; 			iLed<NUM_LEDS; 		iLed++)	{ Vect[iLed] = 0; }
 		for (iLed=0; 			iLed<NUM_LEDS/4; 	iLed++) { Vect[iLed] = 255; }
@@ -5574,56 +5556,56 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:383
 		ShiftLed(GreenDD);
 		if(iFrame) {
 			iFrame = 0;
-    1616:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    1604:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:388
 		}
 		else{
 			iFrame += NUM_LEDS/4;
 		}
 		FrameDelay = 80;
-    161a:	80 e5       	ldi	r24, 0x50	; 80
-    161c:	c2 ca       	rjmp	.-2684   	; 0xba2 <main+0x2e0>
+    1608:	80 e5       	ldi	r24, 0x50	; 80
+    160a:	cb ca       	rjmp	.-2666   	; 0xba2 <main+0x2e0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:391
   	}
   	//////////////////// STATUS 18 ///////////////////////
   	else if(Status == 18)  {
-    161e:	82 31       	cpi	r24, 0x12	; 18
-    1620:	c9 f4       	brne	.+50     	; 0x1654 <L_5289+0x8c2>
-    1622:	ee e3       	ldi	r30, 0x3E	; 62
-    1624:	f1 e0       	ldi	r31, 0x01	; 1
+    160c:	82 31       	cpi	r24, 0x12	; 18
+    160e:	c9 f4       	brne	.+50     	; 0x1642 <L_5289+0x8b0>
+    1610:	ee e3       	ldi	r30, 0x3E	; 62
+    1612:	f1 e0       	ldi	r31, 0x01	; 1
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:392
 		for (iLed=0; iLed<NUM_LEDS; iLed++) { Vect[iLed] = 0; }
-    1626:	11 92       	st	Z+, r1
-    1628:	71 e0       	ldi	r23, 0x01	; 1
-    162a:	ea 35       	cpi	r30, 0x5A	; 90
-    162c:	f7 07       	cpc	r31, r23
-    162e:	d9 f7       	brne	.-10     	; 0x1626 <L_5289+0x894>
+    1614:	11 92       	st	Z+, r1
+    1616:	71 e0       	ldi	r23, 0x01	; 1
+    1618:	ea 35       	cpi	r30, 0x5A	; 90
+    161a:	f7 07       	cpc	r31, r23
+    161c:	d9 f7       	brne	.-10     	; 0x1614 <L_5289+0x882>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:393
 		Vect[0] = 255;
-    1630:	8f ef       	ldi	r24, 0xFF	; 255
-    1632:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <Vect>
+    161e:	8f ef       	ldi	r24, 0xFF	; 255
+    1620:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <Vect>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:394
 		Vect[1] = 255;
-    1636:	80 93 3f 01 	sts	0x013F, r24	; 0x80013f <Vect+0x1>
+    1624:	80 93 3f 01 	sts	0x013F, r24	; 0x80013f <Vect+0x1>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:395
 		Vect[2] = 255;
-    163a:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <Vect+0x2>
+    1628:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <Vect+0x2>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:396
 		Vect[3] = 255;
-    163e:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <Vect+0x3>
+    162c:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <Vect+0x3>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:397
 		Vect[NUM_LEDS/2] = 255;
-    1642:	80 93 4c 01 	sts	0x014C, r24	; 0x80014c <Vect+0xe>
+    1630:	80 93 4c 01 	sts	0x014C, r24	; 0x80014c <Vect+0xe>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:398
 		Vect[NUM_LEDS/2 + 1] = 255;
-    1646:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <Vect+0xf>
+    1634:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <Vect+0xf>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:399
 		Vect[NUM_LEDS/2 + 2] = 255;
-    164a:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <Vect+0x10>
+    1638:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <Vect+0x10>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:400
 		Vect[NUM_LEDS/2 + 3] = 255;
-    164e:	80 93 4f 01 	sts	0x014F, r24	; 0x80014f <Vect+0x11>
-    1652:	5c cd       	rjmp	.-1352   	; 0x110c <L_5289+0x37a>
+    163c:	80 93 4f 01 	sts	0x014F, r24	; 0x80014f <Vect+0x11>
+    1640:	65 cd       	rjmp	.-1334   	; 0x110c <L_5289+0x37a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:407
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
@@ -5631,55 +5613,55 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:407
   	}
   	//////////////////// STATUS 19 ///////////////////////
   	else if(Status == 19)  {
-    1654:	83 31       	cpi	r24, 0x13	; 19
-    1656:	49 f5       	brne	.+82     	; 0x16aa <L_5289+0x918>
-    1658:	ee e3       	ldi	r30, 0x3E	; 62
-    165a:	f1 e0       	ldi	r31, 0x01	; 1
+    1642:	83 31       	cpi	r24, 0x13	; 19
+    1644:	49 f5       	brne	.+82     	; 0x1698 <L_5289+0x906>
+    1646:	ee e3       	ldi	r30, 0x3E	; 62
+    1648:	f1 e0       	ldi	r31, 0x01	; 1
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:408
 		for (iLed=0; iLed<NUM_LEDS; iLed++) { Vect[iLed] = 0; }
-    165c:	11 92       	st	Z+, r1
-    165e:	81 e0       	ldi	r24, 0x01	; 1
-    1660:	ea 35       	cpi	r30, 0x5A	; 90
-    1662:	f8 07       	cpc	r31, r24
-    1664:	d9 f7       	brne	.-10     	; 0x165c <L_5289+0x8ca>
+    164a:	11 92       	st	Z+, r1
+    164c:	81 e0       	ldi	r24, 0x01	; 1
+    164e:	ea 35       	cpi	r30, 0x5A	; 90
+    1650:	f8 07       	cpc	r31, r24
+    1652:	d9 f7       	brne	.-10     	; 0x164a <L_5289+0x8b8>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:409
 		Vect[NUM_LEDS - 1] = 255;
-    1666:	8f ef       	ldi	r24, 0xFF	; 255
-    1668:	80 93 59 01 	sts	0x0159, r24	; 0x800159 <Vect+0x1b>
+    1654:	8f ef       	ldi	r24, 0xFF	; 255
+    1656:	80 93 59 01 	sts	0x0159, r24	; 0x800159 <Vect+0x1b>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:410
 		Vect[NUM_LEDS - 2] = 255;
-    166c:	80 93 58 01 	sts	0x0158, r24	; 0x800158 <Vect+0x1a>
+    165a:	80 93 58 01 	sts	0x0158, r24	; 0x800158 <Vect+0x1a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:411
 		Vect[NUM_LEDS - 3] = 255;
-    1670:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <Vect+0x19>
+    165e:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <Vect+0x19>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:412
 		Vect[NUM_LEDS - 4] = 255;
-    1674:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <Vect+0x18>
+    1662:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <Vect+0x18>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:413
 		ShiftLed(GreenDD);
-    1678:	81 e0       	ldi	r24, 0x01	; 1
-    167a:	81 d8       	rcall	.-3838   	; 0x77e <ShiftLed(unsigned char)>
+    1666:	81 e0       	ldi	r24, 0x01	; 1
+    1668:	8a d8       	rcall	.-3820   	; 0x77e <ShiftLed(unsigned char)>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:414
 		if		(iFrame == NUM_LEDS - 4)	{ CountDir = CountDown;}
-    167c:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    1680:	88 31       	cpi	r24, 0x18	; 24
-    1682:	61 f4       	brne	.+24     	; 0x169c <L_5289+0x90a>
-    1684:	91 e0       	ldi	r25, 0x01	; 1
-    1686:	90 93 5c 01 	sts	0x015C, r25	; 0x80015c <CountDir>
+    166a:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    166e:	88 31       	cpi	r24, 0x18	; 24
+    1670:	61 f4       	brne	.+24     	; 0x168a <L_5289+0x8f8>
+    1672:	91 e0       	ldi	r25, 0x01	; 1
+    1674:	90 93 5c 01 	sts	0x015C, r25	; 0x80015c <CountDir>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:416
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
 		if		(CountDir == CountUp)		{ iFrame ++;}
-    168a:	90 91 5c 01 	lds	r25, 0x015C	; 0x80015c <CountDir>
-    168e:	91 11       	cpse	r25, r1
-    1690:	0a c0       	rjmp	.+20     	; 0x16a6 <L_5289+0x914>
-    1692:	8f 5f       	subi	r24, 0xFF	; 255
+    1678:	90 91 5c 01 	lds	r25, 0x015C	; 0x80015c <CountDir>
+    167c:	91 11       	cpse	r25, r1
+    167e:	0a c0       	rjmp	.+20     	; 0x1694 <L_5289+0x902>
+    1680:	8f 5f       	subi	r24, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:417
 		else								{ iFrame --;}
-    1694:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
+    1682:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:418
 		FrameDelay = 8;
-    1698:	88 e0       	ldi	r24, 0x08	; 8
-    169a:	83 ca       	rjmp	.-2810   	; 0xba2 <main+0x2e0>
+    1686:	88 e0       	ldi	r24, 0x08	; 8
+    1688:	8c ca       	rjmp	.-2792   	; 0xba2 <main+0x2e0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:415
 		Vect[NUM_LEDS - 2] = 255;
 		Vect[NUM_LEDS - 3] = 255;
@@ -5687,81 +5669,81 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:415
 		ShiftLed(GreenDD);
 		if		(iFrame == NUM_LEDS - 4)	{ CountDir = CountDown;}
 		else if	(iFrame == 0)             	{ CountDir = CountUp;}
-    169c:	81 11       	cpse	r24, r1
-    169e:	f5 cf       	rjmp	.-22     	; 0x168a <L_5289+0x8f8>
-    16a0:	10 92 5c 01 	sts	0x015C, r1	; 0x80015c <CountDir>
-    16a4:	f2 cf       	rjmp	.-28     	; 0x168a <L_5289+0x8f8>
+    168a:	81 11       	cpse	r24, r1
+    168c:	f5 cf       	rjmp	.-22     	; 0x1678 <L_5289+0x8e6>
+    168e:	10 92 5c 01 	sts	0x015C, r1	; 0x80015c <CountDir>
+    1692:	f2 cf       	rjmp	.-28     	; 0x1678 <L_5289+0x8e6>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:417
 		if		(CountDir == CountUp)		{ iFrame ++;}
 		else								{ iFrame --;}
-    16a6:	81 50       	subi	r24, 0x01	; 1
-    16a8:	f5 cf       	rjmp	.-22     	; 0x1694 <L_5289+0x902>
+    1694:	81 50       	subi	r24, 0x01	; 1
+    1696:	f5 cf       	rjmp	.-22     	; 0x1682 <L_5289+0x8f0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:421
 		FrameDelay = 8;
   	}
   	//////////////////// STATUS 20 ///////////////////////
   	else if(Status == 20)  {
-    16aa:	84 31       	cpi	r24, 0x14	; 20
-    16ac:	a1 f5       	brne	.+104    	; 0x1716 <L_5289+0x984>
-    16ae:	ee e3       	ldi	r30, 0x3E	; 62
-    16b0:	f1 e0       	ldi	r31, 0x01	; 1
+    1698:	84 31       	cpi	r24, 0x14	; 20
+    169a:	a1 f5       	brne	.+104    	; 0x1704 <L_5289+0x972>
+    169c:	ee e3       	ldi	r30, 0x3E	; 62
+    169e:	f1 e0       	ldi	r31, 0x01	; 1
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:422
 		for (iLed=0; iLed<NUM_LEDS; iLed++) { Vect[iLed] = 0; }
-    16b2:	11 92       	st	Z+, r1
-    16b4:	91 e0       	ldi	r25, 0x01	; 1
-    16b6:	ea 35       	cpi	r30, 0x5A	; 90
-    16b8:	f9 07       	cpc	r31, r25
-    16ba:	d9 f7       	brne	.-10     	; 0x16b2 <L_5289+0x920>
+    16a0:	11 92       	st	Z+, r1
+    16a2:	91 e0       	ldi	r25, 0x01	; 1
+    16a4:	ea 35       	cpi	r30, 0x5A	; 90
+    16a6:	f9 07       	cpc	r31, r25
+    16a8:	d9 f7       	brne	.-10     	; 0x16a0 <L_5289+0x90e>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:423
 		Vect[NUM_LEDS - 1] = 255;
-    16bc:	8f ef       	ldi	r24, 0xFF	; 255
-    16be:	80 93 59 01 	sts	0x0159, r24	; 0x800159 <Vect+0x1b>
+    16aa:	8f ef       	ldi	r24, 0xFF	; 255
+    16ac:	80 93 59 01 	sts	0x0159, r24	; 0x800159 <Vect+0x1b>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:424
 		Vect[NUM_LEDS - 2] = 255;
-    16c2:	80 93 58 01 	sts	0x0158, r24	; 0x800158 <Vect+0x1a>
+    16b0:	80 93 58 01 	sts	0x0158, r24	; 0x800158 <Vect+0x1a>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:425
 		Vect[NUM_LEDS - 3] = 255;
-    16c6:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <Vect+0x19>
+    16b4:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <Vect+0x19>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:426
 		Vect[NUM_LEDS - 4] = 255;
-    16ca:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <Vect+0x18>
+    16b8:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <Vect+0x18>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:427
 		ShiftLed(RedDD);
-    16ce:	80 e0       	ldi	r24, 0x00	; 0
-    16d0:	56 d8       	rcall	.-3924   	; 0x77e <ShiftLed(unsigned char)>
+    16bc:	80 e0       	ldi	r24, 0x00	; 0
+    16be:	5f d8       	rcall	.-3906   	; 0x77e <ShiftLed(unsigned char)>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:428
 		if  (iFrame == NUM_LEDS - 1)    { 
-    16d2:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
-    16d6:	8b 31       	cpi	r24, 0x1B	; 27
-    16d8:	d1 f4       	brne	.+52     	; 0x170e <L_5289+0x97c>
-    16da:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <xFrame>
+    16c0:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    16c4:	8b 31       	cpi	r24, 0x1B	; 27
+    16c6:	d1 f4       	brne	.+52     	; 0x16fc <L_5289+0x96a>
+    16c8:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <xFrame>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:429
 			iFrame = 0;
-    16de:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
+    16cc:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <iFrame>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:430
 			if		(xFrame == 8)			{ CountDir = CountDown;}
-    16e2:	88 30       	cpi	r24, 0x08	; 8
-    16e4:	69 f4       	brne	.+26     	; 0x1700 <L_5289+0x96e>
-    16e6:	91 e0       	ldi	r25, 0x01	; 1
-    16e8:	90 93 5c 01 	sts	0x015C, r25	; 0x80015c <CountDir>
+    16d0:	88 30       	cpi	r24, 0x08	; 8
+    16d2:	69 f4       	brne	.+26     	; 0x16ee <L_5289+0x95c>
+    16d4:	91 e0       	ldi	r25, 0x01	; 1
+    16d6:	90 93 5c 01 	sts	0x015C, r25	; 0x80015c <CountDir>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:432
 			else if	(xFrame == 1)       	{ CountDir = CountUp;}
 			if		(CountDir == CountUp)	{ xFrame++;}
-    16ec:	90 91 5c 01 	lds	r25, 0x015C	; 0x80015c <CountDir>
-    16f0:	91 11       	cpse	r25, r1
-    16f2:	0b c0       	rjmp	.+22     	; 0x170a <L_5289+0x978>
-    16f4:	8f 5f       	subi	r24, 0xFF	; 255
+    16da:	90 91 5c 01 	lds	r25, 0x015C	; 0x80015c <CountDir>
+    16de:	91 11       	cpse	r25, r1
+    16e0:	0b c0       	rjmp	.+22     	; 0x16f8 <L_5289+0x966>
+    16e2:	8f 5f       	subi	r24, 0xFF	; 255
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:433
 			else							{ xFrame--;}
-    16f6:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <xFrame>
+    16e4:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <xFrame>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:438
 		}
 		else                            { 
 			iFrame++; 
 		}
 		FrameDelay = xFrame;
-    16fa:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <xFrame>
-    16fe:	51 ca       	rjmp	.-2910   	; 0xba2 <main+0x2e0>
+    16e8:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <xFrame>
+    16ec:	5a ca       	rjmp	.-2892   	; 0xba2 <main+0x2e0>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:431
 		Vect[NUM_LEDS - 4] = 255;
 		ShiftLed(RedDD);
@@ -5769,49 +5751,139 @@ C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:431
 			iFrame = 0;
 			if		(xFrame == 8)			{ CountDir = CountDown;}
 			else if	(xFrame == 1)       	{ CountDir = CountUp;}
-    1700:	81 30       	cpi	r24, 0x01	; 1
-    1702:	a1 f7       	brne	.-24     	; 0x16ec <L_5289+0x95a>
-    1704:	10 92 5c 01 	sts	0x015C, r1	; 0x80015c <CountDir>
-    1708:	f1 cf       	rjmp	.-30     	; 0x16ec <L_5289+0x95a>
+    16ee:	81 30       	cpi	r24, 0x01	; 1
+    16f0:	a1 f7       	brne	.-24     	; 0x16da <L_5289+0x948>
+    16f2:	10 92 5c 01 	sts	0x015C, r1	; 0x80015c <CountDir>
+    16f6:	f1 cf       	rjmp	.-30     	; 0x16da <L_5289+0x948>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:433
 			if		(CountDir == CountUp)	{ xFrame++;}
 			else							{ xFrame--;}
-    170a:	81 50       	subi	r24, 0x01	; 1
-    170c:	f4 cf       	rjmp	.-24     	; 0x16f6 <L_5289+0x964>
+    16f8:	81 50       	subi	r24, 0x01	; 1
+    16fa:	f4 cf       	rjmp	.-24     	; 0x16e4 <L_5289+0x952>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:436
 		}
 		else                            { 
 			iFrame++; 
-    170e:	8f 5f       	subi	r24, 0xFF	; 255
-    1710:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
-    1714:	f2 cf       	rjmp	.-28     	; 0x16fa <L_5289+0x968>
+    16fc:	8f 5f       	subi	r24, 0xFF	; 255
+    16fe:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
+    1702:	f2 cf       	rjmp	.-28     	; 0x16e8 <L_5289+0x956>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:441
 		}
 		FrameDelay = xFrame;
   	}
   	//////////////////// STATUS 21 ///////////////////////
   	else if(Status == 21)  {
-    1716:	85 31       	cpi	r24, 0x15	; 21
-    1718:	41 f4       	brne	.+16     	; 0x172a <L_5289+0x998>
+    1704:	85 31       	cpi	r24, 0x15	; 21
+    1706:	89 f4       	brne	.+34     	; 0x172a <L_5289+0x998>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:442
 		LedPointer = &Tri[0];
-    171a:	a0 e6       	ldi	r26, 0x60	; 96
-    171c:	b0 e0       	ldi	r27, 0x00	; 0
-    171e:	b0 93 5b 01 	sts	0x015B, r27	; 0x80015b <LedPointer+0x1>
-    1722:	a0 93 5a 01 	sts	0x015A, r26	; 0x80015a <LedPointer>
+    1708:	a0 e6       	ldi	r26, 0x60	; 96
+    170a:	b0 e0       	ldi	r27, 0x00	; 0
+    170c:	b0 93 5b 01 	sts	0x015B, r27	; 0x80015b <LedPointer+0x1>
+    1710:	a0 93 5a 01 	sts	0x015A, r26	; 0x80015a <LedPointer>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:443
 		ShiftLed(PurpleBlueDD);
-    1726:	83 e0       	ldi	r24, 0x03	; 3
-    1728:	f2 cc       	rjmp	.-1564   	; 0x110e <L_5289+0x37c>
+    1714:	83 e0       	ldi	r24, 0x03	; 3
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:460
+			Vect[iLed + 3] = 128;
+			Vect[iLed + 4] = 160;
+			Vect[iLed + 5] = 192;
+			Vect[iLed + 6] = 224;
+		} 
+		ShiftLed(BlueDD);
+    1716:	33 d8       	rcall	.-3994   	; 0x77e <ShiftLed(unsigned char)>
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:461
+		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
+    1718:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <iFrame>
+    171c:	8b 31       	cpi	r24, 0x1B	; 27
+    171e:	09 f4       	brne	.+2      	; 0x1722 <L_5289+0x990>
+    1720:	bb cb       	rjmp	.-2186   	; 0xe98 <L_5289+0x106>
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:462
+		else                            { iFrame++; }
+    1722:	8f 5f       	subi	r24, 0xFF	; 255
+    1724:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <iFrame>
+    1728:	bd cb       	rjmp	.-2182   	; 0xea4 <L_5289+0x112>
 C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:450
 		else                            { iFrame++; }
 		FrameDelay = 15;
   	}
+  	
+	//////////////////// STATUS 22 ///////////////////////
+  	else if(Status == 22)  {
+    172a:	86 31       	cpi	r24, 0x16	; 22
+    172c:	b1 f4       	brne	.+44     	; 0x175a <L_5289+0x9c8>
+    172e:	ee e3       	ldi	r30, 0x3E	; 62
+    1730:	f1 e0       	ldi	r31, 0x01	; 1
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:452
+		for(iLed = 0; iLed < NUM_LEDS - 6; iLed = iLed + 7)	{
+			Vect[iLed + 0] = 32;
+    1732:	60 e2       	ldi	r22, 0x20	; 32
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:453
+			Vect[iLed + 1] = 64;
+    1734:	50 e4       	ldi	r21, 0x40	; 64
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:454
+			Vect[iLed + 2] = 96;
+    1736:	40 e6       	ldi	r20, 0x60	; 96
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:455
+			Vect[iLed + 3] = 128;
+    1738:	30 e8       	ldi	r19, 0x80	; 128
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:456
+			Vect[iLed + 4] = 160;
+    173a:	20 ea       	ldi	r18, 0xA0	; 160
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:457
+			Vect[iLed + 5] = 192;
+    173c:	90 ec       	ldi	r25, 0xC0	; 192
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:458
+			Vect[iLed + 6] = 224;
+    173e:	80 ee       	ldi	r24, 0xE0	; 224
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:452
+  	}
+  	
+	//////////////////// STATUS 22 ///////////////////////
+  	else if(Status == 22)  {
+		for(iLed = 0; iLed < NUM_LEDS - 6; iLed = iLed + 7)	{
+			Vect[iLed + 0] = 32;
+    1740:	60 83       	st	Z, r22
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:453
+			Vect[iLed + 1] = 64;
+    1742:	51 83       	std	Z+1, r21	; 0x01
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:454
+			Vect[iLed + 2] = 96;
+    1744:	42 83       	std	Z+2, r20	; 0x02
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:455
+			Vect[iLed + 3] = 128;
+    1746:	33 83       	std	Z+3, r19	; 0x03
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:456
+			Vect[iLed + 4] = 160;
+    1748:	24 83       	std	Z+4, r18	; 0x04
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:457
+			Vect[iLed + 5] = 192;
+    174a:	95 83       	std	Z+5, r25	; 0x05
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:458
+			Vect[iLed + 6] = 224;
+    174c:	86 83       	std	Z+6, r24	; 0x06
+    174e:	37 96       	adiw	r30, 0x07	; 7
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:451
+		FrameDelay = 15;
+  	}
+  	
+	//////////////////// STATUS 22 ///////////////////////
+  	else if(Status == 22)  {
+		for(iLed = 0; iLed < NUM_LEDS - 6; iLed = iLed + 7)	{
+    1750:	b1 e0       	ldi	r27, 0x01	; 1
+    1752:	ea 35       	cpi	r30, 0x5A	; 90
+    1754:	fb 07       	cpc	r31, r27
+    1756:	a1 f7       	brne	.-24     	; 0x1740 <L_5289+0x9ae>
+    1758:	d9 cc       	rjmp	.-1614   	; 0x110c <L_5289+0x37a>
+C:\Users\user\Desktop\Progetti\LedDriver\LedDriver2/LedDriver2.ino:468
+		FrameDelay = 15;
+  	}
+	
 	//////////////////// STATUS OTHERS ///////////////////////
 	else	{
 		Status = 0;
-    172a:	10 92 5f 01 	sts	0x015F, r1	; 0x80015f <Status>
-    172e:	3b ca       	rjmp	.-2954   	; 0xba6 <main+0x2e4>
+    175a:	10 92 5f 01 	sts	0x015F, r1	; 0x80015f <Status>
+    175e:	23 ca       	rjmp	.-3002   	; 0xba6 <main+0x2e4>
 countFPS():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:225
 
@@ -5820,16 +5892,16 @@ void CFastLED::countFPS(int nFrames) {
 	static uint32_t lastframe = 0; // millis();
 
 	if(br++ >= nFrames) {
-    1730:	80 91 d0 00 	lds	r24, 0x00D0	; 0x8000d0 <CFastLED::countFPS(int)::br>
-    1734:	90 91 d1 00 	lds	r25, 0x00D1	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
-    1738:	9c 01       	movw	r18, r24
-    173a:	2f 5f       	subi	r18, 0xFF	; 255
-    173c:	3f 4f       	sbci	r19, 0xFF	; 255
-    173e:	30 93 d1 00 	sts	0x00D1, r19	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
-    1742:	20 93 d0 00 	sts	0x00D0, r18	; 0x8000d0 <CFastLED::countFPS(int)::br>
-    1746:	49 97       	sbiw	r24, 0x19	; 25
-    1748:	0c f4       	brge	.+2      	; 0x174c <L_5289+0x9ba>
-    174a:	4b c0       	rjmp	.+150    	; 0x17e2 <L_5289+0xa50>
+    1760:	80 91 d0 00 	lds	r24, 0x00D0	; 0x8000d0 <CFastLED::countFPS(int)::br>
+    1764:	90 91 d1 00 	lds	r25, 0x00D1	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
+    1768:	9c 01       	movw	r18, r24
+    176a:	2f 5f       	subi	r18, 0xFF	; 255
+    176c:	3f 4f       	sbci	r19, 0xFF	; 255
+    176e:	30 93 d1 00 	sts	0x00D1, r19	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
+    1772:	20 93 d0 00 	sts	0x00D0, r18	; 0x8000d0 <CFastLED::countFPS(int)::br>
+    1776:	49 97       	sbiw	r24, 0x19	; 25
+    1778:	0c f4       	brge	.+2      	; 0x177c <L_5289+0x9ea>
+    177a:	4b c0       	rjmp	.+150    	; 0x1812 <L_5289+0xa80>
 millis():
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:218
 }
@@ -5838,72 +5910,72 @@ unsigned long millis()
 {
   unsigned long m;
   uint8_t oldSREG = SREG;
-    174c:	8f b7       	in	r24, 0x3f	; 63
+    177c:	8f b7       	in	r24, 0x3f	; 63
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:222
 
   // disable interrupts while we read timer0_millis or we might get an
   // inconsistent value (e.g. in the middle of a write to timer0_millis)
   cli();
-    174e:	f8 94       	cli
+    177e:	f8 94       	cli
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:223
   m = timer0_millis;
-    1750:	00 91 c8 00 	lds	r16, 0x00C8	; 0x8000c8 <timer0_millis>
-    1754:	10 91 c9 00 	lds	r17, 0x00C9	; 0x8000c9 <timer0_millis+0x1>
-    1758:	20 91 ca 00 	lds	r18, 0x00CA	; 0x8000ca <timer0_millis+0x2>
-    175c:	30 91 cb 00 	lds	r19, 0x00CB	; 0x8000cb <timer0_millis+0x3>
+    1780:	00 91 c8 00 	lds	r16, 0x00C8	; 0x8000c8 <timer0_millis>
+    1784:	10 91 c9 00 	lds	r17, 0x00C9	; 0x8000c9 <timer0_millis+0x1>
+    1788:	20 91 ca 00 	lds	r18, 0x00CA	; 0x8000ca <timer0_millis+0x2>
+    178c:	30 91 cb 00 	lds	r19, 0x00CB	; 0x8000cb <timer0_millis+0x3>
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:224
   SREG = oldSREG;
-    1760:	8f bf       	out	0x3f, r24	; 63
+    1790:	8f bf       	out	0x3f, r24	; 63
 countFPS():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:227
 		uint32_t now = millis();
 		now -= lastframe;
-    1762:	80 91 cc 00 	lds	r24, 0x00CC	; 0x8000cc <CFastLED::countFPS(int)::lastframe>
-    1766:	90 91 cd 00 	lds	r25, 0x00CD	; 0x8000cd <CFastLED::countFPS(int)::lastframe+0x1>
-    176a:	a0 91 ce 00 	lds	r26, 0x00CE	; 0x8000ce <CFastLED::countFPS(int)::lastframe+0x2>
-    176e:	b0 91 cf 00 	lds	r27, 0x00CF	; 0x8000cf <CFastLED::countFPS(int)::lastframe+0x3>
-    1772:	a9 01       	movw	r20, r18
-    1774:	98 01       	movw	r18, r16
-    1776:	28 1b       	sub	r18, r24
-    1778:	39 0b       	sbc	r19, r25
-    177a:	4a 0b       	sbc	r20, r26
-    177c:	5b 0b       	sbc	r21, r27
+    1792:	80 91 cc 00 	lds	r24, 0x00CC	; 0x8000cc <CFastLED::countFPS(int)::lastframe>
+    1796:	90 91 cd 00 	lds	r25, 0x00CD	; 0x8000cd <CFastLED::countFPS(int)::lastframe+0x1>
+    179a:	a0 91 ce 00 	lds	r26, 0x00CE	; 0x8000ce <CFastLED::countFPS(int)::lastframe+0x2>
+    179e:	b0 91 cf 00 	lds	r27, 0x00CF	; 0x8000cf <CFastLED::countFPS(int)::lastframe+0x3>
+    17a2:	a9 01       	movw	r20, r18
+    17a4:	98 01       	movw	r18, r16
+    17a6:	28 1b       	sub	r18, r24
+    17a8:	39 0b       	sbc	r19, r25
+    17aa:	4a 0b       	sbc	r20, r26
+    17ac:	5b 0b       	sbc	r21, r27
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:228
 		if(now == 0) {
-    177e:	21 f4       	brne	.+8      	; 0x1788 <L_5289+0x9f6>
+    17ae:	21 f4       	brne	.+8      	; 0x17b8 <L_5289+0xa26>
 main():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:229
 			now = 1; // prevent division by zero below
-    1780:	21 e0       	ldi	r18, 0x01	; 1
-    1782:	30 e0       	ldi	r19, 0x00	; 0
-    1784:	40 e0       	ldi	r20, 0x00	; 0
-    1786:	50 e0       	ldi	r21, 0x00	; 0
+    17b0:	21 e0       	ldi	r18, 0x01	; 1
+    17b2:	30 e0       	ldi	r19, 0x00	; 0
+    17b4:	40 e0       	ldi	r20, 0x00	; 0
+    17b6:	50 e0       	ldi	r21, 0x00	; 0
 countFPS():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:231
 		}
 		m_nFPS = (br * 1000) / now;
-    1788:	e0 91 d0 00 	lds	r30, 0x00D0	; 0x8000d0 <CFastLED::countFPS(int)::br>
-    178c:	f0 91 d1 00 	lds	r31, 0x00D1	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
-    1790:	88 ee       	ldi	r24, 0xE8	; 232
-    1792:	93 e0       	ldi	r25, 0x03	; 3
-    1794:	e8 9f       	mul	r30, r24
-    1796:	b0 01       	movw	r22, r0
-    1798:	e9 9f       	mul	r30, r25
-    179a:	70 0d       	add	r23, r0
-    179c:	f8 9f       	mul	r31, r24
-    179e:	70 0d       	add	r23, r0
-    17a0:	11 24       	eor	r1, r1
-    17a2:	07 2e       	mov	r0, r23
-    17a4:	00 0c       	add	r0, r0
-    17a6:	88 0b       	sbc	r24, r24
-    17a8:	99 0b       	sbc	r25, r25
-    17aa:	fc d0       	rcall	.+504    	; 0x19a4 <__udivmodsi4>
-    17ac:	30 93 33 01 	sts	0x0133, r19	; 0x800133 <FastLED+0x2>
-    17b0:	20 93 32 01 	sts	0x0132, r18	; 0x800132 <FastLED+0x1>
+    17b8:	e0 91 d0 00 	lds	r30, 0x00D0	; 0x8000d0 <CFastLED::countFPS(int)::br>
+    17bc:	f0 91 d1 00 	lds	r31, 0x00D1	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
+    17c0:	88 ee       	ldi	r24, 0xE8	; 232
+    17c2:	93 e0       	ldi	r25, 0x03	; 3
+    17c4:	e8 9f       	mul	r30, r24
+    17c6:	b0 01       	movw	r22, r0
+    17c8:	e9 9f       	mul	r30, r25
+    17ca:	70 0d       	add	r23, r0
+    17cc:	f8 9f       	mul	r31, r24
+    17ce:	70 0d       	add	r23, r0
+    17d0:	11 24       	eor	r1, r1
+    17d2:	07 2e       	mov	r0, r23
+    17d4:	00 0c       	add	r0, r0
+    17d6:	88 0b       	sbc	r24, r24
+    17d8:	99 0b       	sbc	r25, r25
+    17da:	fc d0       	rcall	.+504    	; 0x19d4 <__udivmodsi4>
+    17dc:	30 93 33 01 	sts	0x0133, r19	; 0x800133 <FastLED+0x2>
+    17e0:	20 93 32 01 	sts	0x0132, r18	; 0x800132 <FastLED+0x1>
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:232
 		br = 0;
-    17b4:	10 92 d1 00 	sts	0x00D1, r1	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
-    17b8:	10 92 d0 00 	sts	0x00D0, r1	; 0x8000d0 <CFastLED::countFPS(int)::br>
+    17e4:	10 92 d1 00 	sts	0x00D1, r1	; 0x8000d1 <CFastLED::countFPS(int)::br+0x1>
+    17e8:	10 92 d0 00 	sts	0x00D0, r1	; 0x8000d0 <CFastLED::countFPS(int)::br>
 millis():
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:218
 }
@@ -5912,29 +5984,29 @@ unsigned long millis()
 {
   unsigned long m;
   uint8_t oldSREG = SREG;
-    17bc:	2f b7       	in	r18, 0x3f	; 63
+    17ec:	2f b7       	in	r18, 0x3f	; 63
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:222
 
   // disable interrupts while we read timer0_millis or we might get an
   // inconsistent value (e.g. in the middle of a write to timer0_millis)
   cli();
-    17be:	f8 94       	cli
+    17ee:	f8 94       	cli
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:223
   m = timer0_millis;
-    17c0:	80 91 c8 00 	lds	r24, 0x00C8	; 0x8000c8 <timer0_millis>
-    17c4:	90 91 c9 00 	lds	r25, 0x00C9	; 0x8000c9 <timer0_millis+0x1>
-    17c8:	a0 91 ca 00 	lds	r26, 0x00CA	; 0x8000ca <timer0_millis+0x2>
-    17cc:	b0 91 cb 00 	lds	r27, 0x00CB	; 0x8000cb <timer0_millis+0x3>
+    17f0:	80 91 c8 00 	lds	r24, 0x00C8	; 0x8000c8 <timer0_millis>
+    17f4:	90 91 c9 00 	lds	r25, 0x00C9	; 0x8000c9 <timer0_millis+0x1>
+    17f8:	a0 91 ca 00 	lds	r26, 0x00CA	; 0x8000ca <timer0_millis+0x2>
+    17fc:	b0 91 cb 00 	lds	r27, 0x00CB	; 0x8000cb <timer0_millis+0x3>
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/wiring.c:224
   SREG = oldSREG;
-    17d0:	2f bf       	out	0x3f, r18	; 63
+    1800:	2f bf       	out	0x3f, r18	; 63
 countFPS():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:233
 		lastframe = millis();
-    17d2:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <CFastLED::countFPS(int)::lastframe>
-    17d6:	90 93 cd 00 	sts	0x00CD, r25	; 0x8000cd <CFastLED::countFPS(int)::lastframe+0x1>
-    17da:	a0 93 ce 00 	sts	0x00CE, r26	; 0x8000ce <CFastLED::countFPS(int)::lastframe+0x2>
-    17de:	b0 93 cf 00 	sts	0x00CF, r27	; 0x8000cf <CFastLED::countFPS(int)::lastframe+0x3>
+    1802:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <CFastLED::countFPS(int)::lastframe>
+    1806:	90 93 cd 00 	sts	0x00CD, r25	; 0x8000cd <CFastLED::countFPS(int)::lastframe+0x1>
+    180a:	a0 93 ce 00 	sts	0x00CE, r26	; 0x8000ce <CFastLED::countFPS(int)::lastframe+0x2>
+    180e:	b0 93 cf 00 	sts	0x00CF, r27	; 0x8000cf <CFastLED::countFPS(int)::lastframe+0x3>
 main():
 C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores\MCUdude_corefiles/main.cpp:47
   
@@ -5943,15 +6015,15 @@ C:\Users\user\AppData\Local\Arduino15\packages\MiniCore\hardware\avr\3.0.0\cores
   for (;;) {
     loop();
     if (serialEventRun) serialEventRun();
-    17e2:	80 e0       	ldi	r24, 0x00	; 0
-    17e4:	90 e0       	ldi	r25, 0x00	; 0
-    17e6:	89 2b       	or	r24, r25
-    17e8:	09 f4       	brne	.+2      	; 0x17ec <L_5289+0xa5a>
-    17ea:	34 c9       	rjmp	.-3480   	; 0xa54 <main+0x192>
-    17ec:	09 d4       	rcall	.+2066   	; 0x2000 <__TEXT_REGION_LENGTH__>
-    17ee:	2d c9       	rjmp	.-3494   	; 0xa4a <main+0x188>
+    1812:	80 e0       	ldi	r24, 0x00	; 0
+    1814:	90 e0       	ldi	r25, 0x00	; 0
+    1816:	89 2b       	or	r24, r25
+    1818:	09 f4       	brne	.+2      	; 0x181c <L_5289+0xa8a>
+    181a:	1c c9       	rjmp	.-3528   	; 0xa54 <main+0x192>
+    181c:	f1 d3       	rcall	.+2018   	; 0x2000 <__TEXT_REGION_LENGTH__>
+    181e:	15 c9       	rjmp	.-3542   	; 0xa4a <main+0x188>
 
-000017f0 <_GLOBAL__sub_I_pSmartMatrix>:
+00001820 <_GLOBAL__sub_I_pSmartMatrix>:
 _GLOBAL__sub_I_pSmartMatrix():
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:36
 // uint32_t CRGB::Squant = ((uint32_t)((__TIME__[4]-'0') * 28))<<16 | ((__TIME__[6]-'0')*50)<<8 | ((__TIME__[7]-'0')*28);
@@ -5960,27 +6032,27 @@ CFastLED::CFastLED() {
 	// clear out the array of led controllers
 	// m_nControllers = 0;
 	m_Scale = 255;
-    17f0:	e1 e3       	ldi	r30, 0x31	; 49
-    17f2:	f1 e0       	ldi	r31, 0x01	; 1
-    17f4:	8f ef       	ldi	r24, 0xFF	; 255
-    17f6:	80 83       	st	Z, r24
+    1820:	e1 e3       	ldi	r30, 0x31	; 49
+    1822:	f1 e0       	ldi	r31, 0x01	; 1
+    1824:	8f ef       	ldi	r24, 0xFF	; 255
+    1826:	80 83       	st	Z, r24
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:37
 	m_nFPS = 0;
-    17f8:	12 82       	std	Z+2, r1	; 0x02
-    17fa:	11 82       	std	Z+1, r1	; 0x01
+    1828:	12 82       	std	Z+2, r1	; 0x02
+    182a:	11 82       	std	Z+1, r1	; 0x01
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:38
 	m_pPowerFunc = NULL;
-    17fc:	14 86       	std	Z+12, r1	; 0x0c
-    17fe:	13 86       	std	Z+11, r1	; 0x0b
+    182c:	14 86       	std	Z+12, r1	; 0x0c
+    182e:	13 86       	std	Z+11, r1	; 0x0b
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:39
 	m_nPowerData = 0xFFFFFFFF;
-    1800:	8f ef       	ldi	r24, 0xFF	; 255
-    1802:	9f ef       	ldi	r25, 0xFF	; 255
-    1804:	dc 01       	movw	r26, r24
-    1806:	87 83       	std	Z+7, r24	; 0x07
-    1808:	90 87       	std	Z+8, r25	; 0x08
-    180a:	a1 87       	std	Z+9, r26	; 0x09
-    180c:	b2 87       	std	Z+10, r27	; 0x0a
+    1830:	8f ef       	ldi	r24, 0xFF	; 255
+    1832:	9f ef       	ldi	r25, 0xFF	; 255
+    1834:	dc 01       	movw	r26, r24
+    1836:	87 83       	std	Z+7, r24	; 0x07
+    1838:	90 87       	std	Z+8, r25	; 0x08
+    183a:	a1 87       	std	Z+9, r26	; 0x09
+    183c:	b2 87       	std	Z+10, r27	; 0x0a
 C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:254
 }
 
@@ -5988,539 +6060,539 @@ C:\Users\user\Documents\Arduino\libraries\FastLED\src/FastLED.cpp:254
 /// Extra C definition that some environments may need. 
 /// @returns 0 to indicate success
 extern "C" int atexit(void (* /*func*/ )()) { return 0; }
-    180e:	08 95       	ret
+    183e:	08 95       	ret
 
-00001810 <random_r>:
+00001840 <random_r>:
 random_r():
-    1810:	8f 92       	push	r8
-    1812:	9f 92       	push	r9
-    1814:	af 92       	push	r10
-    1816:	bf 92       	push	r11
-    1818:	cf 92       	push	r12
-    181a:	df 92       	push	r13
-    181c:	ef 92       	push	r14
-    181e:	ff 92       	push	r15
-    1820:	cf 93       	push	r28
-    1822:	df 93       	push	r29
-    1824:	ec 01       	movw	r28, r24
-    1826:	68 81       	ld	r22, Y
-    1828:	79 81       	ldd	r23, Y+1	; 0x01
-    182a:	8a 81       	ldd	r24, Y+2	; 0x02
-    182c:	9b 81       	ldd	r25, Y+3	; 0x03
-    182e:	61 15       	cp	r22, r1
-    1830:	71 05       	cpc	r23, r1
-    1832:	81 05       	cpc	r24, r1
-    1834:	91 05       	cpc	r25, r1
-    1836:	21 f4       	brne	.+8      	; 0x1840 <random_r+0x30>
-    1838:	64 e2       	ldi	r22, 0x24	; 36
-    183a:	79 ed       	ldi	r23, 0xD9	; 217
-    183c:	8b e5       	ldi	r24, 0x5B	; 91
-    183e:	97 e0       	ldi	r25, 0x07	; 7
-    1840:	2d e1       	ldi	r18, 0x1D	; 29
-    1842:	33 ef       	ldi	r19, 0xF3	; 243
-    1844:	41 e0       	ldi	r20, 0x01	; 1
-    1846:	50 e0       	ldi	r21, 0x00	; 0
-    1848:	81 d0       	rcall	.+258    	; 0x194c <__divmodsi4>
-    184a:	49 01       	movw	r8, r18
-    184c:	5a 01       	movw	r10, r20
-    184e:	9b 01       	movw	r18, r22
-    1850:	ac 01       	movw	r20, r24
-    1852:	a7 ea       	ldi	r26, 0xA7	; 167
-    1854:	b1 e4       	ldi	r27, 0x41	; 65
-    1856:	96 d0       	rcall	.+300    	; 0x1984 <__muluhisi3>
-    1858:	6b 01       	movw	r12, r22
-    185a:	7c 01       	movw	r14, r24
-    185c:	ac ee       	ldi	r26, 0xEC	; 236
-    185e:	b4 ef       	ldi	r27, 0xF4	; 244
-    1860:	a5 01       	movw	r20, r10
-    1862:	94 01       	movw	r18, r8
-    1864:	9b d0       	rcall	.+310    	; 0x199c <__mulohisi3>
-    1866:	c6 0e       	add	r12, r22
-    1868:	d7 1e       	adc	r13, r23
-    186a:	e8 1e       	adc	r14, r24
-    186c:	f9 1e       	adc	r15, r25
-    186e:	f7 fe       	sbrs	r15, 7
-    1870:	06 c0       	rjmp	.+12     	; 0x187e <random_r+0x6e>
-    1872:	81 e0       	ldi	r24, 0x01	; 1
-    1874:	c8 1a       	sub	r12, r24
-    1876:	d1 08       	sbc	r13, r1
-    1878:	e1 08       	sbc	r14, r1
-    187a:	80 e8       	ldi	r24, 0x80	; 128
-    187c:	f8 0a       	sbc	r15, r24
-    187e:	c8 82       	st	Y, r12
-    1880:	d9 82       	std	Y+1, r13	; 0x01
-    1882:	ea 82       	std	Y+2, r14	; 0x02
-    1884:	fb 82       	std	Y+3, r15	; 0x03
-    1886:	c7 01       	movw	r24, r14
-    1888:	b6 01       	movw	r22, r12
-    188a:	9f 77       	andi	r25, 0x7F	; 127
-    188c:	df 91       	pop	r29
-    188e:	cf 91       	pop	r28
-    1890:	ff 90       	pop	r15
-    1892:	ef 90       	pop	r14
-    1894:	df 90       	pop	r13
-    1896:	cf 90       	pop	r12
-    1898:	bf 90       	pop	r11
-    189a:	af 90       	pop	r10
-    189c:	9f 90       	pop	r9
-    189e:	8f 90       	pop	r8
-    18a0:	08 95       	ret
+    1840:	8f 92       	push	r8
+    1842:	9f 92       	push	r9
+    1844:	af 92       	push	r10
+    1846:	bf 92       	push	r11
+    1848:	cf 92       	push	r12
+    184a:	df 92       	push	r13
+    184c:	ef 92       	push	r14
+    184e:	ff 92       	push	r15
+    1850:	cf 93       	push	r28
+    1852:	df 93       	push	r29
+    1854:	ec 01       	movw	r28, r24
+    1856:	68 81       	ld	r22, Y
+    1858:	79 81       	ldd	r23, Y+1	; 0x01
+    185a:	8a 81       	ldd	r24, Y+2	; 0x02
+    185c:	9b 81       	ldd	r25, Y+3	; 0x03
+    185e:	61 15       	cp	r22, r1
+    1860:	71 05       	cpc	r23, r1
+    1862:	81 05       	cpc	r24, r1
+    1864:	91 05       	cpc	r25, r1
+    1866:	21 f4       	brne	.+8      	; 0x1870 <random_r+0x30>
+    1868:	64 e2       	ldi	r22, 0x24	; 36
+    186a:	79 ed       	ldi	r23, 0xD9	; 217
+    186c:	8b e5       	ldi	r24, 0x5B	; 91
+    186e:	97 e0       	ldi	r25, 0x07	; 7
+    1870:	2d e1       	ldi	r18, 0x1D	; 29
+    1872:	33 ef       	ldi	r19, 0xF3	; 243
+    1874:	41 e0       	ldi	r20, 0x01	; 1
+    1876:	50 e0       	ldi	r21, 0x00	; 0
+    1878:	81 d0       	rcall	.+258    	; 0x197c <__divmodsi4>
+    187a:	49 01       	movw	r8, r18
+    187c:	5a 01       	movw	r10, r20
+    187e:	9b 01       	movw	r18, r22
+    1880:	ac 01       	movw	r20, r24
+    1882:	a7 ea       	ldi	r26, 0xA7	; 167
+    1884:	b1 e4       	ldi	r27, 0x41	; 65
+    1886:	96 d0       	rcall	.+300    	; 0x19b4 <__muluhisi3>
+    1888:	6b 01       	movw	r12, r22
+    188a:	7c 01       	movw	r14, r24
+    188c:	ac ee       	ldi	r26, 0xEC	; 236
+    188e:	b4 ef       	ldi	r27, 0xF4	; 244
+    1890:	a5 01       	movw	r20, r10
+    1892:	94 01       	movw	r18, r8
+    1894:	9b d0       	rcall	.+310    	; 0x19cc <__mulohisi3>
+    1896:	c6 0e       	add	r12, r22
+    1898:	d7 1e       	adc	r13, r23
+    189a:	e8 1e       	adc	r14, r24
+    189c:	f9 1e       	adc	r15, r25
+    189e:	f7 fe       	sbrs	r15, 7
+    18a0:	06 c0       	rjmp	.+12     	; 0x18ae <random_r+0x6e>
+    18a2:	81 e0       	ldi	r24, 0x01	; 1
+    18a4:	c8 1a       	sub	r12, r24
+    18a6:	d1 08       	sbc	r13, r1
+    18a8:	e1 08       	sbc	r14, r1
+    18aa:	80 e8       	ldi	r24, 0x80	; 128
+    18ac:	f8 0a       	sbc	r15, r24
+    18ae:	c8 82       	st	Y, r12
+    18b0:	d9 82       	std	Y+1, r13	; 0x01
+    18b2:	ea 82       	std	Y+2, r14	; 0x02
+    18b4:	fb 82       	std	Y+3, r15	; 0x03
+    18b6:	c7 01       	movw	r24, r14
+    18b8:	b6 01       	movw	r22, r12
+    18ba:	9f 77       	andi	r25, 0x7F	; 127
+    18bc:	df 91       	pop	r29
+    18be:	cf 91       	pop	r28
+    18c0:	ff 90       	pop	r15
+    18c2:	ef 90       	pop	r14
+    18c4:	df 90       	pop	r13
+    18c6:	cf 90       	pop	r12
+    18c8:	bf 90       	pop	r11
+    18ca:	af 90       	pop	r10
+    18cc:	9f 90       	pop	r9
+    18ce:	8f 90       	pop	r8
+    18d0:	08 95       	ret
 
-000018a2 <random>:
+000018d2 <random>:
 random():
-    18a2:	8f 92       	push	r8
-    18a4:	9f 92       	push	r9
-    18a6:	af 92       	push	r10
-    18a8:	bf 92       	push	r11
-    18aa:	cf 92       	push	r12
-    18ac:	df 92       	push	r13
-    18ae:	ef 92       	push	r14
-    18b0:	ff 92       	push	r15
-    18b2:	60 91 7c 00 	lds	r22, 0x007C	; 0x80007c <next>
-    18b6:	70 91 7d 00 	lds	r23, 0x007D	; 0x80007d <next+0x1>
-    18ba:	80 91 7e 00 	lds	r24, 0x007E	; 0x80007e <next+0x2>
-    18be:	90 91 7f 00 	lds	r25, 0x007F	; 0x80007f <next+0x3>
-    18c2:	61 15       	cp	r22, r1
-    18c4:	71 05       	cpc	r23, r1
-    18c6:	81 05       	cpc	r24, r1
-    18c8:	91 05       	cpc	r25, r1
-    18ca:	21 f4       	brne	.+8      	; 0x18d4 <random+0x32>
-    18cc:	64 e2       	ldi	r22, 0x24	; 36
-    18ce:	79 ed       	ldi	r23, 0xD9	; 217
-    18d0:	8b e5       	ldi	r24, 0x5B	; 91
-    18d2:	97 e0       	ldi	r25, 0x07	; 7
-    18d4:	2d e1       	ldi	r18, 0x1D	; 29
-    18d6:	33 ef       	ldi	r19, 0xF3	; 243
-    18d8:	41 e0       	ldi	r20, 0x01	; 1
-    18da:	50 e0       	ldi	r21, 0x00	; 0
-    18dc:	37 d0       	rcall	.+110    	; 0x194c <__divmodsi4>
-    18de:	49 01       	movw	r8, r18
-    18e0:	5a 01       	movw	r10, r20
-    18e2:	9b 01       	movw	r18, r22
-    18e4:	ac 01       	movw	r20, r24
-    18e6:	a7 ea       	ldi	r26, 0xA7	; 167
-    18e8:	b1 e4       	ldi	r27, 0x41	; 65
-    18ea:	4c d0       	rcall	.+152    	; 0x1984 <__muluhisi3>
-    18ec:	6b 01       	movw	r12, r22
-    18ee:	7c 01       	movw	r14, r24
-    18f0:	ac ee       	ldi	r26, 0xEC	; 236
-    18f2:	b4 ef       	ldi	r27, 0xF4	; 244
-    18f4:	a5 01       	movw	r20, r10
-    18f6:	94 01       	movw	r18, r8
-    18f8:	51 d0       	rcall	.+162    	; 0x199c <__mulohisi3>
-    18fa:	c6 0e       	add	r12, r22
-    18fc:	d7 1e       	adc	r13, r23
-    18fe:	e8 1e       	adc	r14, r24
-    1900:	f9 1e       	adc	r15, r25
-    1902:	f7 fe       	sbrs	r15, 7
-    1904:	06 c0       	rjmp	.+12     	; 0x1912 <random+0x70>
-    1906:	81 e0       	ldi	r24, 0x01	; 1
-    1908:	c8 1a       	sub	r12, r24
-    190a:	d1 08       	sbc	r13, r1
-    190c:	e1 08       	sbc	r14, r1
-    190e:	80 e8       	ldi	r24, 0x80	; 128
-    1910:	f8 0a       	sbc	r15, r24
-    1912:	c0 92 7c 00 	sts	0x007C, r12	; 0x80007c <next>
-    1916:	d0 92 7d 00 	sts	0x007D, r13	; 0x80007d <next+0x1>
-    191a:	e0 92 7e 00 	sts	0x007E, r14	; 0x80007e <next+0x2>
-    191e:	f0 92 7f 00 	sts	0x007F, r15	; 0x80007f <next+0x3>
-    1922:	c7 01       	movw	r24, r14
-    1924:	b6 01       	movw	r22, r12
-    1926:	9f 77       	andi	r25, 0x7F	; 127
-    1928:	ff 90       	pop	r15
-    192a:	ef 90       	pop	r14
-    192c:	df 90       	pop	r13
-    192e:	cf 90       	pop	r12
-    1930:	bf 90       	pop	r11
-    1932:	af 90       	pop	r10
-    1934:	9f 90       	pop	r9
-    1936:	8f 90       	pop	r8
-    1938:	08 95       	ret
+    18d2:	8f 92       	push	r8
+    18d4:	9f 92       	push	r9
+    18d6:	af 92       	push	r10
+    18d8:	bf 92       	push	r11
+    18da:	cf 92       	push	r12
+    18dc:	df 92       	push	r13
+    18de:	ef 92       	push	r14
+    18e0:	ff 92       	push	r15
+    18e2:	60 91 7c 00 	lds	r22, 0x007C	; 0x80007c <next>
+    18e6:	70 91 7d 00 	lds	r23, 0x007D	; 0x80007d <next+0x1>
+    18ea:	80 91 7e 00 	lds	r24, 0x007E	; 0x80007e <next+0x2>
+    18ee:	90 91 7f 00 	lds	r25, 0x007F	; 0x80007f <next+0x3>
+    18f2:	61 15       	cp	r22, r1
+    18f4:	71 05       	cpc	r23, r1
+    18f6:	81 05       	cpc	r24, r1
+    18f8:	91 05       	cpc	r25, r1
+    18fa:	21 f4       	brne	.+8      	; 0x1904 <random+0x32>
+    18fc:	64 e2       	ldi	r22, 0x24	; 36
+    18fe:	79 ed       	ldi	r23, 0xD9	; 217
+    1900:	8b e5       	ldi	r24, 0x5B	; 91
+    1902:	97 e0       	ldi	r25, 0x07	; 7
+    1904:	2d e1       	ldi	r18, 0x1D	; 29
+    1906:	33 ef       	ldi	r19, 0xF3	; 243
+    1908:	41 e0       	ldi	r20, 0x01	; 1
+    190a:	50 e0       	ldi	r21, 0x00	; 0
+    190c:	37 d0       	rcall	.+110    	; 0x197c <__divmodsi4>
+    190e:	49 01       	movw	r8, r18
+    1910:	5a 01       	movw	r10, r20
+    1912:	9b 01       	movw	r18, r22
+    1914:	ac 01       	movw	r20, r24
+    1916:	a7 ea       	ldi	r26, 0xA7	; 167
+    1918:	b1 e4       	ldi	r27, 0x41	; 65
+    191a:	4c d0       	rcall	.+152    	; 0x19b4 <__muluhisi3>
+    191c:	6b 01       	movw	r12, r22
+    191e:	7c 01       	movw	r14, r24
+    1920:	ac ee       	ldi	r26, 0xEC	; 236
+    1922:	b4 ef       	ldi	r27, 0xF4	; 244
+    1924:	a5 01       	movw	r20, r10
+    1926:	94 01       	movw	r18, r8
+    1928:	51 d0       	rcall	.+162    	; 0x19cc <__mulohisi3>
+    192a:	c6 0e       	add	r12, r22
+    192c:	d7 1e       	adc	r13, r23
+    192e:	e8 1e       	adc	r14, r24
+    1930:	f9 1e       	adc	r15, r25
+    1932:	f7 fe       	sbrs	r15, 7
+    1934:	06 c0       	rjmp	.+12     	; 0x1942 <random+0x70>
+    1936:	81 e0       	ldi	r24, 0x01	; 1
+    1938:	c8 1a       	sub	r12, r24
+    193a:	d1 08       	sbc	r13, r1
+    193c:	e1 08       	sbc	r14, r1
+    193e:	80 e8       	ldi	r24, 0x80	; 128
+    1940:	f8 0a       	sbc	r15, r24
+    1942:	c0 92 7c 00 	sts	0x007C, r12	; 0x80007c <next>
+    1946:	d0 92 7d 00 	sts	0x007D, r13	; 0x80007d <next+0x1>
+    194a:	e0 92 7e 00 	sts	0x007E, r14	; 0x80007e <next+0x2>
+    194e:	f0 92 7f 00 	sts	0x007F, r15	; 0x80007f <next+0x3>
+    1952:	c7 01       	movw	r24, r14
+    1954:	b6 01       	movw	r22, r12
+    1956:	9f 77       	andi	r25, 0x7F	; 127
+    1958:	ff 90       	pop	r15
+    195a:	ef 90       	pop	r14
+    195c:	df 90       	pop	r13
+    195e:	cf 90       	pop	r12
+    1960:	bf 90       	pop	r11
+    1962:	af 90       	pop	r10
+    1964:	9f 90       	pop	r9
+    1966:	8f 90       	pop	r8
+    1968:	08 95       	ret
 
-0000193a <srandom>:
+0000196a <srandom>:
 srandom():
-    193a:	60 93 7c 00 	sts	0x007C, r22	; 0x80007c <next>
-    193e:	70 93 7d 00 	sts	0x007D, r23	; 0x80007d <next+0x1>
-    1942:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <next+0x2>
-    1946:	90 93 7f 00 	sts	0x007F, r25	; 0x80007f <next+0x3>
-    194a:	08 95       	ret
+    196a:	60 93 7c 00 	sts	0x007C, r22	; 0x80007c <next>
+    196e:	70 93 7d 00 	sts	0x007D, r23	; 0x80007d <next+0x1>
+    1972:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <next+0x2>
+    1976:	90 93 7f 00 	sts	0x007F, r25	; 0x80007f <next+0x3>
+    197a:	08 95       	ret
 
-0000194c <__divmodsi4>:
+0000197c <__divmodsi4>:
 __divmodsi4():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1686
-    194c:	05 2e       	mov	r0, r21
+    197c:	05 2e       	mov	r0, r21
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1687
-    194e:	97 fb       	bst	r25, 7
+    197e:	97 fb       	bst	r25, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1688
-    1950:	16 f4       	brtc	.+4      	; 0x1956 <__divmodsi4+0xa>
+    1980:	16 f4       	brtc	.+4      	; 0x1986 <__divmodsi4+0xa>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1689
-    1952:	00 94       	com	r0
+    1982:	00 94       	com	r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1690
-    1954:	0f d0       	rcall	.+30     	; 0x1974 <__negsi2>
+    1984:	0f d0       	rcall	.+30     	; 0x19a4 <__negsi2>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1692
-    1956:	57 fd       	sbrc	r21, 7
+    1986:	57 fd       	sbrc	r21, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1693
-    1958:	05 d0       	rcall	.+10     	; 0x1964 <__divmodsi4_neg2>
+    1988:	05 d0       	rcall	.+10     	; 0x1994 <__divmodsi4_neg2>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1694
-    195a:	24 d0       	rcall	.+72     	; 0x19a4 <__udivmodsi4>
+    198a:	24 d0       	rcall	.+72     	; 0x19d4 <__udivmodsi4>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1695
-    195c:	07 fc       	sbrc	r0, 7
+    198c:	07 fc       	sbrc	r0, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1696
-    195e:	02 d0       	rcall	.+4      	; 0x1964 <__divmodsi4_neg2>
+    198e:	02 d0       	rcall	.+4      	; 0x1994 <__divmodsi4_neg2>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1697
-    1960:	46 f4       	brtc	.+16     	; 0x1972 <__divmodsi4_exit>
+    1990:	46 f4       	brtc	.+16     	; 0x19a2 <__divmodsi4_exit>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1698
-    1962:	08 c0       	rjmp	.+16     	; 0x1974 <__negsi2>
+    1992:	08 c0       	rjmp	.+16     	; 0x19a4 <__negsi2>
 
-00001964 <__divmodsi4_neg2>:
+00001994 <__divmodsi4_neg2>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1701
-    1964:	50 95       	com	r21
+    1994:	50 95       	com	r21
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1702
-    1966:	40 95       	com	r20
+    1996:	40 95       	com	r20
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1703
-    1968:	30 95       	com	r19
+    1998:	30 95       	com	r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1704
-    196a:	21 95       	neg	r18
+    199a:	21 95       	neg	r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1705
-    196c:	3f 4f       	sbci	r19, 0xFF	; 255
+    199c:	3f 4f       	sbci	r19, 0xFF	; 255
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1706
-    196e:	4f 4f       	sbci	r20, 0xFF	; 255
+    199e:	4f 4f       	sbci	r20, 0xFF	; 255
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1707
-    1970:	5f 4f       	sbci	r21, 0xFF	; 255
+    19a0:	5f 4f       	sbci	r21, 0xFF	; 255
 
-00001972 <__divmodsi4_exit>:
+000019a2 <__divmodsi4_exit>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1709
-    1972:	08 95       	ret
-
-00001974 <__negsi2>:
-__negsi2():
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1718
-    1974:	90 95       	com	r25
-    1976:	80 95       	com	r24
-    1978:	70 95       	com	r23
-    197a:	61 95       	neg	r22
-    197c:	7f 4f       	sbci	r23, 0xFF	; 255
-    197e:	8f 4f       	sbci	r24, 0xFF	; 255
-    1980:	9f 4f       	sbci	r25, 0xFF	; 255
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1719
-    1982:	08 95       	ret
-
-00001984 <__muluhisi3>:
-__muluhisi3():
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:626
-    1984:	31 d0       	rcall	.+98     	; 0x19e8 <__umulhisi3>
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:627
-    1986:	a5 9f       	mul	r26, r21
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:628
-    1988:	90 0d       	add	r25, r0
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:629
-    198a:	b4 9f       	mul	r27, r20
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:630
-    198c:	90 0d       	add	r25, r0
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:631
-    198e:	a4 9f       	mul	r26, r20
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:632
-    1990:	80 0d       	add	r24, r0
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:633
-    1992:	91 1d       	adc	r25, r1
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:634
-    1994:	11 24       	eor	r1, r1
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:635
-    1996:	08 95       	ret
-
-00001998 <__mulshisi3>:
-__mulshisi3():
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:603
-    1998:	b7 ff       	sbrs	r27, 7
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:605
-    199a:	f4 cf       	rjmp	.-24     	; 0x1984 <__muluhisi3>
-
-0000199c <__mulohisi3>:
-__mulohisi3():
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:613
-    199c:	f3 df       	rcall	.-26     	; 0x1984 <__muluhisi3>
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:615
-    199e:	82 1b       	sub	r24, r18
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:616
-    19a0:	93 0b       	sbc	r25, r19
-/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:617
     19a2:	08 95       	ret
 
-000019a4 <__udivmodsi4>:
+000019a4 <__negsi2>:
+__negsi2():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1718
+    19a4:	90 95       	com	r25
+    19a6:	80 95       	com	r24
+    19a8:	70 95       	com	r23
+    19aa:	61 95       	neg	r22
+    19ac:	7f 4f       	sbci	r23, 0xFF	; 255
+    19ae:	8f 4f       	sbci	r24, 0xFF	; 255
+    19b0:	9f 4f       	sbci	r25, 0xFF	; 255
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1719
+    19b2:	08 95       	ret
+
+000019b4 <__muluhisi3>:
+__muluhisi3():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:626
+    19b4:	31 d0       	rcall	.+98     	; 0x1a18 <__umulhisi3>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:627
+    19b6:	a5 9f       	mul	r26, r21
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:628
+    19b8:	90 0d       	add	r25, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:629
+    19ba:	b4 9f       	mul	r27, r20
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:630
+    19bc:	90 0d       	add	r25, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:631
+    19be:	a4 9f       	mul	r26, r20
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:632
+    19c0:	80 0d       	add	r24, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:633
+    19c2:	91 1d       	adc	r25, r1
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:634
+    19c4:	11 24       	eor	r1, r1
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:635
+    19c6:	08 95       	ret
+
+000019c8 <__mulshisi3>:
+__mulshisi3():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:603
+    19c8:	b7 ff       	sbrs	r27, 7
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:605
+    19ca:	f4 cf       	rjmp	.-24     	; 0x19b4 <__muluhisi3>
+
+000019cc <__mulohisi3>:
+__mulohisi3():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:613
+    19cc:	f3 df       	rcall	.-26     	; 0x19b4 <__muluhisi3>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:615
+    19ce:	82 1b       	sub	r24, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:616
+    19d0:	93 0b       	sbc	r25, r19
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:617
+    19d2:	08 95       	ret
+
+000019d4 <__udivmodsi4>:
 __udivmodsi4():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1638
-    19a4:	a1 e2       	ldi	r26, 0x21	; 33
+    19d4:	a1 e2       	ldi	r26, 0x21	; 33
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1639
-    19a6:	1a 2e       	mov	r1, r26
+    19d6:	1a 2e       	mov	r1, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1640
-    19a8:	aa 1b       	sub	r26, r26
+    19d8:	aa 1b       	sub	r26, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1641
-    19aa:	bb 1b       	sub	r27, r27
+    19da:	bb 1b       	sub	r27, r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1642
-    19ac:	fd 01       	movw	r30, r26
+    19dc:	fd 01       	movw	r30, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1644
-    19ae:	0d c0       	rjmp	.+26     	; 0x19ca <__udivmodsi4_ep>
+    19de:	0d c0       	rjmp	.+26     	; 0x19fa <__udivmodsi4_ep>
 
-000019b0 <__udivmodsi4_loop>:
+000019e0 <__udivmodsi4_loop>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1646
-    19b0:	aa 1f       	adc	r26, r26
+    19e0:	aa 1f       	adc	r26, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1647
-    19b2:	bb 1f       	adc	r27, r27
+    19e2:	bb 1f       	adc	r27, r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1648
-    19b4:	ee 1f       	adc	r30, r30
+    19e4:	ee 1f       	adc	r30, r30
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1649
-    19b6:	ff 1f       	adc	r31, r31
+    19e6:	ff 1f       	adc	r31, r31
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1650
-    19b8:	a2 17       	cp	r26, r18
+    19e8:	a2 17       	cp	r26, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1651
-    19ba:	b3 07       	cpc	r27, r19
+    19ea:	b3 07       	cpc	r27, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1652
-    19bc:	e4 07       	cpc	r30, r20
+    19ec:	e4 07       	cpc	r30, r20
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1653
-    19be:	f5 07       	cpc	r31, r21
+    19ee:	f5 07       	cpc	r31, r21
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1654
-    19c0:	20 f0       	brcs	.+8      	; 0x19ca <__udivmodsi4_ep>
+    19f0:	20 f0       	brcs	.+8      	; 0x19fa <__udivmodsi4_ep>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1655
-    19c2:	a2 1b       	sub	r26, r18
+    19f2:	a2 1b       	sub	r26, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1656
-    19c4:	b3 0b       	sbc	r27, r19
+    19f4:	b3 0b       	sbc	r27, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1657
-    19c6:	e4 0b       	sbc	r30, r20
+    19f6:	e4 0b       	sbc	r30, r20
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1658
-    19c8:	f5 0b       	sbc	r31, r21
+    19f8:	f5 0b       	sbc	r31, r21
 
-000019ca <__udivmodsi4_ep>:
+000019fa <__udivmodsi4_ep>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1660
-    19ca:	66 1f       	adc	r22, r22
+    19fa:	66 1f       	adc	r22, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1661
-    19cc:	77 1f       	adc	r23, r23
+    19fc:	77 1f       	adc	r23, r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1662
-    19ce:	88 1f       	adc	r24, r24
+    19fe:	88 1f       	adc	r24, r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1663
-    19d0:	99 1f       	adc	r25, r25
+    1a00:	99 1f       	adc	r25, r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1664
-    19d2:	1a 94       	dec	r1
+    1a02:	1a 94       	dec	r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1665
-    19d4:	69 f7       	brne	.-38     	; 0x19b0 <__udivmodsi4_loop>
+    1a04:	69 f7       	brne	.-38     	; 0x19e0 <__udivmodsi4_loop>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1667
-    19d6:	60 95       	com	r22
+    1a06:	60 95       	com	r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1668
-    19d8:	70 95       	com	r23
+    1a08:	70 95       	com	r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1669
-    19da:	80 95       	com	r24
+    1a0a:	80 95       	com	r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1670
-    19dc:	90 95       	com	r25
+    1a0c:	90 95       	com	r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1672
-    19de:	9b 01       	movw	r18, r22
+    1a0e:	9b 01       	movw	r18, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1674
-    19e0:	ac 01       	movw	r20, r24
+    1a10:	ac 01       	movw	r20, r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1676
-    19e2:	bd 01       	movw	r22, r26
+    1a12:	bd 01       	movw	r22, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1678
-    19e4:	cf 01       	movw	r24, r30
+    1a14:	cf 01       	movw	r24, r30
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1680
-    19e6:	08 95       	ret
+    1a16:	08 95       	ret
 
-000019e8 <__umulhisi3>:
+00001a18 <__umulhisi3>:
 __umulhisi3():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:564
-    19e8:	a2 9f       	mul	r26, r18
+    1a18:	a2 9f       	mul	r26, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:565
-    19ea:	b0 01       	movw	r22, r0
+    1a1a:	b0 01       	movw	r22, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:566
-    19ec:	b3 9f       	mul	r27, r19
+    1a1c:	b3 9f       	mul	r27, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:567
-    19ee:	c0 01       	movw	r24, r0
+    1a1e:	c0 01       	movw	r24, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:568
-    19f0:	a3 9f       	mul	r26, r19
+    1a20:	a3 9f       	mul	r26, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:578
-    19f2:	01 d0       	rcall	.+2      	; 0x19f6 <__umulhisi3+0xe>
+    1a22:	01 d0       	rcall	.+2      	; 0x1a26 <__umulhisi3+0xe>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:580
-    19f4:	b2 9f       	mul	r27, r18
+    1a24:	b2 9f       	mul	r27, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:581
-    19f6:	70 0d       	add	r23, r0
+    1a26:	70 0d       	add	r23, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:582
-    19f8:	81 1d       	adc	r24, r1
+    1a28:	81 1d       	adc	r24, r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:583
-    19fa:	11 24       	eor	r1, r1
+    1a2a:	11 24       	eor	r1, r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:584
-    19fc:	91 1d       	adc	r25, r1
+    1a2c:	91 1d       	adc	r25, r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:585
-    19fe:	08 95       	ret
+    1a2e:	08 95       	ret
 
-00001a00 <__mulsi3>:
+00001a30 <__mulsi3>:
 __mulsi3():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:648
-    1a00:	db 01       	movw	r26, r22
+    1a30:	db 01       	movw	r26, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:649
-    1a02:	8f 93       	push	r24
+    1a32:	8f 93       	push	r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:650
-    1a04:	9f 93       	push	r25
+    1a34:	9f 93       	push	r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:651
-    1a06:	be df       	rcall	.-132    	; 0x1984 <__muluhisi3>
+    1a36:	be df       	rcall	.-132    	; 0x19b4 <__muluhisi3>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:652
-    1a08:	bf 91       	pop	r27
+    1a38:	bf 91       	pop	r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:653
-    1a0a:	af 91       	pop	r26
+    1a3a:	af 91       	pop	r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:655
-    1a0c:	a2 9f       	mul	r26, r18
+    1a3c:	a2 9f       	mul	r26, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:656
-    1a0e:	80 0d       	add	r24, r0
+    1a3e:	80 0d       	add	r24, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:657
-    1a10:	91 1d       	adc	r25, r1
+    1a40:	91 1d       	adc	r25, r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:658
-    1a12:	a3 9f       	mul	r26, r19
+    1a42:	a3 9f       	mul	r26, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:659
-    1a14:	90 0d       	add	r25, r0
+    1a44:	90 0d       	add	r25, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:660
-    1a16:	b2 9f       	mul	r27, r18
+    1a46:	b2 9f       	mul	r27, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:661
-    1a18:	90 0d       	add	r25, r0
+    1a48:	90 0d       	add	r25, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:662
-    1a1a:	11 24       	eor	r1, r1
+    1a4a:	11 24       	eor	r1, r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:663
-    1a1c:	08 95       	ret
+    1a4c:	08 95       	ret
 
-00001a1e <__divmodhi4>:
+00001a4e <__divmodhi4>:
 __divmodhi4():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1440
-    1a1e:	97 fb       	bst	r25, 7
+    1a4e:	97 fb       	bst	r25, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1441
-    1a20:	07 2e       	mov	r0, r23
+    1a50:	07 2e       	mov	r0, r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1442
-    1a22:	16 f4       	brtc	.+4      	; 0x1a28 <__divmodhi4+0xa>
+    1a52:	16 f4       	brtc	.+4      	; 0x1a58 <__divmodhi4+0xa>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1443
-    1a24:	00 94       	com	r0
+    1a54:	00 94       	com	r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1444
-    1a26:	06 d0       	rcall	.+12     	; 0x1a34 <__divmodhi4_neg1>
+    1a56:	06 d0       	rcall	.+12     	; 0x1a64 <__divmodhi4_neg1>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1446
-    1a28:	77 fd       	sbrc	r23, 7
+    1a58:	77 fd       	sbrc	r23, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1447
-    1a2a:	08 d0       	rcall	.+16     	; 0x1a3c <__divmodhi4_neg2>
+    1a5a:	08 d0       	rcall	.+16     	; 0x1a6c <__divmodhi4_neg2>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1448
-    1a2c:	11 d0       	rcall	.+34     	; 0x1a50 <__udivmodhi4>
+    1a5c:	11 d0       	rcall	.+34     	; 0x1a80 <__udivmodhi4>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1449
-    1a2e:	07 fc       	sbrc	r0, 7
+    1a5e:	07 fc       	sbrc	r0, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1450
-    1a30:	05 d0       	rcall	.+10     	; 0x1a3c <__divmodhi4_neg2>
+    1a60:	05 d0       	rcall	.+10     	; 0x1a6c <__divmodhi4_neg2>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1451
-    1a32:	3e f4       	brtc	.+14     	; 0x1a42 <__divmodhi4_exit>
+    1a62:	3e f4       	brtc	.+14     	; 0x1a72 <__divmodhi4_exit>
 
-00001a34 <__divmodhi4_neg1>:
+00001a64 <__divmodhi4_neg1>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1454
-    1a34:	90 95       	com	r25
+    1a64:	90 95       	com	r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1455
-    1a36:	81 95       	neg	r24
+    1a66:	81 95       	neg	r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1456
-    1a38:	9f 4f       	sbci	r25, 0xFF	; 255
+    1a68:	9f 4f       	sbci	r25, 0xFF	; 255
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1457
-    1a3a:	08 95       	ret
+    1a6a:	08 95       	ret
 
-00001a3c <__divmodhi4_neg2>:
+00001a6c <__divmodhi4_neg2>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1460
-    1a3c:	70 95       	com	r23
+    1a6c:	70 95       	com	r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1461
-    1a3e:	61 95       	neg	r22
+    1a6e:	61 95       	neg	r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1462
-    1a40:	7f 4f       	sbci	r23, 0xFF	; 255
+    1a70:	7f 4f       	sbci	r23, 0xFF	; 255
 
-00001a42 <__divmodhi4_exit>:
+00001a72 <__divmodhi4_exit>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1464
-    1a42:	08 95       	ret
+    1a72:	08 95       	ret
 
-00001a44 <__usmulhisi3>:
+00001a74 <__usmulhisi3>:
 __usmulhisi3():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:545
-    1a44:	d1 df       	rcall	.-94     	; 0x19e8 <__umulhisi3>
+    1a74:	d1 df       	rcall	.-94     	; 0x1a18 <__umulhisi3>
 
-00001a46 <__usmulhisi3_tail>:
+00001a76 <__usmulhisi3_tail>:
 __usmulhisi3_tail():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:551
-    1a46:	b7 ff       	sbrs	r27, 7
+    1a76:	b7 ff       	sbrs	r27, 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:552
-    1a48:	08 95       	ret
+    1a78:	08 95       	ret
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:553
-    1a4a:	82 1b       	sub	r24, r18
+    1a7a:	82 1b       	sub	r24, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:554
-    1a4c:	93 0b       	sbc	r25, r19
+    1a7c:	93 0b       	sbc	r25, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:555
-    1a4e:	08 95       	ret
+    1a7e:	08 95       	ret
 
-00001a50 <__udivmodhi4>:
+00001a80 <__udivmodhi4>:
 __udivmodhi4():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1408
-    1a50:	aa 1b       	sub	r26, r26
+    1a80:	aa 1b       	sub	r26, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1409
-    1a52:	bb 1b       	sub	r27, r27
+    1a82:	bb 1b       	sub	r27, r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1410
-    1a54:	51 e1       	ldi	r21, 0x11	; 17
+    1a84:	51 e1       	ldi	r21, 0x11	; 17
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1411
-    1a56:	07 c0       	rjmp	.+14     	; 0x1a66 <__udivmodhi4_ep>
+    1a86:	07 c0       	rjmp	.+14     	; 0x1a96 <__udivmodhi4_ep>
 
-00001a58 <__udivmodhi4_loop>:
+00001a88 <__udivmodhi4_loop>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1413
-    1a58:	aa 1f       	adc	r26, r26
+    1a88:	aa 1f       	adc	r26, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1414
-    1a5a:	bb 1f       	adc	r27, r27
+    1a8a:	bb 1f       	adc	r27, r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1415
-    1a5c:	a6 17       	cp	r26, r22
+    1a8c:	a6 17       	cp	r26, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1416
-    1a5e:	b7 07       	cpc	r27, r23
+    1a8e:	b7 07       	cpc	r27, r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1417
-    1a60:	10 f0       	brcs	.+4      	; 0x1a66 <__udivmodhi4_ep>
+    1a90:	10 f0       	brcs	.+4      	; 0x1a96 <__udivmodhi4_ep>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1418
-    1a62:	a6 1b       	sub	r26, r22
+    1a92:	a6 1b       	sub	r26, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1419
-    1a64:	b7 0b       	sbc	r27, r23
+    1a94:	b7 0b       	sbc	r27, r23
 
-00001a66 <__udivmodhi4_ep>:
+00001a96 <__udivmodhi4_ep>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1421
-    1a66:	88 1f       	adc	r24, r24
+    1a96:	88 1f       	adc	r24, r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1422
-    1a68:	99 1f       	adc	r25, r25
+    1a98:	99 1f       	adc	r25, r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1423
-    1a6a:	5a 95       	dec	r21
+    1a9a:	5a 95       	dec	r21
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1424
-    1a6c:	a9 f7       	brne	.-22     	; 0x1a58 <__udivmodhi4_loop>
+    1a9c:	a9 f7       	brne	.-22     	; 0x1a88 <__udivmodhi4_loop>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1425
-    1a6e:	80 95       	com	r24
+    1a9e:	80 95       	com	r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1426
-    1a70:	90 95       	com	r25
+    1aa0:	90 95       	com	r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1428
-    1a72:	bc 01       	movw	r22, r24
+    1aa2:	bc 01       	movw	r22, r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1430
-    1a74:	cd 01       	movw	r24, r26
+    1aa4:	cd 01       	movw	r24, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1432
-    1a76:	08 95       	ret
+    1aa6:	08 95       	ret
 
-00001a78 <__tablejump2__>:
+00001aa8 <__tablejump2__>:
 __tablejump2__():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2296
-    1a78:	ee 0f       	add	r30, r30
+    1aa8:	ee 0f       	add	r30, r30
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2297
-    1a7a:	ff 1f       	adc	r31, r31
+    1aaa:	ff 1f       	adc	r31, r31
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2328
-    1a7c:	05 90       	lpm	r0, Z+
+    1aac:	05 90       	lpm	r0, Z+
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2329
-    1a7e:	f4 91       	lpm	r31, Z
+    1aae:	f4 91       	lpm	r31, Z
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2330
-    1a80:	e0 2d       	mov	r30, r0
+    1ab0:	e0 2d       	mov	r30, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2331
-    1a82:	09 94       	ijmp
+    1ab2:	09 94       	ijmp
 
-00001a84 <abort>:
+00001ab4 <abort>:
 abort():
-    1a84:	81 e0       	ldi	r24, 0x01	; 1
-    1a86:	90 e0       	ldi	r25, 0x00	; 0
-    1a88:	f8 94       	cli
-    1a8a:	00 c0       	rjmp	.+0      	; 0x1a8c <_exit>
+    1ab4:	81 e0       	ldi	r24, 0x01	; 1
+    1ab6:	90 e0       	ldi	r25, 0x00	; 0
+    1ab8:	f8 94       	cli
+    1aba:	00 c0       	rjmp	.+0      	; 0x1abc <_exit>
 
-00001a8c <_exit>:
+00001abc <_exit>:
 exit():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
-    1a8c:	f8 94       	cli
+    1abc:	f8 94       	cli
 
-00001a8e <__stop_program>:
+00001abe <__stop_program>:
 __stop_program():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr4/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
-    1a8e:	ff cf       	rjmp	.-2      	; 0x1a8e <__stop_program>
+    1abe:	ff cf       	rjmp	.-2      	; 0x1abe <__stop_program>
