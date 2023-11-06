@@ -1,17 +1,18 @@
 #include <FastLED.h> 
-#define NUM_LEDS 28
-#define DATA_PIN 11 			//SPI MOSI
-#define COLOR_ORDER GRB 	//Green (G), Red (R), Blue (B)
-#define CHIPSET WS2812B
-#define BRIGHTNESS 50 
-#define VOLTS 5 
-#define MAX_AMPS 500 		//value in milliamps
-#define BUTTON_PIN 14 		
-#define CountUp 0 		
-#define CountDown 1 		
-#define RedDD 	0 
-#define GreenDD 1
-#define BlueDD 	2
+#define NUM_LEDS 		28
+#define DATA_PIN 		11 			//SPI MOSI
+#define COLOR_ORDER 	GRB 	//Green (G), Red (R), Blue (B)
+#define CHIPSET 		WS2812B
+#define BRIGHTNESS 		50 
+#define VOLTS 			5 
+#define MAX_AMPS 		500 		//value in milliamps
+#define BUTTON_PIN 		14 		
+#define CountUp 		0 		
+#define CountDown 		1 		
+#define RedDD 			0	 
+#define GreenDD 		1
+#define BlueDD 			2
+#define PurpleBlueDD 	3
 
 CRGB leds[NUM_LEDS];
 
@@ -372,7 +373,6 @@ void loop() {
 	
 		FrameDelay = 15;
   	}
-
   	//////////////////// STATUS 17 ///////////////////////
   	else if(Status == 17)  {
 		for (iLed=0; 			iLed<NUM_LEDS; 		iLed++)	{ Vect[iLed] = 0; }
@@ -437,6 +437,14 @@ void loop() {
 		}
 		FrameDelay = xFrame;
   	}
+  	//////////////////// STATUS 21 ///////////////////////
+  	else if(Status == 21)  {
+		LedPointer = &Tri[0];
+		ShiftLed(PurpleBlueDD);
+		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
+		else                            { iFrame++; }
+		FrameDelay = 15;
+  	}
 	//////////////////// STATUS OTHERS ///////////////////////
 	else	{
 		Status = 0;
@@ -455,9 +463,10 @@ void ShiftLed(uint8_t ColorSwitch)	{
 		while(TempIndex >= NUM_LEDS)	{ 
 			TempIndex = TempIndex - NUM_LEDS;
 		}
-		if		(ColorSwitch == RedDD)		{TempColor = CRGB(LedPointer[TempIndex], 0, 0);}
-		else if	(ColorSwitch == GreenDD)	{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
-		else if	(ColorSwitch == BlueDD)		{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
+		if		(ColorSwitch == RedDD)			{TempColor = CRGB(LedPointer[TempIndex], 0, 0);}
+		else if	(ColorSwitch == GreenDD)		{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
+		else if	(ColorSwitch == BlueDD)			{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
+		else if	(ColorSwitch == PurpleBlueDD)	{TempColor = CRGB(LedPointer[TempIndex], 0, 255);}
 		leds[iLed] = TempColor;
 	}
 }
