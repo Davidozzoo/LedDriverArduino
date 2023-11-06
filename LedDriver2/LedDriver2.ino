@@ -208,9 +208,9 @@ void loop() {
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
 		for (iLed=0; iLed<NUM_LEDS; iLed++) {
-			if(iLed + iFrame >= NUM_LEDS)	{ leds[iLed] = CRGB(0, 0, Tri[iLed + iFrame - NUM_LEDS]);}
-			else									{ leds[iLed] = CRGB(0, 0, Tri[iLed + iFrame]);} 
+			Vect[iLed] = Tri[iLed];
 		}
+		ShiftLed(BlueDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
 		FrameDelay = 15;
