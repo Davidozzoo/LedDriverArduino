@@ -1,4 +1,5 @@
 #include <FastLED.h> 
+//#define NUM_LEDS 		9
 #define NUM_LEDS 		28
 #define DATA_PIN 		11 			//SPI MOSI
 #define COLOR_ORDER 	GRB 	//Green (G), Red (R), Blue (B)
@@ -22,7 +23,10 @@ uint8_t 	xFrame;
 uint8_t 	CountDir;
 uint8_t 	WriteStatusRom = 0;
 uint8_t 	FrameDelay;
+//28 LED
 uint8_t 	Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
+//9 LED
+//uint8_t 	Tri[NUM_LEDS] = {50,100,150,200,250,200,150,100,50};
 uint8_t 	Vect[NUM_LEDS];
 uint8_t* 	LedPointer;
 unsigned long ResetTimeStamp;
@@ -38,7 +42,7 @@ void setup() {
 
 	EEAR = 0x00;
 	//asm volatile ("sbi EECR,EERE");		//Start read.
-	asm volatile ("sbi 0x1C,0");			//Write enable on;
+	asm volatile ("sbi 0x1C,0");			//Read enable on;
 	Status = EEDR;
 
 
@@ -121,7 +125,7 @@ void loop() {
 		fill_rainbow_circular(leds,NUM_LEDS,iFrame);
 		//FastLED.setBrightness(BRIGHTNESS);
 		iFrame += 10;
-		FrameDelay = 5;
+		FrameDelay = 15;
 	}
   	//////////////////// STATUS 9 ///////////////////////
   	else if(Status == 9)  {
@@ -445,7 +449,6 @@ void loop() {
 		else                            { iFrame++; }
 		FrameDelay = 15;
   	}
-  	
 	//////////////////// STATUS 22 ///////////////////////
   	else if(Status == 22)  {
 		for(iLed = 0; iLed < NUM_LEDS - 6; iLed = iLed + 7)	{
