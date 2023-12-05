@@ -1,6 +1,5 @@
 #include <FastLED.h> 
-//#define NUM_LEDS 		9
-#define NUM_LEDS 		100
+#define NUM_LEDS 		16
 #define DATA_PIN 		11 			//SPI MOSI
 #define COLOR_ORDER 	GRB 	//Green (G), Red (R), Blue (B)
 #define CHIPSET 		WS2812B
@@ -14,6 +13,7 @@
 #define GreenDD 		1
 #define BlueDD 			2
 #define PurpleBlueDD 	3
+#define GreenYellowDD 	4
 
 CRGB leds[NUM_LEDS];
 
@@ -23,16 +23,21 @@ uint8_t 	xFrame;
 uint8_t 	CountDir;
 uint8_t 	WriteStatusRom = 0;
 uint8_t 	FrameDelay;
-
-//100 LED
-uint8_t 	Tri[NUM_LEDS] = {4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108,112,116,120,124,128,132,136,140,144,148,152,156,160,164,168,172,176,180,184,188,192,196,200,196,192,188,184,180,176,172,168,164,160,156,152,148,144,140,136,132,128,124,120,116,112,108,104,100,96,92,88,84,80,76,72,68,64,60,56,52,48,44,40,36,32,28,24,20,16,12,8,4,4};
-//28 LED
-//uint8_t 	Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
-//9 LED
-//uint8_t 	Tri[NUM_LEDS] = {50,100,150,200,250,200,150,100,50};
 uint8_t 	Vect[NUM_LEDS];
 uint8_t* 	LedPointer;
 unsigned long ResetTimeStamp;
+
+
+#if 	NUM_LEDS == 16
+	uint8_t 	Tri[NUM_LEDS] = {30,60,90,120,150,180,210,240,210,180,150,120,90,60,30,20};
+#elif 	NUM_LEDS == 100
+	uint8_t 	Tri[NUM_LEDS] = {4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108,112,116,120,124,128,132,136,140,144,148,152,156,160,164,168,172,176,180,184,188,192,196,200,196,192,188,184,180,176,172,168,164,160,156,152,148,144,140,136,132,128,124,120,116,112,108,104,100,96,92,88,84,80,76,72,68,64,60,56,52,48,44,40,36,32,28,24,20,16,12,8,4,4};
+#elif 	NUM_LEDS == 28
+	uint8_t 	Tri[NUM_LEDS] = {18,36,54,72,90,108,126,144,162,180,198,216,234,252,234,216,198,180,162,144,126,108,90,72,54,36,18,18};
+#elif 	NUM_LEDS == 9
+	uint8_t 	Tri[NUM_LEDS] = {50,100,150,200,250,200,150,100,50};
+#endif
+
 
 void setup() {
 	pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -452,8 +457,16 @@ void loop() {
 		else                            { iFrame++; }
 		FrameDelay = 15;
   	}
-	//////////////////// STATUS 22 ///////////////////////
+  	//////////////////// STATUS 22 ///////////////////////
   	else if(Status == 22)  {
+		LedPointer = &Tri[0];
+		ShiftLed(GreenYellowDD);
+		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
+		else                            { iFrame++; }
+		FrameDelay = 15;
+  	}
+	//////////////////// STATUS 23 ///////////////////////
+  	else if(Status == 23)  {
 		for(iLed = 0; iLed < NUM_LEDS - 6; iLed = iLed + 7)	{
 			Vect[iLed + 0] = 32;
 			Vect[iLed + 1] = 64;
@@ -491,6 +504,7 @@ void ShiftLed(uint8_t ColorSwitch)	{
 		else if	(ColorSwitch == GreenDD)		{TempColor = CRGB(0, LedPointer[TempIndex], 0);}
 		else if	(ColorSwitch == BlueDD)			{TempColor = CRGB(0, 0, LedPointer[TempIndex]);}
 		else if	(ColorSwitch == PurpleBlueDD)	{TempColor = CRGB(LedPointer[TempIndex], 0, 255);}
+		else if	(ColorSwitch == GreenYellowDD)	{TempColor = CRGB(LedPointer[TempIndex], 255, 0);}
 		leds[iLed] = TempColor;
 	}
 }
