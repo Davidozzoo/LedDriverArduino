@@ -3,10 +3,11 @@
 #define DATA_PIN 		11 			//SPI MOSI
 #define COLOR_ORDER 	GRB 	//Green (G), Red (R), Blue (B)
 #define CHIPSET 		WS2812B
-#define BRIGHTNESS 		50 
+#define BRIGHTNESS 		90 
 #define VOLTS 			5 
 #define MAX_AMPS 		500 		//value in milliamps
-#define BUTTON_PIN 		14 		
+// #define BUTTON_PIN 		14 		
+#define BUTTON_PIN 		5 		
 #define CountUp 		0 		
 #define CountDown 		1 		
 #define RedDD 			0	 
@@ -52,7 +53,6 @@ void setup() {
 	//asm volatile ("sbi EECR,EERE");		//Start read.
 	asm volatile ("sbi 0x1C,0");			//Read enable on;
 	Status = EEDR;
-
 
 }
 
@@ -142,8 +142,8 @@ void loop() {
 			if(iLed < NUM_LEDS) {leds[iLed] = CRGB::Yellow;}
 			else                {leds[iLed - NUM_LEDS] = CRGB::Yellow;}
 		}
-		if  (iFrame == NUM_LEDS)        { iFrame = 0;}
-		else                            { iFrame++; }
+		if  (iFrame == NUM_LEDS - 1)        { iFrame = 0;}
+		else                            	{ iFrame++; }
 		FrameDelay = 15;
   	}	
   	//////////////////// STATUS 10 ///////////////////////
@@ -151,7 +151,7 @@ void loop() {
     	if(iFrame == 0) {
 			ColorLeds(CRGB::Black);
 		}
-		leds[random(NUM_LEDS)] = CRGB(0, 0, random(255)); 
+		leds[random(NUM_LEDS)] = CRGB(0, random(255), 0); 
 		FrameDelay = 10;
   	}
   	//////////////////// STATUS 11 ///////////////////////
@@ -160,14 +160,14 @@ void loop() {
 			ColorLeds(CRGB::Black);
 		}
 		iFrame = 1;
-		leds[random(NUM_LEDS)] = CRGB(0, 0, random(255)); 
+		leds[random(NUM_LEDS)] = CRGB(0, random(255), 0); 
 		FrameDelay = 10;
   	}
 	//////////////////// STATUS 12 ///////////////////////
 	else if(Status == 12)  {
 		for (iLed = 0; iLed<NUM_LEDS; iLed++) { leds[iLed] = CRGB::Black; }
-		for (iLed = iFrame; iLed < (iFrame + 2); iLed++) { leds[iLed] = CRGB::Blue;}
-		for (iLed = NUM_LEDS - 1 - iFrame; iLed > (NUM_LEDS - 3 - iFrame); iLed--) { leds[iLed] = CRGB::Blue;}
+		for (iLed = iFrame; iLed < (iFrame + 2); iLed++) { leds[iLed] = CRGB::Green;}
+		for (iLed = NUM_LEDS - 1 - iFrame; iLed > (NUM_LEDS - 3 - iFrame); iLed--) { leds[iLed] = CRGB::Green;}
 		if		(iFrame + 2 == NUM_LEDS/2)	{CountDir = CountDown;}
 		else if	(iFrame == 0)				{CountDir = CountUp;}
 		if		(CountDir == CountUp)		{ iFrame ++;}
@@ -218,12 +218,12 @@ void loop() {
 			leds[iFrame] = CRGB::Blue;
 			iFrame--;
 		}
-		FrameDelay = 5;
+		FrameDelay = 10;
   	}	
   	//////////////////// STATUS 14 ///////////////////////
   	else if(Status == 14)  {
 		LedPointer = &Tri[0];
-		ShiftLed(BlueDD);
+		ShiftLed(GreenDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
 		FrameDelay = 15;
@@ -234,7 +234,7 @@ void loop() {
 			RampInit();
 			// ResetStatus = 0;
 		// }
-		ShiftLed(BlueDD);
+		ShiftLed(GreenDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
 		FrameDelay = 15;
@@ -383,7 +383,7 @@ void loop() {
 			else						{iFrame++;}		
 		}		
 	
-		FrameDelay = 15;
+		FrameDelay = 25;
   	}
   	//////////////////// STATUS 17 ///////////////////////
   	else if(Status == 17)  {
@@ -410,7 +410,7 @@ void loop() {
 		Vect[NUM_LEDS/2 + 1] = 255;
 		Vect[NUM_LEDS/2 + 2] = 255;
 		Vect[NUM_LEDS/2 + 3] = 255;
-		ShiftLed(BlueDD);
+		ShiftLed(GreenDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
 		FrameDelay = 15;
@@ -436,7 +436,7 @@ void loop() {
 		Vect[NUM_LEDS - 2] = 255;
 		Vect[NUM_LEDS - 3] = 255;
 		Vect[NUM_LEDS - 4] = 255;
-		ShiftLed(RedDD);
+		ShiftLed(GreenDD);
 		if  (iFrame == NUM_LEDS - 1)    { 
 			iFrame = 0;
 			if		(xFrame == 8)			{ CountDir = CountDown;}
@@ -455,7 +455,7 @@ void loop() {
 		ShiftLed(PurpleBlueDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
-		FrameDelay = 15;
+		FrameDelay = 25;
   	}
   	//////////////////// STATUS 22 ///////////////////////
   	else if(Status == 22)  {
@@ -463,7 +463,7 @@ void loop() {
 		ShiftLed(GreenYellowDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
-		FrameDelay = 15;
+		FrameDelay = 25;
   	}
 	//////////////////// STATUS 23 ///////////////////////
   	else if(Status == 23)  {
@@ -476,7 +476,7 @@ void loop() {
 			Vect[iLed + 5] = 192;
 			Vect[iLed + 6] = 224;
 		} 
-		ShiftLed(BlueDD);
+		ShiftLed(GreenDD);
 		if  (iFrame == NUM_LEDS - 1)    { iFrame = 0;}
 		else                            { iFrame++; }
 		FrameDelay = 15;
