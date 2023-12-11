@@ -54,6 +54,11 @@ void setup() {
 	asm volatile ("sbi 0x1C,0");			//Read enable on;
 	Status = EEDR;
 
+	iFrame = 0;
+	xFrame = 0;
+	LedPointer = &Vect[0];
+				
+
 }
 
 void loop() {
